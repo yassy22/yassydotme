@@ -2,11 +2,12 @@
 import React, { useState, useEffect } from "react";
 
 import PreLoading from "../PreLoading";
-// import Nav from "../sections/Nav";
-// import InspireMe from "../InspireMe";
-// import FinalYear from "../FinalYear";
-// import Works from "../Works";
+import Nav from "../sections/Nav";
+import InspireMe from "../InspireMe";
+import FinalYear from "../FinalYear";
+import Works from "../Works";
 import Hero2 from "../Hero2";
+import TestGalery2 from "../sections/TestGallery2";
 
 // import TestGalery2 from "../sections/TestGallery2";
 
@@ -30,17 +31,17 @@ export default function Home() {
         <PreLoading count={count} />
       ) : (
         <>
-          {/* <Nav /> */}
+          <Nav />
           <main className="overflow-hidden">
             {/* <Hero /> */}
             <Hero2 />
 
-        
-            {/* <FinalYear />
-            <InspireMe /> */}
-            {/* <TestGalery2 /> */}
+       
+           <FinalYear />
+            <InspireMe /> 
+            <TestGalery2 />
               
-            {/* <Works /> */}
+            <Works />
           </main>
         </>
       )}
