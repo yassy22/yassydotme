@@ -7,7 +7,7 @@ function FinalYear() {
   const imageRef = useRef(null);
   const isInView = useInView(imageRef, { once: true });
 
-  const EASING = [0.83, 0, 0.17, 1];
+  const EASING: any = [0.83, 0, 0.17, 1];
 
   const reveal = {
     initial: {
