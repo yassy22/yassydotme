@@ -1,83 +1,69 @@
 "use client";
-import { NewYork } from "@/app/fonts/newyork";
-import Image from "next/image";
-import about from "@/app/api/about/about";
-import { motion } from "framer-motion";
+
 import React, { useRef } from "react";
+import Image from "next/image";
+import { motion, type Variants, cubicBezier } from "framer-motion";
+import { NewYork } from "@/app/fonts/newyork";
+import about from "@/app/api/about/about";
 
 function HeroAbout() {
-  const imageRef = useRef(null);
+  const imageRef = useRef<HTMLDivElement | null>(null);
 
-  const EASING = [0.83, 0, 0.17, 1];
+  // Typesafe easing (vervangt [0.83, 0, 0.17, 1])
+  const easing = cubicBezier(0.83, 0, 0.17, 1);
 
-  const reveal = {
+  const reveal: Variants = {
     initial: {
-      height: "0%", // Initial height
-      transformOrigin: "bottom", // Zorgt ervoor dat de animatie van boven naar beneden begint
+      height: "0%",
     },
     animate: {
       height: "auto",
       transition: {
         duration: 1,
-        ease: EASING,
+        ease: easing,
         delay: 0.5,
       },
     },
   };
 
-  // const appear = {
-  //   initial: {
-  //     opacity: 0,
-  //   },
-  //   animate: {
-  //     opacity: 1,
-  //     transition: {
-  //       duration: 0.6,
-  //       ease: easeInOut,
-  //       delay: 0.4,
-  //     },
-  //   },
-  // };
-
-  const rise1 = {
-    initial: {
-      y: "100%",
-    },
+  const rise1: Variants = {
+    initial: { y: "100%" },
     animate: {
       y: 0,
       transition: {
         duration: 1,
-        ease: EASING,
+        ease: easing,
         delay: 0.3,
       },
     },
   };
 
   return (
-    <div className="hero-about h-screen flex justify-center items-center ">
+    <div className="hero-about h-screen flex justify-center items-center relative">
+      {/* Titel */}
       <div className="hero-about__content text-center overflow-hidden">
         <motion.h1
           variants={rise1}
           initial="initial"
           animate="animate"
-          className={` ${NewYork.className} dark:mix-blend-exclusion text-[12vw] xs:text-[9vw] sm:text-[8vw] lg:text-[9vw] text-center leading-[1] text-[#CAC8BC]`}
+          className={`${NewYork.className} dark:mix-blend-exclusion text-[12vw] xs:text-[9vw] sm:text-[8vw] lg:text-[9vw] leading-[1] text-[#CAC8BC]`}
         >
           Hi, there I’m the <br /> person behind this
         </motion.h1>
       </div>
 
-      <div
-        className="absolute w-screen -z-10 
-       "
-      >
+      {/* Afbeelding */}
+      <div className="absolute inset-0 -z-10 w-screen">
         <motion.div
+          ref={imageRef}
           variants={reveal}
           initial="initial"
-          className="hero-about__image overflow-hidden absolute left-28 bg-orange-600"
           animate="animate"
-          ref={imageRef}
+          // transform-origin als style i.p.v. in variants voor consistentie
+          style={{ transformOrigin: "bottom" }}
+          className="hero-about__image overflow-hidden absolute left-28 bg-orange-600"
         >
-          <motion.div className=" ">
+          <motion.div>
             <Image
               src={
                 Array.isArray(about[0].image)
@@ -87,7 +73,7 @@ function HeroAbout() {
               alt="hero about"
               width={300}
               height={300}
-              className=""
+              unoptimized
             />
           </motion.div>
         </motion.div>

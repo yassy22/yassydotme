@@ -1,19 +1,23 @@
 "use client";
-import { useState } from "react";
-import { NewYork } from "@/app/fonts/newyork";
-import { motion, AnimatePresence } from "framer-motion";
 
-const variants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.2, duration: 0.5, ease: "easeOut" },
-  }),
+import { useEffect, useState, useCallback } from "react";
+import { NewYork } from "@/app/fonts/newyork";
+import { motion, AnimatePresence, cubicBezier } from "framer-motion";
+
+type ContentItem = {
+  id: number;
+  title: string;
+  question?: string;
+  answer?: string | null;
+  videoUrl?: string | null;
+  colSpan?: string; // Tailwind grid span classes
+  hexColor?: string; // Achtergrondkleur (optioneel)
 };
 
-// Content array met aangepaste items
-const content = [
+const easeOutCb = cubicBezier(0.17, 0.55, 0.55, 1); // i.p.v. "easeOut"
+
+// Content array
+const content: ContentItem[] = [
   {
     id: 1,
     title: "01",
@@ -42,7 +46,7 @@ const content = [
     title: "04",
     question: "Are you an introvert or extrovert?",
     answer:
-      " I’m a bit of both—an ambivert. I recharge by spending time alone or in creative projects, but I also enjoy social moments and good conversations.",
+      "I’m a bit of both—an ambivert. I recharge by spending time alone or in creative projects, but I also enjoy social moments and good conversations.",
     videoUrl: null,
     colSpan: "lg:col-span-4 lg:row-span-2",
   },
@@ -51,14 +55,14 @@ const content = [
     title: "05",
     question: "What do you want to learn during an internship?",
     answer:
-      " I want to improve my design skills, especially in creating user-friendly and visually appealing interfaces. My goal is to become more confident in turning ideas into high-quality, polished designs.",
+      "I want to improve my design skills, especially in creating user-friendly and visually appealing interfaces. My goal is to become more confident in turning ideas into high-quality, polished designs.",
     videoUrl: null,
     colSpan: "lg:col-span-4",
   },
   {
     id: 6,
     title: "06",
-    question: "what is your favorite design book?",
+    question: "What is your favorite design book?",
     answer: "Don't Make Me Think.",
     videoUrl: null,
     colSpan: "lg:col-span-4",
@@ -72,7 +76,7 @@ const content = [
   },
 ];
 
-function QAndA() {
+export default function QAndA() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentVideo, setCurrentVideo] = useState<string | null>(null);
 
@@ -81,119 +85,140 @@ function QAndA() {
     setIsModalOpen(true);
   };
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setIsModalOpen(false);
     setCurrentVideo(null);
-  };
+  }, []);
 
-  // const copyToClipboard = (text: string) => {
-  //   navigator.clipboard.writeText(text);
-  //   setCopied(true);
-  //   setTimeout(() => setCopied(false), 2000);
-  // };
+  // ESC om modal te sluiten
+  useEffect(() => {
+    if (!isModalOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeModal();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [isModalOpen, closeModal]);
 
   return (
     <section className="qAndA_list py-32 mx-6 lg:mx-0">
       <div>
         <h1
-          className={`${NewYork.className} qAndA_title text-newyork text-[100px] text-center py-9`}
+          className={`${NewYork.className} qAndA_title text-newyork text-[64px] sm:text-[80px] lg:text-[100px] text-center py-9 leading-none`}
         >
           Q / A
         </h1>
       </div>
+
       <div className="grid w-full max-w-[1400px] mx-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-5 lg:gap-0">
-        {content.map((item, index) => (
-          <motion.div
-            key={item.id}
-            className={`border flex items-center justify-center ${
-              item.colSpan
-            } h-auto min-h-[300px] relative -mr-[1px] -mb-[1px] ${
-              item.hexColor ? "cursor-pointer" : ""
-            } group`}
-            style={{
-              backgroundColor: item.hexColor || "transparent",
-              backgroundImage: item.videoUrl
-                ? "url('../../../public/assets/images/clubSofa/clubsofa_i1.png')"
-                : "none",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={variants}
-            custom={index}
-          >
-            <div className="flex flex-col items-center text-center relative w-full h-full p-4">
-              {/* Titel absoluut gepositioneerd */}
-              <h2
-                className={`${NewYork.className} ${
-                  item.videoUrl
-                    ? "text-[50px] lg:text-[90px] right-[12px] -bottom-[25px]"
-                    : "text-[50px] lg:text-[90px]"
-                } absolute right-[10px] -bottom-[3px] lg:right-[12px] lg:-bottom-[25px]`}
-              >
-                {item.title}
-              </h2>
+        {content.map((item, index) => {
+          const hasVideo = Boolean(item.videoUrl);
 
-              {/* Vraag en antwoord */}
-              {!item.videoUrl && (
-                <div className="flex flex-col items-center justify-center w-full h-full">
-                  {/* Vraag die verdwijnt bij hover */}
-                  <p className="text-lg mb-4 opacity-100 group-hover:opacity-0 transition-opacity duration-300 ease-in-out">
-                    {item.question}
-                  </p>
+          // Als je een poster/achtergrond wil tonen voor video-tiles:
+          // Zet je image in /public en gebruik absolute pad:
+          // bv. /assets/images/clubSofa/clubsofa_i1.png
+          const bgImageForVideo = hasVideo
+            ? "url(/assets/images/clubSofa/clubsofa_i1.png)"
+            : "none";
 
-                  {/* Antwoord dat verschijnt bij hover */}
-                  {item.answer && (
-                    <p className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out text-gray-700">
-                      {item.answer}
+          return (
+            <motion.div
+              key={item.id}
+              className={`border flex items-center justify-center ${
+                item.colSpan ?? ""
+              } h-auto min-h-[300px] relative -mr-[1px] -mb-[1px] group`}
+              style={{
+                backgroundColor: item.hexColor || "transparent",
+                backgroundImage: bgImageForVideo,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{
+                delay: index * 0.2,
+                duration: 0.5,
+                ease: easeOutCb,
+              }}
+            >
+              <div className="flex flex-col items-center text-center relative w-full h-full p-4">
+                {/* Titel */}
+                <h2
+                  className={`${NewYork.className} text-[50px] lg:text-[90px] absolute right-[10px] -bottom-[3px] lg:right-[12px] lg:-bottom-[25px]`}
+                >
+                  {item.title}
+                </h2>
+
+                {/* Vraag / Antwoord (geen video) */}
+                {!hasVideo && (
+                  <div className="flex flex-col items-center justify-center w-full h-full">
+                    <p className="text-lg mb-4 opacity-100 group-hover:opacity-0 transition-opacity duration-300 ease-in-out">
+                      {item.question}
                     </p>
-                  )}
-                </div>
-              )}
 
-              {/* Play-knop voor items met video */}
-              {item.videoUrl && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <button
-                    onClick={() => openModal(item.videoUrl)}
-                    className="text-white text-[38px] w-[80px] h-[80px] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
-                  >
-                    ▶
-                  </button>
-                </div>
-              )}
-            </div>
-          </motion.div>
-        ))}
+                    {item.answer && (
+                      <p className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out text-gray-700">
+                        {item.answer}
+                      </p>
+                    )}
+                  </div>
+                )}
+
+                {/* Play-knop (video) */}
+                {hasVideo && item.videoUrl && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <button
+                      onClick={() => openModal(item.videoUrl!)}
+                      aria-label={`Speel video voor ${item.title}`}
+                      className="text-white text-[38px] w-[80px] h-[80px] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 bg-black/40 backdrop-blur"
+                    >
+                      ▶
+                    </button>
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
 
       {/* Modal voor video */}
       <AnimatePresence>
         {isModalOpen && (
           <motion.div
-            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Video modal"
+            className="fixed inset-0 bg-black/60 flex items-center justify-center z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={closeModal}
           >
             <motion.div
-              className="bg-white p-4 rounded relative max-w-[800px] w-full"
-              initial={{ scale: 0.8 }}
+              className="bg-white p-4 rounded relative max-w-[900px] w-full mx-4"
+              initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
+              exit={{ scale: 0.9 }}
+              transition={{ duration: 0.2, ease: easeOutCb }}
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 onClick={closeModal}
-                className="absolute top-2 right-2 bg-red-500 text-white p-2 rounded-full"
+                aria-label="Sluit video"
+                className="absolute top-2 right-2 bg-red-500 text-white w-9 h-9 rounded-full grid place-items-center focus:outline-none focus:ring-2 focus:ring-red-400"
               >
                 ✕
               </button>
+
               {currentVideo && (
-                <video src={currentVideo} controls className="w-full h-auto" />
+                <video
+                  src={currentVideo}
+                  controls
+                  playsInline
+                  className="w-full h-auto rounded"
+                />
               )}
             </motion.div>
           </motion.div>
@@ -202,5 +227,3 @@ function QAndA() {
     </section>
   );
 }
-
-export default QAndA;
