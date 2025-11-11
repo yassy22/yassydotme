@@ -1,17 +1,20 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import Link from "next/link";
+import { motion, type Variants, cubicBezier } from "framer-motion";
 import works from "../../api/works/works";
 import Rols from "../work/Rols";
-import Link from "next/link";
 
-const variants = {
+const variants: Variants = {
   hidden: { opacity: 0, y: 50 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: {
+      duration: 0.6,
+      ease: cubicBezier(0.22, 1, 0.36, 1), // vervangt "easeOut"
+    },
   },
 };
 
@@ -30,7 +33,7 @@ export default function WorksMobile() {
             >
               {/* Afbeelding */}
               <Image
-                className="w-full object-cover "
+                className="w-full object-cover"
                 width={900}
                 height={500}
                 src={
@@ -44,11 +47,9 @@ export default function WorksMobile() {
 
               {/* Titel en rollen */}
               <div className="pt-6">
-                <div>
-                  <p className="text-[20px] md:text-[25px] my-2 md:my-3 font-semibold">
-                    {work.title}
-                  </p>
-                </div>
+                <p className="text-[20px] md:text-[25px] my-2 md:my-3 font-semibold">
+                  {work.title}
+                </p>
                 <Rols
                   roles={Array.isArray(work.roles) ? work.roles : [work.roles]}
                 />
