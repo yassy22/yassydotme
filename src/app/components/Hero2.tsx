@@ -1,85 +1,79 @@
-import React from "react";
-import v1 from "../../../public/video/V1.mp4";
+"use client";
 
+import React, { useRef } from "react";
 import Image from "next/image";
 import home from "../api/home/home";
 import { NewYork } from "../fonts/newyork";
-import { useRef } from "react";
 import gsap from "gsap";
-
 import { useGSAP } from "@gsap/react";
 
+gsap.registerPlugin(useGSAP);
+
 function Hero2() {
-  const greeting1Ref = useRef(null);
-  const i1Ref = useRef(null);
-  const i2Ref = useRef(null);
+  const scopeRef = useRef<HTMLDivElement | null>(null);
+  const greetingRef = useRef<HTMLDivElement | null>(null);
+  const img1Ref = useRef<HTMLImageElement | null>(null);
+  const vidRef = useRef<HTMLVideoElement | null>(null);
 
-  useGSAP(() =>
-    gsap.from(greeting1Ref.current, {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      delay: 0.5,
-    })
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({
+        defaults: { duration: 1, ease: "power3.out" },
+      });
+      tl.from(greetingRef.current, { opacity: 0, y: 50, delay: 0.5 })
+        .from(img1Ref.current, { opacity: 0, y: -20 }, "-=0.4")
+        .from(vidRef.current, { opacity: 0, y: 20 }, "-=0.8");
+    },
+    { scope: scopeRef }
   );
 
-  useGSAP(() =>
-    gsap.from(i1Ref.current, {
-      opacity: 0,
-      y: -20,
-      duration: 1,
-      delay: 1.5,
-    })
-  );
-
-  useGSAP(() =>
-    gsap.from(i2Ref.current, {
-      opacity: 0,
-      y: 20,
-      duration: 1,
-      delay: 1.5,
-    })
-  );
   return (
-    <div className="hero2 h-screen">
-      <div>
-        {" "}
+    <div ref={scopeRef} className="hero2 h-screen relative">
+      {/* Achtergrond: mobiel = image, desktop = video */}
+      <div className="absolute inset-0">
+        {/* Mobiel background image */}
         <Image
           src={home[0].image[4]}
-          alt="Responsive Image"
-          layout="fill"
-          className="sm:hidden" // Verbergt de afbeelding op desktop als achtergrond
+          alt="Background"
+          fill
+          priority
+          sizes="100vw"
+          className="sm:hidden object-cover"
           unoptimized
+          ref={img1Ref}
         />
+
+        {/* Desktop background video */}
         <video
+          ref={vidRef}
           autoPlay
           loop
           muted
-          className="absolute object-cover w-full h-full hidden sm:block"
+          playsInline
+          className="hidden sm:block absolute inset-0 w-full h-full object-cover"
         >
-          <source src={v1} type="video/mp4"  />
+          <source src="/video/V1.mp4" type="video/mp4" />
         </video>
       </div>
 
+      {/* Content */}
       <div
-        className="presentation grid place-items-center gap-4 h-screen w-screen "
-        ref={greeting1Ref}
+        className="presentation grid place-items-center gap-4 h-screen w-screen relative z-10"
+        ref={greetingRef}
       >
-        <div className="col-start-1 row-start-1  ">
+        <div className="col-start-1 row-start-1">
           <h1
-            className={`${NewYork.variable} font-newYork text-[45px] sm:text-[60px] md:text-[80px] lg:text-[100px] xl:text-[130px]  leading-tight `}
+            className={`${NewYork.variable} font-newYork text-[45px] sm:text-[60px] md:text-[80px] lg:text-[100px] xl:text-[130px] leading-tight`}
           >
-       Digital Designer
+            Digital Designer
           </h1>
-          <div className="flex flex-col items-end pr-6 ">
-            <div>
-              {" "}
-              <p
-                className={`${NewYork.variable} font-newYork text-[40px] leading-tight sm:text-[60px] md:text-[75px] lg:text-[85px] xl:text-[95px] `}
-              >
-               Web developer
-              </p>
-            </div>
+
+          <div className="flex flex-col items-end pr-6">
+            <p
+              className={`${NewYork.variable} font-newYork text-[40px] leading-tight sm:text-[60px] md:text-[75px] lg:text-[85px] xl:text-[95px]`}
+            >
+              Web developer
+            </p>
           </div>
         </div>
 
