@@ -44,9 +44,12 @@ import gif_1 from "../../../../public/assets/images/wizaa/gif1.gif";
 
 // fengshui
 
-import fengshui_header from "../../../../public/assets/images/fen/i1.png";
-import fengshui_i1 from "../../../../public/assets/images/fen/i2.png";
-import fengshui_i2 from "../../../../public/assets/images/fen/i3.png";
+import crowd_header from "../../../../public/assets/images/crowd/crowd_i1.jpg";
+import crowd_i2 from "../../../../public/assets/images/crowd/crowd_i2.jpg";
+import crowd_i3 from "../../../../public/assets/images/crowd/crowd_i3.jpg";
+import crowd_i4 from "../../../../public/assets/images/crowd/crowd_i4.jpg";
+import crowd_i5 from "../../../../public/assets/images/crowd/crowd_i5.jpg";
+import crowd_i6 from "../../../../public/assets/images/crowd/crowd_i6.jpg";
 
 //Smart
 
@@ -55,15 +58,20 @@ import smart_i1 from "../../../../public/assets/images/smart/i2.png";
 import smart_i2 from "../../../../public/assets/images/smart/i3.png";
 import smart_i3 from "../../../../public/assets/images/smart/i4.png";
 
-//lotus
-import lotus_header from "../../../../public/assets/images/lotus/i1.png";
-import lotus_i1 from "../../../../public/assets/images/lotus/i2.png";
-import lotus_i2 from "../../../../public/assets/images/lotus/i3.png";
-import lotus_i3 from "../../../../public/assets/images/lotus/i4.png";
-import lotus_i4 from "../../../../public/assets/images/lotus/i5.png";
-import lotus_i5 from "../../../../public/assets/images/lotus/i6.png";
-import lotus_i6 from "../../../../public/assets/images/lotus/i7.png";
+
 // details
+
+//gwwc
+import gwwc_i1 from "../../../../public/assets/images/gwwc/gwwc_i1.jpg";
+import gwwc_i2 from "../../../../public/assets/images/gwwc/gwwc_i2.jpg";
+import gwwc_i3 from "../../../../public/assets/images/gwwc/gwwc_i3.jpg";
+import gwwc_i4 from "../../../../public/assets/images/gwwc/gwwc_i4.jpg";
+import gwwc_i6 from "../../../../public/assets/images/gwwc/gwwc_i6.png";
+import gwwc_i7 from "../../../../public/assets/images/gwwc/gwwc_i7.jpg";
+import gwwc_i8 from "../../../../public/assets/images/gwwc/gwwc_i8.jpg";
+import gwwc_i9 from "../../../../public/assets/images/gwwc/gwwc_i9.jpg";
+import gwwc_i10 from "../../../../public/assets/images/gwwc/gwwc_i10.jpg";
+import gwwc_i11 from "../../../../public/assets/images/gwwc/gwwc_i11.jpg";
 
 import { IWork } from "../../data/type";
 
@@ -157,16 +165,16 @@ This project allowed us to blend creativity with functionality, enhancing my ski
 
   {
     id: 6,
-    slug: "Lunchbox",
-    title: "Fengshui",
+    slug: "crowdbuilding",
+    title: "crowdbuilding",
     description: `
 This project was one of my first ventures into designing a one-page website for a unique lunch concept centered around herbs and insects. The goal was to create a playful and visually engaging website that captures attention while informing users about the innovative dishes on offer.
 
 Using a mix of vibrant colors, interactive shapes, and a mobile-first approach, I developed a platform that is both inspiring and functional
     `,
-    image: [fengshui_i1, fengshui_i2],
-    imageHeader: [fengshui_header],
-    roles: ["design"],
+    image: [crowd_i2, crowd_i3, crowd_i4, crowd_i5, crowd_i6],
+    imageHeader: [crowd_header],
+    roles: ["visual design", "branding"],
   },
 
   {
@@ -188,18 +196,28 @@ Using a mix of vibrant colors, interactive shapes, and a mobile-first approach, 
 
   {
     id: 8,
-    slug: "Lotus",
-    title: "Lotus",
+    slug: "GWWC",
+    title: "GWWC",
     description: `
-Het "Lotus x Lockers" project is een langdurige campagne van Lotus Biscoff, die loopt van 1 september tot 24 januari, met als doel om bij te dragen aan gelijke onderwijskansen voor kinderen in armoede door lege schoollockers te vullen met essentiële benodigdheden,
+During my internship in Amsterdam, I had the opportunity to work on CrowdBuilding, a Dutch platform that empowers people to collectively develop housing projects.
+Within the agency, I contributed to the rebranding, creating new layouts, presentation slides, and visual compositions.
 
-waarbij mensen worden aangemoedigd om te doneren en de boodschap te verspreiden via social media, zodat deze gezamenlijke inspanning kan uitmonden in een grotere impact op de lange termijn, culminerend op de Internationale Dag van het Onderwijs.
-
-      
-      `,
-    image: [lotus_i1, lotus_i2, lotus_i3, lotus_i4, lotus_i5, lotus_i6],
-    imageHeader: [lotus_header],
-    roles: ["ux design", "design"],
+I also worked on the logo redesign, exploring concepts, typography, and visual directions that reflected the idea of collective power and sustainable living.
+This project helped me strengthen my skills in branding, creative direction, and visual identity design.
+    `,
+    image: [
+      gwwc_i2,
+      gwwc_i3,
+      gwwc_i4,
+      gwwc_i6,
+      gwwc_i7,
+      gwwc_i8,
+      gwwc_i9,
+      gwwc_i10,
+      gwwc_i11,
+    ],
+    imageHeader: [gwwc_i1],
+    roles: ["visual design", "illustration"],
   },
 ];
 
