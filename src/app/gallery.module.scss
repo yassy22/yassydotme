@@ -1,0 +1,63 @@
+.gallery1{
+    height: 175vh;
+    position: relative;
+    display: flex;
+    gap: 0.6vw;
+    padding: 1vw;
+    box-sizing: border-box;
+    overflow: hidden;
+    .column{
+        position: relative;
+        height: 100%;
+        width: 100%;
+      
+        display: flex;
+        flex-direction: column;
+        gap: 0.6vw;
+
+        .imageContainer{
+           
+            position: relative;
+            overflow: hidden;
+            img{
+                object-fit: cover;
+            }
+        }
+        &:nth-of-type(1){
+            top: -45%;
+        }
+        &:nth-of-type(2){
+            top: -95%;
+        }
+        &:nth-of-type(3){
+            top: -45%;
+        }
+        &:nth-of-type(4){
+            top: -75%;
+        }
+    }
+
+
+    // responsive
+    @media screen and (max-width: 768px){
+        
+       // verkort de hoogte van de gallery
+        height: 130vh;
+        gap: 2vw;
+        .column{
+            gap: 2vw;
+            
+            &:nth-of-type(1){
+                top: -25%;
+            }
+            &:nth-of-type(2){
+                top: -15%;
+            }
+    
+        }
+
+    }
+}
+.spacer{
+    height: 100vh;
+}

@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --background-black: #181713;
+  --font-color: #fff;
+}
+
+/* * {
+  cursor: none;
+} */
+
+body {
+  color: var(--font-color);
+  
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.Work_title {
+  font-size: 102px;
+  line-height: 1.5;
+}
+
+.title_thanks {
+  font-size: 102px;
+}
+
+
+.qAndA_title {
+  font-size: 102px;
+  line-height: 1;
+ 
+}
+
+.border {
+  border: 1px solid #fff;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
