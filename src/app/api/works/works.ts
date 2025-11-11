@@ -1,68 +1,68 @@
 // clubSofa
-import hearder from "../../public/assets/images/clubSofa/headeri0.png";
-import clubsofa_i1 from "../../public/assets/images/clubSofa/clubsofa_i1.png";
-import clubsofa_i4 from "../../public/assets/images/clubSofa/clubsofa_i4.png";
-import clubsofa_i5 from "../../public/assets/images/clubSofa/clubsofa_i5.png";
-import clubsofa_i6 from "../../public/assets/images/clubSofa/clubsofa_i6.png";
-import clubsofa_i7 from "../../public/assets/images/clubSofa/clubsofa_i7.png";
-import clubsofa_i8 from "../../public/assets/images/clubSofa/clubsofa_i8.png";
-import clubsofa_iphone from "../../public/assets/images/clubSofa/clubsofa_iphone.png";
+import hearder from "../../../../public/assets/images/clubSofa/headeri0.png";
+import clubsofa_i1 from "../../../../public/assets/images/clubSofa/clubsofa_i1.png";
+import clubsofa_i4 from "../../../../public/assets/images/clubSofa/clubsofa_i4.png";
+import clubsofa_i5 from "../../../../public/assets/images/clubSofa/clubsofa_i5.png";
+import clubsofa_i6 from "../../../../public/assets/images/clubSofa/clubsofa_i6.png";
+import clubsofa_i7 from "../../../../public/assets/images/clubSofa/clubsofa_i7.png";
+import clubsofa_i8 from "../../../../public/assets/images/clubSofa/clubsofa_i8.png";
+import clubsofa_iphone from "../../../../public/assets/images/clubSofa/clubsofa_iphone.png";
 
-import clubsofa_gif_1 from "../../public/assets/images/clubSofa/gifs/workiV1.gif";
+import clubsofa_gif_1 from "../../../../public/assets/images/clubSofa/gifs/workiV1.gif";
 
 // scapino
-import scapino_header from "../../public/assets/images/scapino/header_scapino.png";
-import scapino_i1 from "../../public/assets/images/scapino/i1.png";
-import scapino_i3 from "../../public/assets/images/scapino/styleboard.png";
-import scapino_i4 from "../../public/assets/images/scapino/insta.png";
-import scapino_i5 from "../../public/assets/images/scapino/imga1.png";
-import scapino_gif_1 from "../../public/assets/images/scapino/scapino.gif";
-import scapino_phone_gif from "../../public/assets/images/scapino/phone.gif";
+import scapino_header from "../../../../public/assets/images/scapino/header_scapino.png";
+import scapino_i1 from "../../../../public/assets/images/scapino/i1.png";
+import scapino_i3 from "../../../../public/assets/images/scapino/styleboard.png";
+import scapino_i4 from "../../../../public/assets/images/scapino/insta.png";
+import scapino_i5 from "../../../../public/assets/images/scapino/imga1.png";
+import scapino_gif_1 from "../../../../public/assets/images/scapino/scapino.gif";
+import scapino_phone_gif from "../../../../public/assets/images/scapino/phone.gif";
 
-import header2 from "../../public/assets/images/gold/Header_hands.png";
+import header2 from "../../../../public/assets/images/gold/Header_hands.png";
 
-import moodboardGold from "../../public/assets/images/gold/Moodboard.png";
-import textureGold from "../../public/assets/images/gold/Texture.png";
-import FinalGold from "../../public/assets/images/gold/i1.png";
+import moodboardGold from "../../../../public/assets/images/gold/Moodboard.png";
+import textureGold from "../../../../public/assets/images/gold/Texture.png";
+import FinalGold from "../../../../public/assets/images/gold/i1.png";
 
 // muiji
-import muiji_header from "../../public/assets/images/muij/muij_header.png";
-import i1_muji from "../../public/assets/images/muij/i1.png";
-import i2_muji from "../../public/assets/images/muij/i2.png";
-import moodboard_muji from "../../public/assets/images/muij/moodboard.png";
-import styleMuij from "../../public/assets/images/muij/style.png";
+import muiji_header from "../../../../public/assets/images/muij/muij_header.png";
+import i1_muji from "../../../../public/assets/images/muij/i1.png";
+import i2_muji from "../../../../public/assets/images/muij/i2.png";
+import moodboard_muji from "../../../../public/assets/images/muij/moodboard.png";
+import styleMuij from "../../../../public/assets/images/muij/style.png";
 
 // wizaa
-import wizaa_header from "../../public/assets/images/wizaa/i1.png";
-import wizaa_iO from "../../public/assets/images/wizaa/i0.png";
-import wizaa_i1 from "../../public/assets/images/wizaa/i2.png";
-import wizaa_i2 from "../../public/assets/images/wizaa/i3.png";
-import wizaa_i3 from "../../public/assets/images/wizaa/i4.png";
-import wizaa_i4 from "../../public/assets/images/wizaa/i5.png";
-import wizaa_i5 from "../../public/assets/images/wizaa/i6.png";
-import gif_1 from "../../public/assets/images/wizaa/gif1.gif";
+import wizaa_header from "../../../../public/assets/images/wizaa/i1.png";
+import wizaa_iO from "../../../../public/assets/images/wizaa/i0.png";
+import wizaa_i1 from "../../../../public/assets/images/wizaa/i2.png";
+import wizaa_i2 from "../../../../public/assets/images/wizaa/i3.png";
+import wizaa_i3 from "../../../../public/assets/images/wizaa/i4.png";
+import wizaa_i4 from "../../../../public/assets/images/wizaa/i5.png";
+import wizaa_i5 from "../../../../public/assets/images/wizaa/i6.png";
+import gif_1 from "../../../../public/assets/images/wizaa/gif1.gif";
 
 // fengshui
 
-import fengshui_header from "../../public/assets/images/fen/i1.png";
-import fengshui_i1 from "../../public/assets/images/fen/i2.png";
-import fengshui_i2 from "../../public/assets/images/fen/i3.png";
+import fengshui_header from "../../../../public/assets/images/fen/i1.png";
+import fengshui_i1 from "../../../../public/assets/images/fen/i2.png";
+import fengshui_i2 from "../../../../public/assets/images/fen/i3.png";
 
 //Smart
 
-import smart_header from "../../public/assets/images/smart/i1.png";
-import smart_i1 from "../../public/assets/images/smart/i2.png";
-import smart_i2 from "../../public/assets/images/smart/i3.png";
-import smart_i3 from "../../public/assets/images/smart/i4.png";
+import smart_header from "../../../../public/assets/images/smart/i1.png";
+import smart_i1 from "../../../../public/assets/images/smart/i2.png";
+import smart_i2 from "../../../../public/assets/images/smart/i3.png";
+import smart_i3 from "../../../../public/assets/images/smart/i4.png";
 
 //lotus
-import lotus_header from "../../public/assets/images/lotus/i1.png";
-import lotus_i1 from "../../public/assets/images/lotus/i2.png";
-import lotus_i2 from "../../public/assets/images/lotus/i3.png";
-import lotus_i3 from "../../public/assets/images/lotus/i4.png";
-import lotus_i4 from "../../public/assets/images/lotus/i5.png";
-import lotus_i5 from "../../public/assets/images/lotus/i6.png";
-import lotus_i6 from "../../public/assets/images/lotus/i7.png";
+import lotus_header from "../../../../public/assets/images/lotus/i1.png";
+import lotus_i1 from "../../../../public/assets/images/lotus/i2.png";
+import lotus_i2 from "../../../../public/assets/images/lotus/i3.png";
+import lotus_i3 from "../../../../public/assets/images/lotus/i4.png";
+import lotus_i4 from "../../../../public/assets/images/lotus/i5.png";
+import lotus_i5 from "../../../../public/assets/images/lotus/i6.png";
+import lotus_i6 from "../../../../public/assets/images/lotus/i7.png";
 // details
 
 import { IWork } from "../../data/type";

@@ -1,5 +1,5 @@
 import React from "react";
-import v1 from "../public/video/V1.mp4";
+import v1 from "../../../public/video/V1.mp4";
 
 import Image from "next/image";
 import home from "../api/home/home";

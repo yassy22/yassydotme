@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 
-import star from "../public/assets/images/home/star.png";
+import star from "../../../public/assets/images/home/star.png";
 import Image from "next/image";
 
 function StarSpin({
