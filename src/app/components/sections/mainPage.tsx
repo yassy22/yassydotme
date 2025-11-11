@@ -8,7 +8,7 @@ import FinalYear from "../FinalYear";
 import Works from "../Works";
 import Hero2 from "../Hero2";
 
-import TestGalery2 from "../sections/TestGallery2";
+// import TestGalery2 from "../sections/TestGallery2";
 
 export default function Home() {
   const [count, setCount] = useState(10);
@@ -38,7 +38,7 @@ export default function Home() {
         
             <FinalYear />
             <InspireMe />
-            <TestGalery2 />
+            {/* <TestGalery2 /> */}
               
             <Works />
           </main>
