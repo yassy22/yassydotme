@@ -6,7 +6,7 @@ import Nav from "../sections/Nav";
 import InspireMe from "../InspireMe";
 import FinalYear from "../FinalYear";
 import Works from "../Works";
-import Hero2 from "../Hero2";
+import Hero from "../Hero";
 import TestGalery2 from "../sections/TestGallery2";
 
 // import TestGalery2 from "../sections/TestGallery2";
@@ -34,13 +34,12 @@ export default function Home() {
           <Nav />
           <main className="overflow-hidden">
             {/* <Hero /> */}
-            <Hero2 />
+            <Hero />
 
-       
-           <FinalYear />
-            <InspireMe /> 
+            <FinalYear />
+            <InspireMe />
             <TestGalery2 />
-              
+
             <Works />
           </main>
         </>

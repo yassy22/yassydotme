@@ -43,14 +43,14 @@ function FinalYear() {
         </motion.div>
       </motion.div>
 
-      <div className="h-[70vh] sm:h-screen flex flex-col gap-10 justify-center items-center relative z-10">
-        <p className="text-[14px] sm:text-[45px] font-light">
-          In my final year of studies, I am dedicated to further honing my
-          skills in front-end development and design.
-        </p>
+      <div className=" sm:h-screen flex flex-col gap-10 pt-[300px] relative z-10">
         <p className="text-[14px] sm:text-[45px]">
-          I focus on transforming creative ideas into well-crafted, high-quality
-          products from concept to completion.
+          I didn’t plan to become a designer, but life decided differently.{" "}
+          <br />
+          <br />
+          Design became the place where curiosity, structure, and intuition{" "}
+          <br />
+          meet. I focus on branding, visual identity, and visual storytelling.
         </p>
       </div>
     </section>
