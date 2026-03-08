@@ -39,9 +39,9 @@ function Nav() {
             </Link>
           </li>
           <li>
-            <Link href="/about" className="hover:text-blue-500">
+            {/* <Link href="/about" className="hover:text-blue-500">
               about
-            </Link>
+            </Link> */}
           </li>
         </ul>
       </nav>
