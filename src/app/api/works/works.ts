@@ -171,7 +171,7 @@ Using a mix of vibrant colors, interactive shapes, and a mobile-first approach, 
 
 
   {
-    id: 8,
+    id: 7,
     slug: "GWWC",
     title: "GWWC",
     description: `

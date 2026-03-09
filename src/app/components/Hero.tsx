@@ -89,7 +89,7 @@ function Hero() {
                   front-end dev
                 </p>
                 <div className="max-w-[450px]">
-                  <p className="text-[14px] max-w-[400px] pt-2  sm:pt-0 ">
+                  <p className="text-[14px] max-w-[450px] pt-2  sm:pt-0 ">
                     I’m a curious digital designer who enjoys exploring ideas
                     through visual design, film, and photography. I love
                     creating digital experiences that feel both thoughtful and
