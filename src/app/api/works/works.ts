@@ -51,12 +51,6 @@ import crowd_i4 from "../../../../public/assets/images/crowd/crowd_i4.jpg";
 import crowd_i5 from "../../../../public/assets/images/crowd/crowd_i5.jpg";
 import crowd_i6 from "../../../../public/assets/images/crowd/crowd_i6.jpg";
 
-//Smart
-
-import smart_header from "../../../../public/assets/images/smart/i1.png";
-import smart_i1 from "../../../../public/assets/images/smart/i2.png";
-import smart_i2 from "../../../../public/assets/images/smart/i3.png";
-import smart_i3 from "../../../../public/assets/images/smart/i4.png";
 
 
 // details
@@ -93,7 +87,7 @@ It was also my first deep dive into app design, where I learned the importance o
       clubsofa_i8,
       clubsofa_i4,
       clubsofa_i5,
-    ], // Drie afbeeldingen
+    ],
     imageHeader: [clubsofa_iphone, hearder],
     roles: ["creative direction", "app design"],
   },
@@ -102,14 +96,13 @@ It was also my first deep dive into app design, where I learned the importance o
     slug: "Wizaa",
     title: "Wizaa potery",
     description: `
-    For this personal project, I created Wizaa, a website dedicated to pottery. My goal was to explore various design styles and experiment with web design techniques.
+For this personal project, I created Wizaa, a website dedicated to pottery. My goal was to explore various design styles and experiment with web design techniques.
 
-    The project allowed me to flex my creative muscles and try new things, from creating a unique visual identity to experimenting with animations and interactions. It was a fun, challenging project that helped me grow as a designer.
-    `,
-    image: [wizaa_iO, gif_1, wizaa_i1, wizaa_i2, wizaa_i3, wizaa_i5, wizaa_i4], //
-
+The project allowed me to flex my creative muscles and try new things, from creating a unique visual identity to experimenting with animations and interactions. It was a fun, challenging project that helped me grow as a designer.
+`,
+    image: [wizaa_iO, gif_1, wizaa_i1, wizaa_i2, wizaa_i3, wizaa_i5, wizaa_i4],
     imageHeader: [wizaa_header],
-    roles: ["ux design", " 3D modeling", "Ai"],
+    roles: ["ux design", "3D modeling", "Ai"],
   },
   {
     id: 3,
@@ -124,7 +117,6 @@ This project helped me refine my skills in 3D modeling and animation while align
     imageHeader: [muiji_header],
     roles: ["creative direction", "3D modeling", "animation"],
   },
-
   {
     id: 4,
     slug: "scapino",
@@ -134,7 +126,6 @@ As a team, we designed a digital experience for Scapino Ballet Rotterdam to conn
 
 This project allowed us to blend creativity with functionality, enhancing my skills in UX design and front-end development while collaborating closely with my teammates to deliver a cohesive result.
 `,
-
     image: [
       scapino_i1,
       scapino_gif_1,
@@ -149,20 +140,19 @@ This project allowed us to blend creativity with functionality, enhancing my ski
     research:
       "https://www.figma.com/proto/NmM4ivwzWdOezNF0SKkZNr/Integration-4?page-id=648%3A1035&node-id=920-2129&node-type=frame&viewport=199%2C-3687%2C0.15&t=vuBQjkpFYa9PODLF-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=920%3A2129",
   },
-
   {
     id: 5,
     slug: "GoldGold",
     title: "Gold + Gold",
-    description: `The goal of this project was to choose a significant element from my culture and bring it to life visually. For me, the choice was clear: gold. It represents not just wealth and beauty, but also the deep sense of tradition, resilience, and value that my culture holds dear. 
+    description: `
+The goal of this project was to choose a significant element from my culture and bring it to life visually. For me, the choice was clear: gold. It represents not just wealth and beauty, but also the deep sense of tradition, resilience, and value that my culture holds dear. 
     
-    Gold symbolizes something precious, timeless, and enduring—just like the heritage and values I carry with me.
+Gold symbolizes something precious, timeless, and enduring—just like the heritage and values I carry with me.
 `,
     image: [moodboardGold, textureGold, FinalGold],
     imageHeader: [header2],
     roles: ["creative direction"],
   },
-
   {
     id: 6,
     slug: "crowdbuilding",
@@ -170,32 +160,14 @@ This project allowed us to blend creativity with functionality, enhancing my ski
     description: `
 This project was one of my first ventures into designing a one-page website for a unique lunch concept centered around herbs and insects. The goal was to create a playful and visually engaging website that captures attention while informing users about the innovative dishes on offer.
 
-Using a mix of vibrant colors, interactive shapes, and a mobile-first approach, I developed a platform that is both inspiring and functional
-    `,
+Using a mix of vibrant colors, interactive shapes, and a mobile-first approach, I developed a platform that is both inspiring and functional.
+`,
     image: [crowd_i2, crowd_i3, crowd_i4, crowd_i5, crowd_i6],
     imageHeader: [crowd_header],
     roles: ["visual design", "branding"],
   },
-
   {
     id: 7,
-    slug: "Smart",
-    title: "Smart",
-    description: `
-   Dit onderzoek richt zich op het ontwikkelen van een Smart City-oplossing om stress in drukke stadsgebieden te verminderen. Onze oplossing is gericht op het helpen van mensen te leiden naar plaatsen waar het minder druk is en hun stress te verminderen.
-   
-   Via onze micro-website willen we onze zoektocht naar verschillende oplossingen, inzichten en het algemene proces toelichten.
-
-    `,
-    image: [smart_i1, smart_i2, smart_i3],
-    imageHeader: [smart_header],
-    roles: ["ux design", "research"],
-    research:
-      "https://www.figma.com/proto/rRzy7Nl15KqM9igMgV7YEC/SMartCitys_micro_site_morgane_sam_yasmine?page-id=617%3A2064&node-id=617-2094&node-type=frame&viewport=2350%2C4685%2C0.32&t=UWvp0pBk1ap7JKWi-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=617%3A2094",
-  },
-
-  {
-    id: 8,
     slug: "GWWC",
     title: "GWWC",
     description: `
@@ -204,7 +176,7 @@ Within the agency, I contributed to the rebranding, creating new layouts, presen
 
 I also worked on the logo redesign, exploring concepts, typography, and visual directions that reflected the idea of collective power and sustainable living.
 This project helped me strengthen my skills in branding, creative direction, and visual identity design.
-    `,
+`,
     image: [
       gwwc_i2,
       gwwc_i3,
@@ -220,5 +192,4 @@ This project helped me strengthen my skills in branding, creative direction, and
     roles: ["visual design", "illustration"],
   },
 ];
-
 export default works;
