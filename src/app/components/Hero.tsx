@@ -88,8 +88,8 @@ function Hero() {
                 >
                   front-end dev
                 </p>
-                <div className="max-w-[450px]">
-                  <p className="text-[14px] max-w-[450px] pt-2  sm:pt-0 ">
+                <div className="max-w-[500px]">
+                  <p className="text-[14px] max-w-[500px] pt-2  sm:pt-0 ">
                     I’m a curious digital designer who enjoys exploring ideas
                     through visual design, film, and photography. I love
                     creating digital experiences that feel both thoughtful and
@@ -97,9 +97,8 @@ function Hero() {
                   </p>
                 </div>
                 <Button href="/all" className="mt-4">
-                  View Work 
+                  View Work
                 </Button>
-
               </div>
             </div>
           </div>
