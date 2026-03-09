@@ -51,15 +51,7 @@ import crowd_i4 from "../../../../public/assets/images/crowd/crowd_i4.jpg";
 import crowd_i5 from "../../../../public/assets/images/crowd/crowd_i5.jpg";
 import crowd_i6 from "../../../../public/assets/images/crowd/crowd_i6.jpg";
 
-//Smart
 
-import smart_header from "../../../../public/assets/images/smart/i1.png";
-import smart_i1 from "../../../../public/assets/images/smart/i2.png";
-import smart_i2 from "../../../../public/assets/images/smart/i3.png";
-import smart_i3 from "../../../../public/assets/images/smart/i4.png";
-
-
-// details
 
 //gwwc
 import gwwc_i1 from "../../../../public/assets/images/gwwc/gwwc_i1.jpg";
@@ -177,22 +169,6 @@ Using a mix of vibrant colors, interactive shapes, and a mobile-first approach, 
     roles: ["visual design", "branding"],
   },
 
-  {
-    id: 7,
-    slug: "Smart",
-    title: "Smart",
-    description: `
-   Dit onderzoek richt zich op het ontwikkelen van een Smart City-oplossing om stress in drukke stadsgebieden te verminderen. Onze oplossing is gericht op het helpen van mensen te leiden naar plaatsen waar het minder druk is en hun stress te verminderen.
-   
-   Via onze micro-website willen we onze zoektocht naar verschillende oplossingen, inzichten en het algemene proces toelichten.
-
-    `,
-    image: [smart_i1, smart_i2, smart_i3],
-    imageHeader: [smart_header],
-    roles: ["ux design", "research"],
-    research:
-      "https://www.figma.com/proto/rRzy7Nl15KqM9igMgV7YEC/SMartCitys_micro_site_morgane_sam_yasmine?page-id=617%3A2064&node-id=617-2094&node-type=frame&viewport=2350%2C4685%2C0.32&t=UWvp0pBk1ap7JKWi-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=617%3A2094",
-  },
 
   {
     id: 8,
