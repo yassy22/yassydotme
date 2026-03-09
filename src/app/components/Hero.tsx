@@ -97,8 +97,9 @@ function Hero() {
                   </p>
                 </div>
                 <Button href="/all" className="mt-4">
-                  View Work
+                  View Work 
                 </Button>
+
               </div>
             </div>
           </div>
