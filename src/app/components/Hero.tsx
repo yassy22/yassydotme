@@ -7,7 +7,6 @@ import gsap from "gsap";
 
 import { useGSAP } from "@gsap/react";
 
-
 function Hero() {
   const greeting1Ref = useRef(null);
   const i1Ref = useRef(null);
@@ -19,7 +18,7 @@ function Hero() {
       y: 50,
       duration: 1,
       delay: 0.5,
-    })
+    }),
   );
 
   useGSAP(() =>
@@ -28,7 +27,7 @@ function Hero() {
       y: -20,
       duration: 1,
       delay: 1.5,
-    })
+    }),
   );
 
   useGSAP(() =>
@@ -37,7 +36,7 @@ function Hero() {
       y: 20,
       duration: 1,
       delay: 1.5,
-    })
+    }),
   );
 
   return (
@@ -59,7 +58,6 @@ function Hero() {
           unoptimized
           className="overflow-hidden absolute right-44 z-10 hidden lg:block"
           ref={i1Ref}
-          
         />
 
         <Image
@@ -80,7 +78,7 @@ function Hero() {
             <h1
               className={`${NewYork.variable} font-newYork text-[45px] sm:text-[60px] md:text-[80px] lg:text-[100px] xl:text-[146px]  leading-tight `}
             >
-              Frontend Developer
+              Digital Designer
             </h1>
             <div className="flex flex-col items-end pr-6 ">
               <div>
@@ -88,17 +86,18 @@ function Hero() {
                 <p
                   className={`${NewYork.variable} font-newYork text-[40px] leading-tight sm:text-[60px] md:text-[75px] lg:text-[85px] xl:text-[95px] `}
                 >
-                  UI Designer
+                  front-end dev
                 </p>
                 <div className="max-w-[450px]">
                   <p className="text-[14px] max-w-[400px] pt-2  sm:pt-0 ">
-                    My front-end development and design skills enable me to
-                    bring ideas to life, creating tailored, user-focused
-                    solutions from start to finish.
+                    I’m a curious digital designer who enjoys exploring ideas
+                    through visual design, film, and photography. I love
+                    creating digital experiences that feel both thoughtful and
+                    visually engaging.
                   </p>
                 </div>
-                <Button href="/about" className="mt-4">
-                  ABOUT ME
+                <Button href="/all" className="mt-4">
+                  View Work
                 </Button>
               </div>
             </div>
