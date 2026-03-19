@@ -73,7 +73,6 @@ import athena_i5 from "../../../../public/assets/images/athena/i5.png";
 import athena_i6 from "../../../../public/assets/images/athena/i6.png";
 import gif_athena from "../../../../public/assets/images/athena/igif.gif";
 
-
 import { IWork } from "../../data/type";
 
 const works: IWork[] = [
