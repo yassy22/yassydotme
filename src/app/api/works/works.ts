@@ -84,7 +84,7 @@ const works: IWork[] = [
     description: `
 This was my first experience designing a subscription-based app, where I focused on creating an intuitive yet visually engaging interface to make the ordering process straightforward and enjoyable.
 
-It was also my first deep dive into app design, where I learned the importance of balancing functionality with aesthetics and gained valuable experience in crafting an intuitive user flow that enhances the customer experience.
+It was also my first deep dive into app design, where I learned the importance of balancing functionality with aesthetics and gained valuable experience in crafting an intuitive user flow that enhances the customer experience. 
 `,
     image: [
       clubsofa_gif_1,
