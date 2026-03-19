@@ -67,12 +67,12 @@ import gwwc_i11 from "../../../../public/assets/images/gwwc/gwwc_i11.jpg";
 import athena_i1 from "../../../../public/assets/images/athena/i0.png";
 import athena_i1_bw from "../../../../public/assets/images/athena/i0_black_w.png";
 
-import athena_i2 from "../../../../public/assets/images/athena/i2.png";
 import athena_i3 from "../../../../public/assets/images/athena/i3.png";
 import athena_i4 from "../../../../public/assets/images/athena/i4.png";
 import athena_i5 from "../../../../public/assets/images/athena/i5.png";
 import athena_i6 from "../../../../public/assets/images/athena/i6.png";
 import gif_athena from "../../../../public/assets/images/athena/igif.gif";
+
 
 import { IWork } from "../../data/type";
 
