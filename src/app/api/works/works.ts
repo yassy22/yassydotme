@@ -51,8 +51,6 @@ import crowd_i4 from "../../../../public/assets/images/crowd/crowd_i4.jpg";
 import crowd_i5 from "../../../../public/assets/images/crowd/crowd_i5.jpg";
 import crowd_i6 from "../../../../public/assets/images/crowd/crowd_i6.jpg";
 
-
-
 //gwwc
 import gwwc_i1 from "../../../../public/assets/images/gwwc/gwwc_i1.jpg";
 import gwwc_i2 from "../../../../public/assets/images/gwwc/gwwc_i2.jpg";
@@ -64,6 +62,17 @@ import gwwc_i8 from "../../../../public/assets/images/gwwc/gwwc_i8.jpg";
 import gwwc_i9 from "../../../../public/assets/images/gwwc/gwwc_i9.jpg";
 import gwwc_i10 from "../../../../public/assets/images/gwwc/gwwc_i10.jpg";
 import gwwc_i11 from "../../../../public/assets/images/gwwc/gwwc_i11.jpg";
+
+// Athena
+import athena_i1 from "../../../../public/assets/images/athena/i0.png";
+import athena_i1_bw from "../../../../public/assets/images/athena/i0_black_w.png";
+
+import athena_i2 from "../../../../public/assets/images/athena/i2.png";
+import athena_i3 from "../../../../public/assets/images/athena/i3.png";
+import athena_i4 from "../../../../public/assets/images/athena/i4.png";
+import athena_i5 from "../../../../public/assets/images/athena/i5.png";
+import athena_i6 from "../../../../public/assets/images/athena/i6.png";
+import gif_athena from "../../../../public/assets/images/athena/igif.gif";
 
 import { IWork } from "../../data/type";
 
@@ -156,6 +165,20 @@ This project allowed us to blend creativity with functionality, enhancing my ski
   },
 
   {
+    id: 8,
+    slug: "athena",
+    title: "Athena",
+    description: `Athena Calderone has been a major source of inspiration for me and was at the core of this two-day project. The goal was to explore her universe, better understand her approach and aesthetic, and use that as inspiration to develop my own creative style. 
+    
+    Based on this research, I created a cohesive visual universe and designed posts specifically for this project, focusing on social media and art direction.
+
+    `,
+    image: [athena_i3, athena_i4, gif_athena, athena_i5, athena_i6, athena_i1],
+    imageHeader: [athena_i1_bw],
+    roles: ["visual design", "Social media", "Rush project"],
+  },
+
+  {
     id: 6,
     slug: "crowdbuilding",
     title: "crowdbuilding",
@@ -168,7 +191,6 @@ Using a mix of vibrant colors, interactive shapes, and a mobile-first approach, 
     imageHeader: [crowd_header],
     roles: ["visual design", "branding"],
   },
-
 
   {
     id: 7,
