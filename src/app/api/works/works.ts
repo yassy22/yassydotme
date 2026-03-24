@@ -19,11 +19,6 @@ import scapino_i5 from "../../../../public/assets/images/scapino/imga1.png";
 import scapino_gif_1 from "../../../../public/assets/images/scapino/scapino.gif";
 import scapino_phone_gif from "../../../../public/assets/images/scapino/phone.gif";
 
-import header2 from "../../../../public/assets/images/gold/Header_hands.png";
-
-import moodboardGold from "../../../../public/assets/images/gold/Moodboard.png";
-import textureGold from "../../../../public/assets/images/gold/Texture.png";
-import FinalGold from "../../../../public/assets/images/gold/i1.png";
 
 // muiji
 import muiji_header from "../../../../public/assets/images/muij/muij_header.png";
@@ -153,7 +148,7 @@ This project allowed us to blend creativity with functionality, enhancing my ski
 
   
   {
-    id: 6,
+    id: 5,
     slug: "slipdesktop",
     title: "Slip Desktop",
     description: `
@@ -177,7 +172,7 @@ This project allowed me to explore desktop application design, focusing on usabi
   },
 
   {
-    id: 7,
+    id: 6,
     slug: "GWWC",
     title: "GWWC",
     description: `
@@ -202,7 +197,7 @@ This project helped me strengthen my skills in branding, creative direction, and
     roles: ["visual design", "illustration"],
   },
   {
-    id: 8,
+    id: 7,
     slug: "athena",
     title: "Athena",
     description: `Athena Calderone has been a major source of inspiration for me and was at the core of this two-day project. The goal was to explore her universe, better understand her approach and aesthetic, and use that as inspiration to develop my own creative style. 
