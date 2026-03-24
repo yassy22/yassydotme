@@ -42,15 +42,6 @@ import wizaa_i4 from "../../../../public/assets/images/wizaa/i5.png";
 import wizaa_i5 from "../../../../public/assets/images/wizaa/i6.png";
 import gif_1 from "../../../../public/assets/images/wizaa/gif1.gif";
 
-// fengshui
-
-import crowd_header from "../../../../public/assets/images/crowd/crowd_i1.jpg";
-import crowd_i2 from "../../../../public/assets/images/crowd/crowd_i2.jpg";
-import crowd_i3 from "../../../../public/assets/images/crowd/crowd_i3.jpg";
-import crowd_i4 from "../../../../public/assets/images/crowd/crowd_i4.jpg";
-import crowd_i5 from "../../../../public/assets/images/crowd/crowd_i5.jpg";
-import crowd_i6 from "../../../../public/assets/images/crowd/crowd_i6.jpg";
-
 //gwwc
 import gwwc_i1 from "../../../../public/assets/images/gwwc/gwwc_i1.jpg";
 import gwwc_i2 from "../../../../public/assets/images/gwwc/gwwc_i2.jpg";
@@ -72,6 +63,16 @@ import athena_i4 from "../../../../public/assets/images/athena/i4.png";
 import athena_i5 from "../../../../public/assets/images/athena/i5.png";
 import athena_i6 from "../../../../public/assets/images/athena/i6.png";
 import gif_athena from "../../../../public/assets/images/athena/igif.gif";
+
+import slipDesktop_i0 from "../../../../public/assets/images/sipdesk/i0.png";
+import slipDesktop_i1 from "../../../../public/assets/images/sipdesk/i1.png";
+import slipDesktop_i2 from "../../../../public/assets/images/sipdesk/i2.png";
+import slipDesktop_i3 from "../../../../public/assets/images/sipdesk/i3.png";
+import slipDesktop_i4 from "../../../../public/assets/images/sipdesk/i4.png";
+import slipDesktop_i5 from "../../../../public/assets/images/sipdesk/i5.png";
+import slipDesktop_i6 from "../../../../public/assets/images/sipdesk/i6.png";
+import slipDesktop_i7 from "../../../../public/assets/images/sipdesk/i7.png";
+import slipDesktop_i8 from "../../../../public/assets/images/sipdesk/i8.png";
 
 import { IWork } from "../../data/type";
 
@@ -150,45 +151,29 @@ This project allowed us to blend creativity with functionality, enhancing my ski
       "https://www.figma.com/proto/NmM4ivwzWdOezNF0SKkZNr/Integration-4?page-id=648%3A1035&node-id=920-2129&node-type=frame&viewport=199%2C-3687%2C0.15&t=vuBQjkpFYa9PODLF-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=920%3A2129",
   },
 
-  {
-    id: 5,
-    slug: "GoldGold",
-    title: "Gold + Gold",
-    description: `The goal of this project was to choose a significant element from my culture and bring it to life visually. For me, the choice was clear: gold. It represents not just wealth and beauty, but also the deep sense of tradition, resilience, and value that my culture holds dear. 
-    
-    Gold symbolizes something precious, timeless, and enduring—just like the heritage and values I carry with me.
-`,
-    image: [moodboardGold, textureGold, FinalGold],
-    imageHeader: [header2],
-    roles: ["creative direction"],
-  },
-
-  {
-    id: 8,
-    slug: "athena",
-    title: "Athena",
-    description: `Athena Calderone has been a major source of inspiration for me and was at the core of this two-day project. The goal was to explore her universe, better understand her approach and aesthetic, and use that as inspiration to develop my own creative style. 
-    
-    Based on this research, I created a cohesive visual universe and designed posts specifically for this project, focusing on social media and art direction.
-
-    `,
-    image: [athena_i3, athena_i4, gif_athena, athena_i5, athena_i6, athena_i1],
-    imageHeader: [athena_i1_bw],
-    roles: ["visual design", "Social media", "Rush project"],
-  },
-
+  
   {
     id: 6,
-    slug: "crowdbuilding",
-    title: "crowdbuilding",
+    slug: "slipdesktop",
+    title: "Slip Desktop",
     description: `
-This project was one of my first ventures into designing a one-page website for a unique lunch concept centered around herbs and insects. The goal was to create a playful and visually engaging website that captures attention while informing users about the innovative dishes on offer.
+For this project, I designed a desktop application for Slip, a company specializing in high-quality silk products. The goal was to create an intuitive and visually appealing interface that reflects the brand's luxurious aesthetic while providing a seamless user experience.
 
-Using a mix of vibrant colors, interactive shapes, and a mobile-first approach, I developed a platform that is both inspiring and functional
-    `,
-    image: [crowd_i2, crowd_i3, crowd_i4, crowd_i5, crowd_i6],
-    imageHeader: [crowd_header],
-    roles: ["visual design", "branding"],
+This project allowed me to explore desktop application design, focusing on usability and visual storytelling to enhance the overall brand experience.
+`,
+    image: [
+      slipDesktop_i0,
+      slipDesktop_i1,
+      slipDesktop_i2,
+      slipDesktop_i3,
+      slipDesktop_i4,
+      slipDesktop_i5,
+      slipDesktop_i6,
+      slipDesktop_i7,
+      slipDesktop_i8,
+    ],
+    imageHeader: [slipDesktop_i8],
+    roles: ["desktop app design", "visual design"],
   },
 
   {
@@ -215,6 +200,19 @@ This project helped me strengthen my skills in branding, creative direction, and
     ],
     imageHeader: [gwwc_i1],
     roles: ["visual design", "illustration"],
+  },
+  {
+    id: 8,
+    slug: "athena",
+    title: "Athena",
+    description: `Athena Calderone has been a major source of inspiration for me and was at the core of this two-day project. The goal was to explore her universe, better understand her approach and aesthetic, and use that as inspiration to develop my own creative style. 
+    
+    Based on this research, I created a cohesive visual universe and designed posts specifically for this project, focusing on social media and art direction.
+
+    `,
+    image: [athena_i3, athena_i4, gif_athena, athena_i5, athena_i6, athena_i1],
+    imageHeader: [athena_i1_bw],
+    roles: ["visual design", "Social media", "Rush project"],
   },
 ];
 
