@@ -39,9 +39,9 @@ export default function Home() {
             {/* <Hero /> */}
             <Hero />
 
-            <FinalYear />
+            {/* <FinalYear />
             <InspireMe />
-            <TestGallerySection />
+            <TestGallerySection /> */}
 
             <Works />
           </main>
