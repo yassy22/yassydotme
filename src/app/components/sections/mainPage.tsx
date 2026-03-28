@@ -35,15 +35,15 @@ export default function Home() {
       ) : (
         <>
           <Nav theme="light" />
-          <main className="overflow-hidden">
+          <main>
             {/* <Hero /> */}
             <Hero />
 
-            {/* <FinalYear />
-            <InspireMe />
+            <FinalYear />
+            {/* <InspireMe />
             <TestGallerySection /> */}
 
-            <Works />
+            {/* <Works /> */}
           </main>
         </>
       )}

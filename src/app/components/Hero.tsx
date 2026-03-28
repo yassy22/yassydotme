@@ -1,45 +1,33 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { div } from "framer-motion/client";
 
 export default function StudioPage() {
-  const [time, setTime] = useState("");
   const wrapperRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
     target: wrapperRef,
-    offset: ["start start", "end start"],
+    offset: ["start start", "end end"],
   });
 
-  const leftX = useTransform(scrollYProgress, [0, 0.5], ["0vw", "12vw"]);
-  const rightX = useTransform(scrollYProgress, [0, 0.5], ["0vw", "-12vw"]);
+  const leftX = useTransform(scrollYProgress, [0, 1], ["0vw", "30vw"]);
+  const rightX = useTransform(scrollYProgress, [0, 1], ["0vw", "-30vw"]);
+  const downZ = useTransform(scrollYProgress, [0, 1], ["0vw", "20vw"]);
 
-  useEffect(() => {
-    const update = () => {
-      const now = new Date();
-      setTime(
-        now.toLocaleTimeString("en-US", {
-          hour: "2-digit",
-          minute: "2-digit",
-          hour12: false,
-          timeZone: "Europe/Brussels",
-        }) + " GMT+2",
-      );
-    };
-    update();
-    const interval = setInterval(update, 1000);
-    return () => clearInterval(interval);
-  }, []);
+ 
 
   return (
+ 
     <div
       ref={wrapperRef}
-      className="relative min-h-screen flex flex-col"
-      style={{ backgroundColor: "#e8e4dc", color: "#0a0a0a" }}
+      style={{ height: "300vh", backgroundColor: "#e8e4dc", color: "#0a0a0a" }}
     >
-      {/* Main content */}
-      <div className="flex flex-col justify-center min-h-screen px-4">
-        {/* Giant name */}
+      <div
+        className="sticky top-0 h-screen flex flex-col items-center justify-center  px-4"
+        style={{}}
+      >
+        {/* Nom */}
         <motion.div
           className="w-full text-center"
           initial={{ opacity: 0 }}
@@ -70,8 +58,8 @@ export default function StudioPage() {
           </h1>
         </motion.div>
 
-        {/* Middle row: A VISUAL | video | DESIGNER */}
-        <div className="relative flex items-center justify-center mt-4 md:mt-6">
+        {/* Middle row */}
+        <div className="relative w-full flex items-center justify-center mt-4 md:mt-6">
           <motion.span
             className="absolute left-4 uppercase font-black leading-none"
             style={{
@@ -88,13 +76,18 @@ export default function StudioPage() {
             A VISUAL
           </motion.span>
 
-          {/* Video */}
           <motion.div
-            className="flex-shrink-0 overflow-hidden"
-            style={{ width: "clamp(300px, 30vw, 500px)" }}
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.3 }}
+            className="  flex-shrink-0"
+            style={{
+              width: "clamp(300px, 30vw, 500px)", 
+              y: downZ,
+            }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            
+            transition={{ duration: 0.9, delay: 0.6 }}
+        
+            
           >
             <video
               src="/video/V1.mp4"
@@ -103,6 +96,7 @@ export default function StudioPage() {
               loop
               playsInline
               className="w-full h-full object-cover"
+              
             />
           </motion.div>
 
@@ -122,11 +116,11 @@ export default function StudioPage() {
             DESIGNER
           </motion.span>
         </div>
-      </div>
 
-      {/* Scroll down */}
-      <div className="absolute bottom-7 left-1/2 -translate-x-1/2 text-[11px] uppercase tracking-widest">
-        SCROLL DOWN
+        {/* Scroll down */}
+        <div className="absolute bottom-7 left-1/2 -translate-x-1/2 text-[11px] uppercase tracking-widest">
+          SCROLL DOWN
+        </div>
       </div>
     </div>
   );
