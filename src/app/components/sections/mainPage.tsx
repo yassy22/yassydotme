@@ -43,7 +43,7 @@ export default function Home() {
             {/* <InspireMe />
             <TestGallerySection /> */}
 
-            {/* <Works /> */}
+            <Works />
           </main>
         </>
       )}

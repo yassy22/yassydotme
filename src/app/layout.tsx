@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Raleway } from "./fonts/Raleway";
+import { NewYork } from "./fonts/newyork";
 import LenisScroll from "./components/LenisScroll";
 
 
@@ -28,7 +29,7 @@ export default function RootLayout({
       </head>
 
       <body
-        className={`${Raleway.className} bg-[var(--background-black)]  text-white antialiased `}
+        className={`${Raleway.className} ${NewYork.variable} bg-[var(--background-black)]  text-white antialiased `}
         suppressHydrationWarning
       >
         <LenisScroll>
