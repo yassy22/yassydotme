@@ -9,13 +9,13 @@ import { useTransform, useScroll, motion } from "framer-motion";
 
 import gallery from "@/app/api/gallery/gallery";
 
-export default function Home() {
-  const gallery1 = useRef(null);
+export default function TestGallery2() {
+  const galleryRef = useRef(null);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
-  const [isMobile] = useState(false); // Detecteer mobiel of desktop
+  const isMobile = dimension.width > 0 && dimension.width < 768;
 
   const { scrollYProgress } = useScroll({
-    target: gallery1,
+    target: galleryRef,
     offset: ["start end", "end start"],
   });
 
@@ -23,55 +23,55 @@ export default function Home() {
   const y = useTransform(
     scrollYProgress,
     [0, 1],
-    [0, height * (isMobile ? 0.5 : 2)]
+    [0, height * (isMobile ? 0.5 : 2)],
   );
   const y2 = useTransform(
     scrollYProgress,
     [0, 1],
-    [0, height * (isMobile ? 0.6 : 3)]
+    [0, height * (isMobile ? 0.6 : 3)],
   );
   const y3 = useTransform(
     scrollYProgress,
     [0, 1],
-    [0, height * (isMobile ? 1 : 1.25)]
+    [0, height * (isMobile ? 1 : 1.25)],
   );
   const y4 = useTransform(
     scrollYProgress,
     [0, 1],
-    [0, height * (isMobile ? 2 : 3)]
+    [0, height * (isMobile ? 2 : 3)],
   );
 
- useEffect(() => {
-   const lenis = new Lenis();
+  useEffect(() => {
+    const lenis = new Lenis();
+    let rafId = 0;
 
-   const raf = (time: number) => {
-     lenis.raf(time);
-     requestAnimationFrame(raf);
-   };
+    const raf = (time: number) => {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    };
 
-   const resize = () => {
-     setDimension({ width: window.innerWidth, height: window.innerHeight });
-   };
+    const resize = () => {
+      setDimension({ width: window.innerWidth, height: window.innerHeight });
+    };
 
-   window.addEventListener("resize", resize);
-   requestAnimationFrame(raf);
-   resize();
+    window.addEventListener("resize", resize);
+    resize();
+    rafId = requestAnimationFrame(raf);
 
-   return () => {
-     window.removeEventListener("resize", resize);
-   };
- }, []);
-
+    return () => {
+      window.removeEventListener("resize", resize);
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+    };
+  }, []);
 
   return (
     <div>
-      <div ref={gallery1} className={styles.gallery1}>
+      <div ref={galleryRef} className={styles.gallery1}>
         <Column images={gallery[0].collomn1} y={y} />
         <Column images={gallery[0].collomn2} y={y2} />
-        {!isMobile && <Column images={gallery[0].collomn3} y={y3} />}{" "}
-        {/* Verberg op mobiel */}
-        {!isMobile && <Column images={gallery[0].collomn4} y={y4} />}{" "}
-        {/* Verberg op mobiel */}
+        {!isMobile && <Column images={gallery[0].collomn3} y={y3} />}
+        {!isMobile && <Column images={gallery[0].collomn4} y={y4} />}
       </div>
     </div>
   );

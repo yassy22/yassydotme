@@ -1,51 +1,70 @@
 "use client";
-import React, { useState } from "react";
-import logo from "../../../../public/assets/images/logo.png";
-import Image from "next/image";
+import React, { useEffect, useState } from "react";
+
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
-function Nav() {
+
+function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
+  const color = theme === "light" ? "#0a0a0a" : "#ffffff";
+  const dotColor = theme === "light" ? "bg-black" : "bg-white";
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+   const [time, setTime] = useState("");
+  
+    useEffect(() => {
+      const update = () => {
+        const now = new Date();
+        setTime(
+          now.toLocaleTimeString("en-US", {
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: false,
+            timeZone: "Europe/Brussels",
+          }) + " GMT+2"
+        );
+      };
+      update();
+      const interval = setInterval(update, 1000);
+      return () => clearInterval(interval);
+    }, []);
+  
 
   return (
-    <header className="fixed w-full z-50">
-      <nav className="flex justify-between items-center py-5 px-5">
-        {/* Logo */}
-        <Link href="/" className="">
-          <Image src={logo} alt="logo" width={80} height={80} unoptimized />
-        </Link>
-
-        {/* Hamburger icon for mobile */}
-        <button
-          className="sm:hidden flex flex-col gap-1"
-          onClick={toggleMenu}
-          aria-label="Toggle Menu"
-        >
-          <span className="block w-10 h-[2px] bg-white"></span>
-          <span className="block w-10 h-[2px] my-1 bg-white"></span>
-          <span className="block w-10 h-[2px] bg-white"></span>
-        </button>
-
-        {/* Desktop Navigation */}
-        <ul className="hidden sm:flex gap-5 sm:gap-10 uppercase text-sm sm:text-base">
+    <header className="fixed w-full z-50 ">
+      <div
+        className="fixed top-0 left-0 right-0 flex justify-between items-center px-6 py-5 z-50 text-[11px] uppercase tracking-widest"
+        style={{ color }}
+      >
+        <div className="flex items-center gap-6">
+          <span className="flex items-center gap-2">
+            <span className={`w-[6px] h-[6px] rounded-full ${dotColor} inline-block`} />
+            GHENT, BE
+          </span>
+          <span>{time}</span>
+          <span className="hidden md:inline">51.0543° N, 3.7174°</span>
+        </div>
+        <ul className="hidden sm:flex gap-8 text-[11px]">
           <li>
-            <Link href="/all" className="hover:text-blue-500">
-              works
+            <Link href="/" className="hover:opacity-50 transition-opacity">
+              HOME
             </Link>
           </li>
           <li>
-            {/* <Link href="/about" className="hover:text-blue-500">
-              about
-            </Link> */}
+            <Link href="/all" className="hover:opacity-50 transition-opacity">
+              WORKS
+            </Link>
+          </li>
+          <li>
+            <Link href="/about" className="hover:opacity-50 transition-opacity">
+              ABOUT
+            </Link>
           </li>
         </ul>
-      </nav>
-
+      </div>
       {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (

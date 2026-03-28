@@ -35,7 +35,7 @@ function FinalYear() {
         <motion.div>
           <Image
             src={home[0].image[2]}
-            alt="Fixed Size Image"
+            alt="Design project preview"
             width={600}
             height={700}
             unoptimized

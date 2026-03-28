@@ -7,9 +7,8 @@ import InspireMe from "../InspireMe";
 import FinalYear from "../FinalYear";
 import Works from "../Works";
 import Hero from "../Hero";
-import TestGalery2 from "../sections/TestGallery2";
+import TestGallerySection from "../sections/TestGallery2";
 
-// import TestGalery2 from "../sections/TestGallery2";
 
 export default function Home() {
   const [count, setCount] = useState(10);
@@ -23,6 +22,10 @@ export default function Home() {
         } else return prev - 1;
       });
     }, 500);
+
+    return () => {
+      clearInterval(timer);
+    };
   }, []);
 
   return (
@@ -31,14 +34,14 @@ export default function Home() {
         <PreLoading count={count} />
       ) : (
         <>
-          <Nav />
+          <Nav theme="light" />
           <main className="overflow-hidden">
             {/* <Hero /> */}
             <Hero />
 
             <FinalYear />
             <InspireMe />
-            <TestGalery2 />
+            <TestGallerySection />
 
             <Works />
           </main>

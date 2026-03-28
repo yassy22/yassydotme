@@ -1,8 +1,8 @@
-interface RolsProps {
+interface RolesProps {
   roles: string[];
 }
 
-export default function Rols({ roles }: RolsProps) {
+export default function Roles({ roles }: RolesProps) {
   return (
     <div className="roles-container  text-[12px] flex flex-wrap gap-5 ">
       {Array.isArray(roles) ? (
@@ -14,7 +14,6 @@ export default function Rols({ roles }: RolsProps) {
       ) : (
         <p>No roles available</p>
       )}
-      
     </div>
   );
 }

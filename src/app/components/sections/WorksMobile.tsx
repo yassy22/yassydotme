@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, type Variants, cubicBezier } from "framer-motion";
 import works from "../../api/works/works";
-import Rols from "../work/Rols";
+import Roles from "../work/Rols";
 
 const variants: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -50,7 +50,7 @@ export default function WorksMobile() {
                 <p className="text-[20px] md:text-[25px] my-2 md:my-3 font-semibold">
                   {work.title}
                 </p>
-                <Rols
+                <Roles
                   roles={Array.isArray(work.roles) ? work.roles : [work.roles]}
                 />
               </div>
