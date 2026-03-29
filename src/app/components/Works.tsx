@@ -4,7 +4,7 @@ import WorksMobile from "./sections/WorksMobile";
 
 function Works() {
   return (
-    <section className=" mx-4 flex flex-col justify-center items-center pt-40 ">
+    <section className="flex flex-col justify-center items-center">
     
       {/* <p className="sm:mx-[130px] text-[14px] lg:text-[16px] lg:w-[600px] lg:pl-10 text-center">
         Here is a selection of my school and personal projects. Each combines

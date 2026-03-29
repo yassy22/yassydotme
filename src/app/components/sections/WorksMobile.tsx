@@ -2,57 +2,88 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, type Variants, cubicBezier } from "framer-motion";
+import { motion } from "framer-motion";
 import works from "../../api/works/works";
-import Roles from "../work/Rols";
-
-const variants: Variants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: cubicBezier(0.22, 1, 0.36, 1), // vervangt "easeOut"
-    },
-  },
-};
 
 export default function WorksMobile() {
   return (
-    <section className="mx-4 my-16">
-      <div className="flex flex-col gap-8 md:gap-12 lg:gap-16">
-        {works.map((work, index) => (
-          <Link href={`/works/${work.slug}`} key={work.id || index}>
-            <motion.div
-              className="cursor-pointer"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={variants}
-            >
-              {/* Afbeelding */}
-              <Image
-                className="w-full object-cover"
-                width={900}
-                height={500}
-                src={
-                  Array.isArray(work.imageHeader)
-                    ? work.imageHeader[0]
-                    : work.imageHeader
-                }
-                alt={`work ${index + 1}`}
-                unoptimized
-              />
+    <section
+      className="w-full px-5 pt-24 pb-20"
+      style={{ backgroundColor: "#faf8f4" }}
+    >
+      {/* Header */}
+      <div className="flex justify-between items-center mb-10">
+        <span
+          className="uppercase tracking-widest text-[11px] font-bold"
+          style={{ color: "#9b1c2e" }}
+        >
+          Selected Works
+        </span>
+        <span
+          className="uppercase tracking-widest text-[11px] font-bold"
+          style={{ color: "#0a0a0a", opacity: 0.4 }}
+        >
+          {works.length} Projects
+        </span>
+      </div>
 
-              {/* Titel en rollen */}
-              <div className="pt-6">
-                <p className="text-[20px] md:text-[25px] my-2 md:my-3 font-semibold">
-                  {work.title}
-                </p>
-                <Roles
-                  roles={Array.isArray(work.roles) ? work.roles : [work.roles]}
+      {/* Works list */}
+      <div className="flex flex-col gap-10">
+        {works.map((work, index) => (
+          <Link href={`/works/${work.slug}`} key={work.id}>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, amount: 0.2 }}
+              className="cursor-pointer"
+            >
+              {/* Image */}
+              <div
+                className="relative w-full overflow-hidden"
+                style={{ borderRadius: "10px", aspectRatio: "4/3" }}
+              >
+                <Image
+                  fill
+                  src={
+                    Array.isArray(work.imageHeader)
+                      ? work.imageHeader[0]
+                      : work.imageHeader
+                  }
+                  alt={work.title}
+                  className="object-cover"
+                  unoptimized
                 />
+                {/* Index */}
+                <div
+                  className="absolute top-4 left-4 text-white font-bold text-[11px] tracking-widest"
+                  style={{ opacity: 0.6 }}
+                >
+                  0{index + 1}
+                </div>
+              </div>
+
+              {/* Info */}
+              <div className="pt-4 flex justify-between items-start">
+                <h3
+                  className="font-black uppercase leading-none"
+                  style={{
+                    fontFamily: "'Arial Black', 'Arial', sans-serif",
+                    fontSize: "clamp(18px, 5vw, 28px)",
+                    letterSpacing: "-0.02em",
+                    color: "#0a0a0a",
+                  }}
+                >
+                  {work.title}
+                </h3>
+                <p
+                  className="uppercase tracking-widest text-[10px] font-bold text-right mt-1"
+                  style={{ color: "#0a0a0a", opacity: 0.45, maxWidth: "45%" }}
+                >
+                  {Array.isArray(work.roles)
+                    ? work.roles.join(" · ")
+                    : work.roles}
+                </p>
               </div>
             </motion.div>
           </Link>
