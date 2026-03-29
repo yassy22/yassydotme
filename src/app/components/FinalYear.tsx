@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 function FinalYear() {
   return (
     <section
-      className="relative w-full flex items-center justify-center overflow-hidden px-4 md:px-6 py-16 md:py-24 min-h-screen mt-[100vh]"
-      style={{ backgroundColor: "#1a0e08", color: "#e8e4dc" }}
+      className="relative w-full flex items-center justify-center overflow-hidden px-4 md:px-6 py-16 md:py-24 min-h-screen md:mt-[100vh]"
+      style={{ backgroundColor: "#1E1E1E", color: "#FEFEF2" }}
     >
       {/* Label haut gauche — caché sur mobile */}
       <motion.p
@@ -74,7 +74,7 @@ function FinalYear() {
         </motion.div>
 
         {/* 3e lijn */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-14">
+        <div className="flex flex-col md:flex-row items-center justify-center md:gap-14">
           <motion.div
             className="text-left normal-case"
             initial={{ opacity: 0, x: "-100%" }}
@@ -98,7 +98,7 @@ function FinalYear() {
               wordSpacing: "0.2em",
             }}
           >
-            ( what do you think?)
+            (what do you think?)
           </motion.div>
         </div>
       </div>

@@ -47,11 +47,7 @@ export default function ScrollWorks() {
 
   return (
     <section className="scroll-works relative no-scrollbar overflow-x-hidden h-screen flex flex-col justify-evenly items-center ">
-      <h2
-        className={`${NewYork.className} font-newYork text-[50px] lg:text-[90px] `}
-      >
-        Selected Projects
-      </h2>
+    
       <div className="relative flex justify-center items-center overflow-x-auto">
         <div className="flex">
           {works.map((work, index) => (

@@ -7,6 +7,7 @@ import InspireMe from "../InspireMe";
 import FinalYear from "../FinalYear";
 import Works from "../Works";
 import Hero from "../Hero";
+import MySuperPower from "../MySuperPower";
 import TestGallerySection from "../sections/TestGallery2";
 
 
@@ -40,6 +41,7 @@ export default function Home() {
             <Hero />
 
             <FinalYear />
+            <MySuperPower />
             {/* <InspireMe />
             <TestGallerySection /> */}
 
