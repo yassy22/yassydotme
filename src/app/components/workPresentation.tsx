@@ -13,6 +13,7 @@ interface Work {
 function WorkImage({ image, index }: { image: string | StaticImageData; index: number }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const isGif = typeof image === "string" && image.endsWith(".gif");
 
   return (
     <motion.div
@@ -26,14 +27,24 @@ function WorkImage({ image, index }: { image: string | StaticImageData; index: n
         delay: index * 0.2,
       }}
     >
-      <Image
-        width={1200}
-        height={800}
-        src={image}
-        alt={`work image ${index + 1}`}
-        className="w-full h-auto rounded-lg"
-        loading={index === 0 ? "eager" : "lazy"}
-      />
+      {isGif ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={image as string}
+          alt={`work image ${index + 1}`}
+          className="w-full h-auto rounded-lg"
+          loading={index === 0 ? "eager" : "lazy"}
+        />
+      ) : (
+        <Image
+          width={1200}
+          height={800}
+          src={image}
+          alt={`work image ${index + 1}`}
+          className="w-full h-auto rounded-lg"
+          loading={index === 0 ? "eager" : "lazy"}
+        />
+      )}
     </motion.div>
   );
 }
