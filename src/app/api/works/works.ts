@@ -8,7 +8,7 @@ import clubsofa_i7 from "../../../../public/assets/images/clubSofa/clubsofa_i7.p
 import clubsofa_i8 from "../../../../public/assets/images/clubSofa/clubsofa_i8.png";
 import clubsofa_iphone from "../../../../public/assets/images/clubSofa/clubsofa_iphone.png";
 
-const clubsofa_gif_1 = "/assets/images/clubSofa/gifs/workiV1.gif";
+const clubsofa_gif_1 = "/assets/images/clubSofa/gifs/workiV1.mp4";
 
 // scapino
 import scapino_header from "../../../../public/assets/images/scapino/header_scapino.png";
@@ -16,8 +16,8 @@ import scapino_i1 from "../../../../public/assets/images/scapino/i1.png";
 import scapino_i3 from "../../../../public/assets/images/scapino/styleboard.png";
 import scapino_i4 from "../../../../public/assets/images/scapino/insta.png";
 import scapino_i5 from "../../../../public/assets/images/scapino/imga1.png";
-const scapino_gif_1 = "/assets/images/scapino/scapino.gif";
-const scapino_phone_gif = "/assets/images/scapino/phone.gif";
+const scapino_gif_1 = "/assets/images/scapino/scapino.mp4";
+const scapino_phone_gif = "/assets/images/scapino/phone.mp4";
 
 
 // muiji
@@ -35,7 +35,7 @@ import wizaa_i2 from "../../../../public/assets/images/wizaa/i3.png";
 import wizaa_i3 from "../../../../public/assets/images/wizaa/i4.png";
 import wizaa_i4 from "../../../../public/assets/images/wizaa/i5.png";
 import wizaa_i5 from "../../../../public/assets/images/wizaa/i6.png";
-const gif_1 = "/assets/images/wizaa/gif1.gif";
+const gif_1 = "/assets/images/wizaa/gif1.mp4";
 
 //gwwc
 import gwwc_i1 from "../../../../public/assets/images/gwwc/gwwc_i1.jpg";
@@ -57,7 +57,7 @@ import athena_i3 from "../../../../public/assets/images/athena/i3.png";
 import athena_i4 from "../../../../public/assets/images/athena/i4.png";
 import athena_i5 from "../../../../public/assets/images/athena/i5.png";
 import athena_i6 from "../../../../public/assets/images/athena/i6.png";
-const gif_athena = "/assets/images/athena/igif.gif";
+const gif_athena = "/assets/images/athena/igif.mp4";
 
 import slipDesktop_i0 from "../../../../public/assets/images/sipdesk/i0.png";
 import slipDesktop_i1 from "../../../../public/assets/images/sipdesk/i1.png";

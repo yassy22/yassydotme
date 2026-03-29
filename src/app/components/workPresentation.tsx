@@ -13,7 +13,7 @@ interface Work {
 function WorkImage({ image, index }: { image: string | StaticImageData; index: number }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const isGif = typeof image === "string" && image.endsWith(".gif");
+  const isVideo = typeof image === "string" && image.endsWith(".mp4");
 
   return (
     <motion.div
@@ -27,13 +27,14 @@ function WorkImage({ image, index }: { image: string | StaticImageData; index: n
         delay: index * 0.2,
       }}
     >
-      {isGif ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
+      {isVideo ? (
+        <video
           src={image as string}
-          alt={`work image ${index + 1}`}
+          autoPlay
+          loop
+          muted
+          playsInline
           className="w-full h-auto rounded-lg"
-          loading={index === 0 ? "eager" : "lazy"}
         />
       ) : (
         <Image
