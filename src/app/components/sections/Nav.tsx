@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
   const [isOpen, setIsOpen] = useState(false);
   const [navTheme, setNavTheme] = useState(theme);
-  const [time, setTime] = useState("");
+  const [, setTime] = useState("");
 
   // Live clock
   useEffect(() => {

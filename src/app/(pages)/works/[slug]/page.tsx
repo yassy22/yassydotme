@@ -1,7 +1,6 @@
 import works from "../../../api/works/works";
 import Nav from "../../../components/sections/Nav";
 import Image from "next/image";
-import ThankYou from "../../../components/sections/ThankYou";
 import Link from "next/link";
 import Info from "../../../components/info";
 import WorkPresentation from "../../../components/workPresentation";

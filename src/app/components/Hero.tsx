@@ -1,7 +1,6 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { div } from "framer-motion/client";
 
 
 export default function StudioPage() {

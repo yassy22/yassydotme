@@ -11,7 +11,6 @@ const skills = [
   { label: "Visual Content",        x:   80, y:  340, rotate:  3 },
 ];
 
-const mobileRotations = [-3, 2, -4, 3, -2, 4];
 
 function Pill({ label, x, y, rotate, delay }: {
   label: string; x: number; y: number; rotate: number; delay: number;

@@ -3,12 +3,10 @@ import React, { useState, useEffect } from "react";
 
 import PreLoading from "../PreLoading";
 import Nav from "../sections/Nav";
-import InspireMe from "../InspireMe";
 import FinalYear from "../FinalYear";
 import Works from "../Works";
 import Hero from "../Hero";
 import MySuperPower from "../MySuperPower";
-import TestGallerySection from "../sections/TestGallery2";
 import { AnimatePresence, motion } from "framer-motion";
 
 
@@ -17,7 +15,7 @@ let preloaderShown = false;
 
 export default function Home() {
   const [count, setCount] = useState(10);
-  const [hasLoaded, setHasLoaded] = useState(false);
+  const [, setHasLoaded] = useState(false);
 
   useEffect(() => {
     if (preloaderShown) {

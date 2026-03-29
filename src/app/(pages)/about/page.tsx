@@ -92,10 +92,10 @@ export default function About() {
               Junior with talent,<br />or not —
             </h2>
             <p className="leading-relaxed" style={{ fontSize: "16px", opacity: 0.75, maxWidth: "480px" }}>
-              I'm a visual designer and creative developer based in Moeskroen. I love creating digital experiences that feel both thoughtful and visually engaging  from brand identities to interactive interfaces.
+              I&apos;m a visual designer and creative developer based in Moeskroen. I love creating digital experiences that feel both thoughtful and visually engaging — from brand identities to interactive interfaces.
             </p>
             <p className="leading-relaxed mt-5" style={{ fontSize: "16px", opacity: 0.75, maxWidth: "480px" }}>
-              I'm curious by nature, always exploring ideas through visual design, photography, and code. I believe good design is both beautiful and functional.
+              I&apos;m curious by nature, always exploring ideas through visual design, photography, and code. I believe good design is both beautiful and functional.
             </p>
           </motion.div>
 

@@ -20,7 +20,7 @@ function FinalYear() {
       >
         HELLO
         <br />
-        IT'S VERY NICE TO MEET YOU
+        IT&apos;S VERY NICE TO MEET YOU
       </motion.p>
 
       {/* Label milieu droite — caché sur mobile */}
@@ -33,7 +33,7 @@ function FinalYear() {
         viewport={{ once: true }}
       >
         <p>
-          I'M WRITING THIS TO EXPRESS
+          I&apos;M WRITING THIS TO EXPRESS
           <br />
           MY INTEREST IN WORKING TOGETHER
         </p>
