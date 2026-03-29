@@ -31,7 +31,7 @@ const WorkPage = async ({ params }: WorkPageProps) => {
       <Nav />
 
       {/* ── Hero image ── */}
-      <div className="relative h-screen w-full">
+      <div className="relative h-screen w-full" data-nav="dark">
         <Image
           src={
             Array.isArray(work.imageHeader)
@@ -123,6 +123,7 @@ const WorkPage = async ({ params }: WorkPageProps) => {
       <Link href={`/works/${nextWork.slug}`}>
         <div
           className="w-full group cursor-pointer px-8 md:px-20 pt-16 md:py-24 pb-16"
+          data-nav="dark"
           style={{ backgroundColor: "#1E1E1E", color: "#FEFEF2" }}
         >
           {/* Contenu : texte + vignette desktop */}

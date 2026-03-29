@@ -40,6 +40,7 @@ function WorkPresentation({ work }: { work: Work }) {
   return (
     <section
       className="px-5 md:px-10 pt-10 pb-20"
+      data-nav="light"
       style={{ backgroundColor: "#faf8f4" }}
     >
       <div className="flex flex-col gap-8 md:gap-16 items-center">

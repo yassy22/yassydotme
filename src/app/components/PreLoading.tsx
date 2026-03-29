@@ -1,108 +1,103 @@
 "use client";
 import React from "react";
-import StarSpin from "./StarSpin";
-import { motion, AnimatePresence, easeInOut } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { NewYork } from "../fonts/newyork";
 
-
 function PreLoading({ count }: { readonly count: number }) {
-  const name = "Yasmine";
-  
-
-  const starVariant = {
-    initial: {
-      opacity: 0,
-      rotate: 0,
-    },
-    animate: {
-      opacity: 1,
-      rotate: 90,
-      transition: {
-        duration: 0.6,
-        delay: 0.6,
-        ease: easeInOut,
-      },
-    },
-    exit: {
-      opacity: 0,
-      rotate: 0,
-      transition: {
-        delay: .75
-      },
-    },
-  };
+  const progress = Math.round(((10 - count) / 10) * 100);
 
   return (
     <AnimatePresence>
-      {count > 4 && (
-        <motion.section
-          className="z-[100] relative bg-lightBg dark:bg-darkBg w-full h-[90vh] lg:h-screen flex items-end justify-center overflow-hidden"
-        >
-          {name.split("").map((nom, i) => {
-            return name[i] === "" ? (
-              <div
-                key={`${nom}_${i}`}
-                className="flex flex-col items-center justify-center gap-y-[6vh] lg:gap-y-[10vh]"
-              >
-                <motion.div
-                  variants={starVariant}
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-                >
-                  <StarSpin classNameSize="w-[15vw] sm:w-[12vw] lg:w-[7vw]" />
-                </motion.div>
-                <motion.p
-                  initial={{ y: "100%", opacity: 1 }}
-                  animate={{
-                    y: 0,
-                    opacity: 1,
-                    transition: {
-                      duration: 1,
-                      ease: [0.87, 0, 0.13, 1],
-                      delay: i * 0.1,
-                    },
+      {count > 0 && (
+        <>
+          {/* Panneau rouge — part en dernier */}
+          <motion.div
+            className="fixed inset-0 z-[101]"
+            style={{ backgroundColor: "#9b1c2e" }}
+            initial={{ y: 0 }}
+            exit={{
+              y: "-100%",
+              transition: { duration: 1.4, delay: 0.1, ease: [0.16, 1, 0.3, 1] },
+            }}
+          />
+
+          {/* Panneau beige — part en premier */}
+          <motion.section
+            className="fixed inset-0 z-[102] flex flex-col justify-between px-6 md:px-14 py-8 overflow-hidden"
+            style={{ backgroundColor: "#faf8f4" }}
+            initial={{ y: 0 }}
+            exit={{
+              y: "-100%",
+              transition: { duration: 1.4, ease: [0.16, 1, 0.3, 1] },
+            }}
+          >
+            {/* Top */}
+            <motion.div
+              className="flex justify-between items-center uppercase tracking-widest text-[11px] font-bold"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <span style={{ opacity: 0.35 }}>Portfolio 2025</span>
+              <span style={{ color: "#9b1c2e" }}>{progress}%</span>
+            </motion.div>
+
+            {/* Center */}
+            <div className="flex flex-col">
+              <div className="overflow-hidden">
+                <motion.h1
+                  className="font-black uppercase leading-none"
+                  style={{
+                    fontFamily: "'Arial Black', 'Arial', sans-serif",
+                    fontSize: "clamp(48px, 12vw, 180px)",
+                    letterSpacing: "-0.03em",
+                    lineHeight: 0.88,
+                    color: "#0a0a0a",
                   }}
-                  exit={{
-                    y: "100%",
-                    transition: {
-                      delay: 0.6,
-                      ease: [0.65, 0, 0.35, 1],
-                    },
-                  }}
-                  className={` ${NewYork.variable} font-newYork  text-[29.5vw] leading-[.85] tracking-tight mb-[-.2em]`}
-                >
-                  {nom}
-                </motion.p>
-              </div>
-            ) : (
-              <div key={`${nom}_${i}`} className="">
-                <motion.p
                   initial={{ y: "100%" }}
-                  animate={{
-                    y: 0,
-                    transition: {
-                      duration: 1,
-                      ease: [0.87, 0, 0.13, 1],
-                      delay: i * 0.1,
-                    },
-                  }}
-                  exit={{
-                    y: 0,
-                    opacity: 0,
-                    transition: {
-                      // delay: 0.1,
-                      ease: [0.65, 0, 0.35, 1],
-                    },
-                  }}
-                  className={` ${NewYork.variable} font-newYork  uppercase text-[24.5vw] leading-[.85] tracking-tight mb-[-.2em]`}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
                 >
-                  {nom}
-                </motion.p>
+                  A VISUAL
+                </motion.h1>
               </div>
-            );
-          })}
-        </motion.section>
+              <div className="overflow-hidden">
+                <motion.h1
+                  className={`${NewYork.variable} font-newYork leading-none`}
+                  style={{
+                    fontSize: "clamp(48px, 12vw, 180px)",
+                    fontStyle: "italic",
+                    color: "#9b1c2e",
+                    lineHeight: 0.9,
+                  }}
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.35 }}
+                >
+                  Designer
+                </motion.h1>
+              </div>
+            </div>
+
+            {/* Bottom : barre */}
+            <div className="flex flex-col gap-3">
+              <div className="w-full h-[1px]" style={{ backgroundColor: "rgba(0,0,0,0.1)" }}>
+                <motion.div
+                  className="h-full"
+                  style={{ backgroundColor: "#9b1c2e" }}
+                  animate={{ width: `${progress}%` }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                />
+              </div>
+              <span
+                className="uppercase tracking-widest text-[11px] font-bold"
+                style={{ opacity: 0.3 }}
+              >
+                Loading
+              </span>
+            </div>
+          </motion.section>
+        </>
       )}
     </AnimatePresence>
   );

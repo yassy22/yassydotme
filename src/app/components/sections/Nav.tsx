@@ -1,52 +1,91 @@
 "use client";
 import React, { useEffect, useState } from "react";
-
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
-
 function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
-  const color = theme === "light" ? "#0a0a0a" : "#ffffff";
-  const dotColor = theme === "light" ? "bg-black" : "bg-white";
   const [isOpen, setIsOpen] = useState(false);
+  const [navTheme, setNavTheme] = useState(theme);
+  const [time, setTime] = useState("");
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-   const [time, setTime] = useState("");
-  
-    useEffect(() => {
-      const update = () => {
-        const now = new Date();
-        setTime(
-          now.toLocaleTimeString("en-US", {
-            hour: "2-digit",
-            minute: "2-digit",
-            hour12: false,
-            timeZone: "Europe/Brussels",
-          }) + " GMT+2"
-        );
-      };
-      update();
-      const interval = setInterval(update, 1000);
-      return () => clearInterval(interval);
-    }, []);
-  
+  // Live clock
+  useEffect(() => {
+    const update = () => {
+      const now = new Date();
+      setTime(
+        now.toLocaleTimeString("en-US", {
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: false,
+          timeZone: "Europe/Brussels",
+        }) + " GMT+2"
+      );
+    };
+    update();
+    const interval = setInterval(update, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Auto-detect dark/light section behind nav
+  useEffect(() => {
+    const darkSections = document.querySelectorAll<HTMLElement>(
+      "[data-nav='dark']"
+    );
+    const lightSections = document.querySelectorAll<HTMLElement>(
+      "[data-nav='light']"
+    );
+
+    if (darkSections.length === 0 && lightSections.length === 0) {
+      setNavTheme(theme);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const t = (entry.target as HTMLElement).dataset.nav as
+              | "dark"
+              | "light";
+            if (t) setNavTheme(t);
+          }
+        });
+      },
+      {
+        rootMargin: "-10px 0px -90% 0px", // Détecte uniquement la zone en haut où la nav est
+        threshold: 0,
+      }
+    );
+
+    darkSections.forEach((el) => observer.observe(el));
+    lightSections.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, [theme]);
+
+  const color = navTheme === "light" ? "#0a0a0a" : "#ffffff";
+  const dotColor = navTheme === "light" ? "bg-black" : "bg-white";
+
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <header className="fixed w-full z-50 ">
-      <div
+    <header className="fixed w-full z-50">
+      <motion.div
         className="fixed top-0 left-0 right-0 flex justify-between items-center px-6 py-5 z-50 text-[11px] uppercase tracking-widest"
-        style={{ color }}
+        animate={{ color }}
+        transition={{ duration: 0.4 }}
       >
+        {/* Left : location + time */}
         <div className="flex items-center gap-6">
           <span className="flex items-center gap-2">
             <span className={`w-[6px] h-[6px] rounded-full ${dotColor} inline-block`} />
-            GHENT, BE
+           Moeskroen, BE
           </span>
-          <span>{time}</span>
-          <span className="hidden md:inline">51.0543° N, 3.7174°</span>
+          {/* <span>{time}</span> */}
+          {/* <span className="hidden md:inline">51.0543° N, 3.7174°</span> */}
         </div>
+
+        {/* Right : links desktop */}
         <ul className="hidden sm:flex gap-8 text-[11px]">
           <li>
             <Link href="/" className="hover:opacity-50 transition-opacity">
@@ -64,7 +103,18 @@ function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
             </Link>
           </li>
         </ul>
-      </div>
+
+        {/* Burger mobile */}
+        <button
+          className="sm:hidden flex flex-col gap-[5px] cursor-pointer"
+          onClick={toggleMenu}
+          aria-label="Menu"
+        >
+          <span className="w-5 h-[1.5px] block" style={{ backgroundColor: color }} />
+          <span className="w-5 h-[1.5px] block" style={{ backgroundColor: color }} />
+        </button>
+      </motion.div>
+
       {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
@@ -73,46 +123,47 @@ function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
               initial={{ opacity: 0, x: "100%" }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: "100%" }}
-              transition={{ duration: 0.3 }}
-              className="fixed top-0 right-0 h-full w-full bg-black shadow-lg z-40"
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              className="fixed top-0 right-0 h-full w-full z-40 flex flex-col justify-center items-center gap-8"
+              style={{ backgroundColor: "#faf8f4", color: "#0a0a0a" }}
             >
-              <ul className="flex flex-col h-full w-full justify-center items-center p-10 gap-5 uppercase text-sm">
-                <li
-                  onClick={toggleMenu}
-                  className="close_button text-[60px] cursor-pointer"
-                >
-                  &times;
-                </li>
-                <li>
-                  <Link
-                    href="/all"
-                    onClick={toggleMenu}
-                    className="hover:text-blue-500 text-[20px]"
-                  >
-                    works
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/about"
-                    onClick={toggleMenu}
-                    className="hover:text-blue-500 text-[20px]"
-                  >
-                    about
-                  </Link>
-                </li>
-              </ul>
-            </motion.div>
+              {/* Close */}
+              <button
+                onClick={toggleMenu}
+                className="absolute top-6 right-6 text-[28px] leading-none"
+                style={{ color: "#0a0a0a" }}
+              >
+                ×
+              </button>
 
-            {/* Overlay for mobile menu */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.5 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              onClick={toggleMenu}
-              className="fixed inset-0 bg-black z-30"
-            />
+              {/* Links */}
+              {[
+                { href: "/", label: "Home" },
+                { href: "/all", label: "Works" },
+                { href: "/about", label: "About" },
+              ].map((link, i) => (
+                <motion.div
+                  key={link.href}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + i * 0.08, duration: 0.5 }}
+                >
+                  <Link
+                    href={link.href}
+                    onClick={toggleMenu}
+                    className="font-black uppercase"
+                    style={{
+                      fontFamily: "'Arial Black', 'Arial', sans-serif",
+                      fontSize: "clamp(36px, 10vw, 64px)",
+                      letterSpacing: "-0.02em",
+                      color: "#0a0a0a",
+                    }}
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
           </>
         )}
       </AnimatePresence>

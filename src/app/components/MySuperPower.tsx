@@ -6,7 +6,7 @@ const skills = [
   { label: "Visual Design",         x: -240, y: -320, rotate: -4 },
   { label: "Branding",              x:  260, y: -260, rotate:  3 },
   { label: "User Interface Design", x: -580, y:  -40, rotate: -3 },
-  { label: "Design Systems",        x:  300, y:  120, rotate:  4 },
+  { label: "Design Systems",        x:  360, y:  120, rotate:  4 },
   { label: "Creative Development",  x: -520, y:  280, rotate: -4 },
   { label: "Visual Content",        x:   80, y:  340, rotate:  3 },
 ];
@@ -44,6 +44,7 @@ function MySuperPower() {
   return (
     <section
       className="relative w-full overflow-hidden"
+      data-nav="light"
       style={{ minHeight: "100vh", backgroundColor: "#faf8f4", color: "#0a0a0a" }}
     >
 

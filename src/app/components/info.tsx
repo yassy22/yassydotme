@@ -17,6 +17,7 @@ function Info({ work }: { work: Work }) {
   return (
     <section
       className="hidden lg:block w-full px-16 py-24"
+      data-nav="light"
       style={{ backgroundColor: "#faf8f4" }}
     >
       {/* Top row : titre + description */}

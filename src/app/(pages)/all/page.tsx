@@ -3,88 +3,110 @@ import React from "react";
 import works from "@/app/api/works/works";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, easeInOut } from "framer-motion";
+import { motion } from "framer-motion";
 import Nav from "@/app/components/sections/Nav";
 import { NewYork } from "@/app/fonts/newyork";
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.5, // Vertraging tussen items
-    },
-  },
-};
-
-const titleVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      ease: easeInOut,
-    },
-  },
-};
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.9,
-      ease: easeInOut,
-    },
-  },
-};
-
 function All() {
   return (
-    <div>
-      <Nav />{" "}
-      <main>
-        <div className={`container  mx-auto p-6 pt-40 `}>
-          <motion.h1
-            className={`my-5 ${NewYork.variable} font-newYork text-[70px] `}
-            variants={titleVariants}
-            initial="hidden"
-            animate="show"
-          >
-            Some Projects
-          </motion.h1>
+    <div style={{ backgroundColor: "#faf8f4", color: "#0a0a0a", minHeight: "100vh" }}>
+      <Nav theme="light" />
 
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-6"
-            variants={containerVariants}
-            initial="hidden"
-            animate="show"
+      <main className="px-6 md:px-16 pt-36 pb-24">
+
+        {/* Header */}
+        <motion.div
+          className="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b pb-10"
+          style={{ borderColor: "rgba(0,0,0,0.1)" }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <h1
+            className={`${NewYork.variable} font-newYork leading-none`}
+            style={{
+              fontSize: "clamp(48px, 10vw, 130px)",
+              color: "#0a0a0a",
+              fontStyle: "italic",
+            }}
           >
-            {works.map((work) => (
-              <motion.div key={work.slug} variants={itemVariants}>
-                <Link href={`/works/${work.slug}`}>
-                  <div className="relative group overflow-hidden">
-                    {/* Afbeelding */}
+            Selected<br />Works
+          </h1>
+          <p
+            className="uppercase tracking-widest text-[11px] font-bold mt-4 md:mt-0"
+            style={{ color: "#9b1c2e" }}
+          >
+            {works.length} Projects
+          </p>
+        </motion.div>
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
+          {works.map((work, index) => (
+            <motion.div
+              key={work.slug}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.7,
+                delay: index * 0.1,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+            >
+              <Link href={`/works/${work.slug}`}>
+                <div className="group cursor-pointer">
+
+                  {/* Image */}
+                  <div
+                    className="relative w-full overflow-hidden"
+                    style={{ borderRadius: "10px", aspectRatio: "4/3" }}
+                  >
                     <Image
-                      src={work.imageHeader[0]}
-                      alt={`${work.title} header`}
-                      width={500}
-                      height={300}
-                      className="w-full h-auto object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
+                      src={
+                        Array.isArray(work.imageHeader)
+                          ? work.imageHeader[0]
+                          : work.imageHeader
+                      }
+                      alt={work.title}
+                      fill
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       unoptimized
                     />
-
-                    {/* Overlay met titel */}
-                    <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-                      <h2 className="text-white text-xl font-semibold">
-                        {work.title}
-                      </h2>
+                    {/* Index */}
+                    <div
+                      className="absolute top-4 left-4 text-white font-bold text-[11px] tracking-widest"
+                      style={{ opacity: 0.6 }}
+                    >
+                      0{index + 1}
                     </div>
                   </div>
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
+
+                  {/* Info */}
+                  <div className="mt-5 flex items-start justify-between">
+                    <h2
+                      className="font-black uppercase leading-none"
+                      style={{
+                        fontFamily: "'Arial Black', 'Arial', sans-serif",
+                        fontSize: "clamp(18px, 2.5vw, 32px)",
+                        letterSpacing: "-0.02em",
+                      }}
+                    >
+                      {work.title}
+                    </h2>
+                    <p
+                      className="uppercase tracking-widest text-[10px] font-bold text-right mt-1"
+                      style={{ color: "#0a0a0a", opacity: 0.4, maxWidth: "45%" }}
+                    >
+                      {Array.isArray(work.roles)
+                        ? work.roles.join(" · ")
+                        : work.roles}
+                    </p>
+                  </div>
+
+                </div>
+              </Link>
+            </motion.div>
+          ))}
         </div>
       </main>
     </div>
