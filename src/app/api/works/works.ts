@@ -150,7 +150,7 @@ This project allowed us to blend creativity with functionality, enhancing my ski
   {
     id: 5,
     slug: "slipdesktop",
-    title: "Slip Desktop",
+    title: "The Sip Desk",
     description: `
 For this project, I designed a desktop application for Slip, a company specializing in high-quality silk products. The goal was to create an intuitive and visually appealing interface that reflects the brand's luxurious aesthetic while providing a seamless user experience.
 

@@ -1,13 +1,8 @@
 "use client";
 import React from "react";
+import { motion } from "framer-motion";
 import { NewYork } from "../fonts/newyork";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowUpRight } from "lucide-react";
-gsap.registerPlugin(ScrollTrigger);
-
-import gsap from "gsap";
-
-import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 
 interface Work {
@@ -19,101 +14,89 @@ interface Work {
 }
 
 function Info({ work }: { work: Work }) {
-  
-  useGSAP(() => {
-    const tl = gsap.timeline();
-
-    // Initial slide-in animation
-    tl.to(".info", {
-      x: 0,
-      duration: 1.5,
-      ease: "power3.out",
-    });
-  });
-
-  useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".info",
-        start: "center center",
-        end: "bottom center",
-        scrub: true,
-      },
-    });
-
-    // Initial slide-in animation
-
-    // Slide-out animation
-    tl.to(".info", {
-      x: "48vh", // Slide out to the right
-      ease: "power3.out",
-    });
-  });
-
   return (
-    <div className="h-screen hidden lg:block">
-      <div className=" info flex items-center justify-end min-h-screen translate-x-[58vh]">
-        <div className="handel bg-[#DFDEDA] w-[40px] h-[100px] rounded-s-sm	">
-          <div className="bg-pink-400] flex  items-center justify-center h-full ">
-            <div className="h-16 w-[2px] bg-gray-800  mx-1"></div>
-            <div className="h-16 w-[2px] bg-gray-800 mx-1 "></div>
-          </div>
-        </div>
-        <div className="w-[450px] h-[850px] bg-[#DFDEDA] flex flex-col justify-between">
-          <div className="p-10 text-black flex flex-col justify-between">
-            <h1 className={`${NewYork.variable} font-newYork text-[50px] `}>
-              {work.title}
-            </h1>
-            <p className="whitespace-pre-line text-[14px]">
-              {work.description}
-            </p>
+    <section
+      className="hidden lg:block w-full px-16 py-24"
+      style={{ backgroundColor: "#faf8f4" }}
+    >
+      {/* Top row : titre + description */}
+      <div className="flex items-start justify-between gap-20 border-t pt-12" style={{ borderColor: "rgba(0,0,0,0.1)" }}>
+
+        {/* Titre */}
+        <motion.h1
+          className={`${NewYork.variable} font-newYork leading-none`}
+          style={{
+            fontSize: "clamp(48px, 6vw, 96px)",
+            color: "#0a0a0a",
+            maxWidth: "45%",
+            flexShrink: 0,
+          }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true }}
+        >
+          {work.title}
+        </motion.h1>
+
+        {/* Description + liens */}
+        <motion.div
+          className="flex flex-col gap-6 pt-2"
+          style={{ maxWidth: "45%" }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true }}
+        >
+          <p
+            className="whitespace-pre-line leading-relaxed"
+            style={{ fontSize: "15px", color: "#0a0a0a", opacity: 0.7 }}
+          >
+            {work.description}
+          </p>
+
+          <div className="flex flex-col gap-2">
             {work.link?.trim() && (
               <Link
                 href={work.link}
-                className="font-black text-sm py-3 underline flex"
+                className="inline-flex items-center gap-1 font-bold text-[13px] underline underline-offset-4"
+                style={{ color: "#9b1c2e" }}
               >
-                View the project
-                <ArrowUpRight size={16} className="ml-2" />
+                View the project <ArrowUpRight size={14} />
               </Link>
             )}
-
             {work.research?.trim() && (
               <Link
                 href={work.research}
-                className="font-black text-sm underline flex"
+                className="inline-flex items-center gap-1 font-bold text-[13px] underline underline-offset-4"
+                style={{ color: "#9b1c2e" }}
               >
-                Desk research
-                <ArrowUpRight size={16} className="ml-2" />
+                Desk research <ArrowUpRight size={14} />
               </Link>
             )}
-
-            <p
-              className="font-black text-sm py-5"
-              aria-label="Scroll to explore the work"
-            >
-              [Scroll to explore]
-            </p>
           </div>
-
-          <div>
-            <div className="roles-container text-[12px] flex flex-col font-bold py-5">
-              {Array.isArray(work.roles) && work.roles.length > 0 ? (
-                work.roles.map((role, index) => (
-                  <div
-                    key={index}
-                    className="role-item py-[6px] px-[20px] text-black"
-                  >
-                    {role}
-                  </div>
-                ))
-              ) : (
-                <p>No roles available</p>
-              )}
-            </div>
-          </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+
+      {/* Bottom row : rôles */}
+      <motion.div
+        className="flex flex-wrap gap-3 mt-12"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+        viewport={{ once: true }}
+      >
+        {work.roles.map((role, i) => (
+          <span
+            key={i}
+            className="px-4 py-2 rounded-full text-[11px] font-bold uppercase tracking-widest"
+            style={{ backgroundColor: "#9b1c2e", color: "#fff" }}
+          >
+            {role}
+          </span>
+        ))}
+      </motion.div>
+    </section>
   );
 }
 

@@ -12,6 +12,7 @@ const nextConfig = {
     return config;
   },
   output: "export", // Enables static export
+  images: { unoptimized: true }, // Required for static export
   // basePath: "/out", // Adds 'out' at the beginning of every URL
   trailingSlash: true, // Optional: ensures all paths end with a slash
 };

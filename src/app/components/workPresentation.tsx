@@ -25,11 +25,12 @@ function WorkImage({ image, index }: { image: string; index: number }) {
       }}
     >
       <Image
-        width={900}
-        height={490}
+        width={1200}
+        height={800}
         src={image}
         alt={`work image ${index + 1}`}
-        unoptimized
+        className="w-full h-auto rounded-lg"
+        loading={index === 0 ? "eager" : "lazy"}
       />
     </motion.div>
   );
@@ -37,22 +38,18 @@ function WorkImage({ image, index }: { image: string; index: number }) {
 
 function WorkPresentation({ work }: { work: Work }) {
   return (
-    <section className="work-section mx-[20px] pt-20">
-      <div className="section-title flex justify-center">
-        <h2 className="take-a-look relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[-8px] after:w-full after:h-[0.6px] after:bg-white w-[900px] text-center my-8">
-          Take a look
-        </h2>
-      </div>
-      <div className="work-images flex justify-center">
-        <div className="image-grid flex flex-col gap-10 lg:gap-20">
-          {Array.isArray(work.image) ? (
-            work.image.map((image, index) => (
-              <WorkImage key={index} image={image} index={index} />
-            ))
-          ) : (
-            <WorkImage image={work.image} index={0} />
-          )}
-        </div>
+    <section
+      className="px-5 md:px-10 pt-10 pb-20"
+      style={{ backgroundColor: "#faf8f4" }}
+    >
+      <div className="flex flex-col gap-8 md:gap-16 items-center">
+        {Array.isArray(work.image) ? (
+          work.image.map((image, index) => (
+            <WorkImage key={index} image={image} index={index} />
+          ))
+        ) : (
+          <WorkImage image={work.image} index={0} />
+        )}
       </div>
     </section>
   );
