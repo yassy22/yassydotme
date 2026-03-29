@@ -6,8 +6,8 @@ export interface IWork {
   slug: string;
   title: string;
   description: string;
-  image: string | StaticImageData[];
-  imageHeader: string | StaticImageData[];
+  image: (string | StaticImageData)[];
+  imageHeader: (string | StaticImageData)[];
   roles: string[] | string;
   video?: string; 
   link?: string;

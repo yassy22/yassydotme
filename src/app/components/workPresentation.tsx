@@ -3,12 +3,14 @@ import Image from "next/image";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
+import { StaticImageData } from "next/image";
+
 interface Work {
   id: number;
-  image: string | string[];
+  image: (string | StaticImageData)[];
 }
 
-function WorkImage({ image, index }: { image: string; index: number }) {
+function WorkImage({ image, index }: { image: string | StaticImageData; index: number }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -44,13 +46,9 @@ function WorkPresentation({ work }: { work: Work }) {
       style={{ backgroundColor: "#faf8f4" }}
     >
       <div className="flex flex-col gap-8 md:gap-16 items-center">
-        {Array.isArray(work.image) ? (
-          work.image.map((image, index) => (
-            <WorkImage key={index} image={image} index={index} />
-          ))
-        ) : (
-          <WorkImage image={work.image} index={0} />
-        )}
+        {work.image.map((image, index) => (
+          <WorkImage key={index} image={image} index={index} />
+        ))}
       </div>
     </section>
   );
