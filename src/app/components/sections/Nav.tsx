@@ -63,7 +63,7 @@ function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
     return () => observer.disconnect();
   }, [theme]);
 
-  const color = navTheme === "light" ? "#0a0a0a" : "#ffffff";
+  const color = navTheme === "light" ? "#101010" : "#ffffff";
   const dotColor = navTheme === "light" ? "bg-black" : "bg-white";
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -125,13 +125,13 @@ function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
               exit={{ opacity: 0, x: "100%" }}
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="fixed top-0 right-0 h-full w-full z-40 flex flex-col justify-center items-center gap-8"
-              style={{ backgroundColor: "#faf8f4", color: "#0a0a0a" }}
+              style={{ backgroundColor: "#F3F0E9", color: "#101010" }}
             >
               {/* Close */}
               <button
                 onClick={toggleMenu}
                 className="absolute top-6 right-6 text-[28px] leading-none"
-                style={{ color: "#0a0a0a" }}
+                style={{ color: "#101010" }}
               >
                 ×
               </button>
@@ -156,7 +156,7 @@ function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
                       fontFamily: "'Arial Black', 'Arial', sans-serif",
                       fontSize: "clamp(36px, 10vw, 64px)",
                       letterSpacing: "-0.02em",
-                      color: "#0a0a0a",
+                      color: "#101010",
                     }}
                   >
                     {link.label}

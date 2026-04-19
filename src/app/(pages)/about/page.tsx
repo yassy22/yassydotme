@@ -39,7 +39,7 @@ const infos = [
 
 export default function About() {
   return (
-    <div style={{ backgroundColor: "#faf8f4", color: "#0a0a0a", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "#F3F0E9", color: "#101010", minHeight: "100vh" }}>
       <Nav />
 
       {/* ── Hero ── */}
@@ -52,7 +52,7 @@ export default function About() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="uppercase tracking-widest text-[11px] font-bold mb-8" style={{ color: "#9b1c2e" }}>
+          <p className="uppercase tracking-widest text-[11px] font-bold mb-8" style={{ color: "#C4572A" }}>
             About me
           </p>
           <h1
@@ -87,7 +87,7 @@ export default function About() {
           >
             <h2
               className={`${NewYork.variable} font-newYork leading-none mb-10`}
-              style={{ fontSize: "clamp(36px, 5vw, 72px)", fontStyle: "italic", color: "#9b1c2e" }}
+              style={{ fontSize: "clamp(36px, 5vw, 72px)", fontStyle: "italic", color: "#C4572A" }}
             >
               Junior with talent,<br />or not —
             </h2>
@@ -124,7 +124,7 @@ export default function About() {
       <section className="w-full px-6 md:px-16 py-24" data-nav="light">
         <motion.p
           className="uppercase tracking-widest text-[11px] font-bold mb-12"
-          style={{ color: "#9b1c2e" }}
+          style={{ color: "#C4572A" }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -164,7 +164,7 @@ export default function About() {
       <section className="w-full px-6 md:px-16 py-24" data-nav="light">
         <motion.p
           className="uppercase tracking-widest text-[11px] font-bold mb-12"
-          style={{ color: "#9b1c2e" }}
+          style={{ color: "#C4572A" }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -190,7 +190,7 @@ export default function About() {
               </span>
               <span
                 className="text-[11px] uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                style={{ color: "#9b1c2e" }}
+                style={{ color: "#C4572A" }}
               >
                 0{i + 1}
               </span>
@@ -204,7 +204,7 @@ export default function About() {
       <section
         className="w-full px-6 md:px-16 py-32 flex flex-col md:flex-row items-start md:items-end justify-between gap-10"
         data-nav="dark"
-        style={{ backgroundColor: "#1E1E1E", color: "#FEFEF2" }}
+        style={{ backgroundColor: "#101010", color: "#F3F0E9" }}
       >
         <motion.h2
           className={`${NewYork.variable} font-newYork leading-none`}
@@ -220,7 +220,7 @@ export default function About() {
         <motion.a
           href="mailto:yasmine@example.com"
           className="uppercase tracking-widest text-[11px] font-bold underline underline-offset-4 hover:opacity-60 transition-opacity"
-          style={{ color: "#FEFEF2" }}
+          style={{ color: "#F3F0E9" }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}

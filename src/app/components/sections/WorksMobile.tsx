@@ -9,19 +9,19 @@ export default function WorksMobile() {
   return (
     <section
       className="w-full px-5 pt-24 pb-20"
-      style={{ backgroundColor: "#faf8f4" }}
+      style={{ backgroundColor: "#F3F0E9" }}
     >
       {/* Header */}
       <div className="flex justify-between items-center mb-10">
         <span
           className="uppercase tracking-widest text-[11px] font-bold"
-          style={{ color: "#9b1c2e" }}
+          style={{ color: "#C4572A" }}
         >
           Selected Works
         </span>
         <span
           className="uppercase tracking-widest text-[11px] font-bold"
-          style={{ color: "#0a0a0a", opacity: 0.4 }}
+          style={{ color: "#101010", opacity: 0.4 }}
         >
           {works.length} Projects
         </span>
@@ -29,7 +29,7 @@ export default function WorksMobile() {
 
       {/* Works list */}
       <div className="flex flex-col gap-10">
-        {works.map((work, index) => (
+        {works.filter(w => !w.hidden).map((work, index) => (
           <Link href={`/works/${work.slug}`} key={work.id}>
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -71,14 +71,14 @@ export default function WorksMobile() {
                     fontFamily: "'Arial Black', 'Arial', sans-serif",
                     fontSize: "clamp(18px, 5vw, 28px)",
                     letterSpacing: "-0.02em",
-                    color: "#0a0a0a",
+                    color: "#101010",
                   }}
                 >
                   {work.title}
                 </h3>
                 <p
                   className="uppercase tracking-widest text-[10px] font-bold text-right mt-1"
-                  style={{ color: "#0a0a0a", opacity: 0.45, maxWidth: "45%" }}
+                  style={{ color: "#101010", opacity: 0.45, maxWidth: "45%" }}
                 >
                   {Array.isArray(work.roles)
                     ? work.roles.join(" · ")

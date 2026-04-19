@@ -18,7 +18,7 @@ function Info({ work }: { work: Work }) {
     <section
       className="hidden lg:block w-full px-16 py-24"
       data-nav="light"
-      style={{ backgroundColor: "#faf8f4" }}
+      style={{ backgroundColor: "#F3F0E9" }}
     >
       {/* Top row : titre + description */}
       <div className="flex items-start justify-between gap-20 border-t pt-12" style={{ borderColor: "rgba(0,0,0,0.1)" }}>
@@ -28,7 +28,7 @@ function Info({ work }: { work: Work }) {
           className={`${NewYork.variable} font-newYork leading-none`}
           style={{
             fontSize: "clamp(48px, 6vw, 96px)",
-            color: "#0a0a0a",
+            color: "#101010",
             maxWidth: "45%",
             flexShrink: 0,
           }}
@@ -51,7 +51,7 @@ function Info({ work }: { work: Work }) {
         >
           <p
             className="whitespace-pre-line leading-relaxed"
-            style={{ fontSize: "15px", color: "#0a0a0a", opacity: 0.7 }}
+            style={{ fontSize: "15px", color: "#101010", opacity: 0.7 }}
           >
             {work.description}
           </p>
@@ -61,7 +61,7 @@ function Info({ work }: { work: Work }) {
               <Link
                 href={work.link}
                 className="inline-flex items-center gap-1 font-bold text-[13px] underline underline-offset-4"
-                style={{ color: "#9b1c2e" }}
+                style={{ color: "#C4572A" }}
               >
                 View the project <ArrowUpRight size={14} />
               </Link>
@@ -70,7 +70,7 @@ function Info({ work }: { work: Work }) {
               <Link
                 href={work.research}
                 className="inline-flex items-center gap-1 font-bold text-[13px] underline underline-offset-4"
-                style={{ color: "#9b1c2e" }}
+                style={{ color: "#C4572A" }}
               >
                 Desk research <ArrowUpRight size={14} />
               </Link>
@@ -91,7 +91,7 @@ function Info({ work }: { work: Work }) {
           <span
             key={i}
             className="px-4 py-2 rounded-full text-[11px] font-bold uppercase tracking-widest"
-            style={{ backgroundColor: "#9b1c2e", color: "#fff" }}
+            style={{ backgroundColor: "#C4572A", color: "#fff" }}
           >
             {role}
           </span>

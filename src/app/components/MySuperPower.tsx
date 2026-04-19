@@ -22,8 +22,8 @@ function Pill({ label, x, y, rotate, delay }: {
         top: "50%",
         left: "50%",
         rotate,
-        backgroundColor: "#fadadd",
-        color: "#2a0a0a",
+        backgroundColor: "#F3F0E9",
+        color: "#101010",
         fontSize: "clamp(11px, 1vw, 15px)",
         whiteSpace: "nowrap",
         boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
@@ -44,7 +44,7 @@ function MySuperPower() {
     <section
       className="relative w-full overflow-hidden"
       data-nav="light"
-      style={{ minHeight: "100vh", backgroundColor: "#faf8f4", color: "#0a0a0a" }}
+      style={{ minHeight: "100vh", backgroundColor: "#F3F0E9", color: "#101010" }}
     >
 
       {/* ── DESKTOP ── */}
@@ -64,7 +64,7 @@ function MySuperPower() {
               fontSize: "clamp(42px, 7vw, 110px)",
               fontWeight: "normal",
               fontStyle: "italic",
-              color: "#9b1c2e",
+              color: "#C4572A",
               lineHeight: 1.05,
             }}
           >
@@ -90,7 +90,7 @@ function MySuperPower() {
             fontSize: "clamp(48px, 14vw, 80px)",
             fontWeight: "normal",
             fontStyle: "italic",
-            color: "#9b1c2e",
+            color: "#C4572A",
             lineHeight: 1.05,
           }}
         >
@@ -106,8 +106,8 @@ function MySuperPower() {
               key={s.label}
               className="px-6 py-4 rounded-full font-bold text-center"
               style={{
-                backgroundColor: "#fadadd",
-                color: "#2a0a0a",
+                backgroundColor: "#F3F0E9",
+                color: "#101010",
                 fontSize: "17px",
                 boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
               }}

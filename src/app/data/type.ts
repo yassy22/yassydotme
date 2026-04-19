@@ -9,9 +9,10 @@ export interface IWork {
   image: (string | StaticImageData)[];
   imageHeader: (string | StaticImageData)[];
   roles: string[] | string;
-  video?: string; 
+  video?: string;
   link?: string;
   research?: string;
+  hidden?: boolean;
 }
 
 export interface Gold {

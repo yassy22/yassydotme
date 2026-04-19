@@ -57,12 +57,12 @@ export default function ScrollWorks() {
     <section
       ref={sectionRef}
       className="relative overflow-hidden h-screen w-screen"
-      style={{ backgroundColor: "#faf8f4" }}
+      style={{ backgroundColor: "#F3F0E9" }}
     >
       {/* Section title */}
       <div
         className="absolute top-24 left-10 z-10 uppercase tracking-widest text-[11px] font-bold"
-        style={{ color: "#9b1c2e" }}
+        style={{ color: "#C4572A" }}
       >
         Selected Works
       </div>
@@ -70,7 +70,7 @@ export default function ScrollWorks() {
       {/* Counter */}
       <div
         className="absolute top-24 right-10 z-10 uppercase tracking-widest text-[11px] font-bold"
-        style={{ color: "#0a0a0a", opacity: 0.4 }}
+        style={{ color: "#101010", opacity: 0.4 }}
       >
         {works.length} Projects
       </div>
@@ -81,7 +81,7 @@ export default function ScrollWorks() {
         className="absolute top-0 left-0 h-full flex items-center gap-8 px-20"
         style={{ width: "max-content" }}
       >
-        {works.map((work, index) => (
+        {works.filter(w => !w.hidden).map((work, index) => (
           <Link key={work.id} href={`/works/${work.slug}`}>
             <div
               className="work-card relative flex-shrink-0 overflow-hidden group cursor-pointer"
@@ -89,7 +89,7 @@ export default function ScrollWorks() {
                 width: "clamp(320px, 30vw, 560px)",
                 height: "clamp(380px, 60vh, 680px)",
                 borderRadius: "12px",
-                backgroundColor: "#e8e4dc",
+                backgroundColor: "#F3F0E9",
               }}
             >
               {/* Image */}
@@ -147,7 +147,7 @@ export default function ScrollWorks() {
       {/* Scroll hint */}
       <div
         className="absolute bottom-10 left-1/2 -translate-x-1/2 uppercase tracking-widest text-[10px] font-bold"
-        style={{ color: "#0a0a0a", opacity: 0.35 }}
+        style={{ color: "#101010", opacity: 0.35 }}
       >
         Scroll to explore →
       </div>

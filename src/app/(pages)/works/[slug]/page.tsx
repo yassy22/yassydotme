@@ -18,15 +18,16 @@ const WorkPage = async ({ params }: WorkPageProps) => {
     return <div className="not-found">Not Found</div>;
   }
 
-  const currentIndex = works.findIndex((w) => w.slug === slug);
-  const nextIndex = (currentIndex + 1) % works.length;
-  const nextWork = works[nextIndex];
+  const visibleWorks = works.filter((w) => !w.hidden);
+  const currentIndex = visibleWorks.findIndex((w) => w.slug === slug);
+  const nextIndex = (currentIndex + 1) % visibleWorks.length;
+  const nextWork = visibleWorks[nextIndex];
   const nextHeader = Array.isArray(nextWork.imageHeader)
     ? nextWork.imageHeader[0]
     : nextWork.imageHeader;
 
   return (
-    <div style={{ backgroundColor: "#faf8f4", color: "#0a0a0a" }}>
+    <div style={{ backgroundColor: "#F3F0E9", color: "#101010" }}>
       <Nav />
 
       {/* ── Hero image ── */}
@@ -62,10 +63,10 @@ const WorkPage = async ({ params }: WorkPageProps) => {
       />
 
       {/* ── Mobile info ── */}
-      <div className="lg:hidden px-6 pt-10 pb-6" style={{ backgroundColor: "#faf8f4" }}>
+      <div className="lg:hidden px-6 pt-10 pb-6" style={{ backgroundColor: "#F3F0E9" }}>
         <h1
           className={`${NewYork.variable} font-newYork`}
-          style={{ fontSize: "clamp(36px, 10vw, 64px)", lineHeight: 1.05, color: "#0a0a0a" }}
+          style={{ fontSize: "clamp(36px, 10vw, 64px)", lineHeight: 1.05, color: "#101010" }}
         >
           {work.title}
         </h1>
@@ -76,14 +77,14 @@ const WorkPage = async ({ params }: WorkPageProps) => {
             <span
               key={i}
               className="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest"
-              style={{ backgroundColor: "#9b1c2e", color: "#fff" }}
+              style={{ backgroundColor: "#C4572A", color: "#fff" }}
             >
               {role}
             </span>
           ))}
         </div>
 
-        <p className="mt-6 text-[14px] leading-relaxed" style={{ color: "#0a0a0a", opacity: 0.7 }}>
+        <p className="mt-6 text-[14px] leading-relaxed" style={{ color: "#101010", opacity: 0.7 }}>
           {work.description}
         </p>
 
@@ -123,7 +124,7 @@ const WorkPage = async ({ params }: WorkPageProps) => {
         <div
           className="w-full group cursor-pointer px-8 md:px-20 pt-16 md:py-24 pb-16"
           data-nav="dark"
-          style={{ backgroundColor: "#1E1E1E", color: "#FEFEF2" }}
+          style={{ backgroundColor: "#101010", color: "#F3F0E9" }}
         >
           {/* Contenu : texte + vignette desktop */}
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
@@ -189,7 +190,7 @@ const WorkPage = async ({ params }: WorkPageProps) => {
 };
 
 export async function generateStaticParams() {
-  return works.map((work) => ({ slug: work.slug }));
+  return works.filter((w) => !w.hidden).map((work) => ({ slug: work.slug }));
 }
 
 export default WorkPage;

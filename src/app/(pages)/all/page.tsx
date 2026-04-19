@@ -9,7 +9,7 @@ import { NewYork } from "@/app/fonts/newyork";
 
 function All() {
   return (
-    <div style={{ backgroundColor: "#faf8f4", color: "#0a0a0a", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "#F3F0E9", color: "#101010", minHeight: "100vh" }}>
       <Nav theme="light" />
 
       <main className="px-6 md:px-16 pt-36 pb-24">
@@ -26,7 +26,7 @@ function All() {
             className={`${NewYork.variable} font-newYork leading-none`}
             style={{
               fontSize: "clamp(48px, 10vw, 130px)",
-              color: "#0a0a0a",
+              color: "#101010",
               fontStyle: "italic",
             }}
           >
@@ -34,15 +34,15 @@ function All() {
           </h1>
           <p
             className="uppercase tracking-widest text-[11px] font-bold mt-4 md:mt-0"
-            style={{ color: "#9b1c2e" }}
+            style={{ color: "#C4572A" }}
           >
-            {works.length} Projects
+            {works.filter(w => !w.hidden).length} Projects
           </p>
         </motion.div>
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
-          {works.map((work, index) => (
+          {works.filter(w => !w.hidden).map((work, index) => (
             <motion.div
               key={work.slug}
               initial={{ opacity: 0, y: 40 }}
@@ -95,7 +95,7 @@ function All() {
                     </h2>
                     <p
                       className="uppercase tracking-widest text-[10px] font-bold text-right mt-1"
-                      style={{ color: "#0a0a0a", opacity: 0.4, maxWidth: "45%" }}
+                      style={{ color: "#101010", opacity: 0.4, maxWidth: "45%" }}
                     >
                       {Array.isArray(work.roles)
                         ? work.roles.join(" · ")
