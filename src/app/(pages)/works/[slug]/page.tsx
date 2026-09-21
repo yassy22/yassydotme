@@ -71,19 +71,6 @@ const WorkPage = async ({ params }: WorkPageProps) => {
           {work.title}
         </h1>
 
-        {/* Roles */}
-        <div className="flex flex-wrap gap-2 mt-4">
-          {(Array.isArray(work.roles) ? work.roles : [work.roles]).map((role, i) => (
-            <span
-              key={i}
-              className="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest"
-              style={{ backgroundColor: "#C4572A", color: "#fff" }}
-            >
-              {role}
-            </span>
-          ))}
-        </div>
-
         <p className="mt-6 text-[14px] leading-relaxed" style={{ color: "#101010", opacity: 0.7 }}>
           {work.description}
         </p>
