@@ -1,10 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
-  const [isOpen, setIsOpen] = useState(false);
   const [navTheme, setNavTheme] = useState(theme);
   const [, setTime] = useState("");
 
@@ -66,8 +65,6 @@ function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
   const color = navTheme === "light" ? "#101010" : "#ffffff";
   const dotColor = navTheme === "light" ? "bg-black" : "bg-white";
 
-  const toggleMenu = () => setIsOpen(!isOpen);
-
   return (
     <header className="fixed w-full z-50">
       <motion.div
@@ -85,8 +82,8 @@ function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
           {/* <span className="hidden md:inline">51.0543° N, 3.7174°</span> */}
         </div>
 
-        {/* Right : links desktop */}
-        <ul className="hidden sm:flex gap-8 text-[11px]">
+        {/* Right : links */}
+        <ul className="flex gap-6 sm:gap-8 text-[11px]">
           <li>
             <Link href="/" className="hover:opacity-50 transition-opacity">
               HOME
@@ -103,70 +100,7 @@ function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
             </Link>
           </li> */}
         </ul>
-
-        {/* Burger mobile */}
-        <button
-          className="sm:hidden flex flex-col gap-[5px] cursor-pointer"
-          onClick={toggleMenu}
-          aria-label="Menu"
-        >
-          <span className="w-5 h-[1.5px] block" style={{ backgroundColor: color }} />
-          <span className="w-5 h-[1.5px] block" style={{ backgroundColor: color }} />
-        </button>
       </motion.div>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0, x: "100%" }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: "100%" }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed top-0 right-0 h-full w-full z-40 flex flex-col justify-center items-center gap-8"
-              style={{ backgroundColor: "#F3F0E9", color: "#101010" }}
-            >
-              {/* Close */}
-              <button
-                onClick={toggleMenu}
-                className="absolute top-6 right-6 text-[28px] leading-none"
-                style={{ color: "#101010" }}
-              >
-                ×
-              </button>
-
-              {/* Links */}
-              {[
-                { href: "/", label: "Home" },
-                { href: "/all", label: "Works" },
-                // { href: "/about", label: "About" },
-              ].map((link, i) => (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 + i * 0.08, duration: 0.5 }}
-                >
-                  <Link
-                    href={link.href}
-                    onClick={toggleMenu}
-                    className="font-black uppercase"
-                    style={{
-                      fontFamily: "'Arial Black', 'Arial', sans-serif",
-                      fontSize: "clamp(36px, 10vw, 64px)",
-                      letterSpacing: "-0.02em",
-                      color: "#101010",
-                    }}
-                  >
-                    {link.label}
-                  </Link>
-                </motion.div>
-              ))}
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
     </header>
   );
 }
