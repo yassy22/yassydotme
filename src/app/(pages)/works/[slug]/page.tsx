@@ -31,7 +31,7 @@ const WorkPage = async ({ params }: WorkPageProps) => {
       <Nav />
 
       {/* ── Hero image ── */}
-      <div className="relative h-screen w-full" data-nav="dark">
+      <div className="relative h-[60vh] md:h-screen w-full" data-nav="dark">
         <Image
           src={
             Array.isArray(work.imageHeader)
