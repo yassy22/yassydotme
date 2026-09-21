@@ -10,10 +10,10 @@ function Works() {
         Here is a selection of my school and personal projects. Each combines
         creativity and technical skill, showcasing my passion creating.
       </p> */}
-      <div className="hidden lg:block">
+      <div className="hidden lg:block w-full">
         <ScrollWorks />
       </div>
-      <div className="block lg:hidden">
+      <div className="block lg:hidden w-full">
         <WorksMobile />
       </div>
     </section>
