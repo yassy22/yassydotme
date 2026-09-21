@@ -40,7 +40,10 @@ export default function StudioPage() {
       className="h-[140vh] md:h-[300vh]"
       style={{ backgroundColor: "#F3F0E9", color: "#101010" }}
     >
-      <div className="sticky top-0 h-screen pt-28  px-4" style={{}}>
+      <div
+        className="sticky top-0 h-screen px-4 flex flex-col justify-center md:block md:pt-28"
+        style={{}}
+      >
         {/* Nom */}
         <motion.div
           className="w-full text-center"
