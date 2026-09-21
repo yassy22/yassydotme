@@ -9,7 +9,7 @@ export default function WorksMobile() {
   return (
     <section
       className="w-full px-5 pt-24 pb-20"
-      style={{ backgroundColor: "#F6EFE3" }}
+      style={{ backgroundColor: "#FCFAF6" }}
     >
       {/* Header */}
       <div className="flex justify-between items-center mb-10">

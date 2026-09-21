@@ -35,7 +35,7 @@ function HeroAbout() {
           variants={rise1}
           initial="initial"
           animate="animate"
-          className={`${NewYork.className} dark:mix-blend-exclusion text-[12vw] xs:text-[9vw] sm:text-[8vw] lg:text-[9vw] leading-[1] text-[#F6EFE3]`}
+          className={`${NewYork.className} dark:mix-blend-exclusion text-[12vw] xs:text-[9vw] sm:text-[8vw] lg:text-[9vw] leading-[1] text-[#FCFAF6]`}
         >
           Hi, there I’m the <br /> person behind this
         </motion.h1>

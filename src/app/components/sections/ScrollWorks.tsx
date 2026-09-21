@@ -57,7 +57,7 @@ export default function ScrollWorks() {
     <section
       ref={sectionRef}
       className="relative overflow-hidden h-screen w-screen"
-      style={{ backgroundColor: "#F6EFE3" }}
+      style={{ backgroundColor: "#FCFAF6" }}
     >
       {/* Section title */}
       <div
@@ -89,7 +89,7 @@ export default function ScrollWorks() {
                 width: "clamp(320px, 30vw, 560px)",
                 height: "clamp(380px, 60vh, 680px)",
                 borderRadius: "12px",
-                backgroundColor: "#F6EFE3",
+                backgroundColor: "#FCFAF6",
               }}
             >
               {/* Image */}

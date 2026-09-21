@@ -22,7 +22,7 @@ function Pill({ label, x, y, rotate, delay }: {
         top: "50%",
         left: "50%",
         rotate,
-        backgroundColor: "#F6EFE3",
+        backgroundColor: "#FCFAF6",
         color: "#101010",
         fontSize: "clamp(11px, 1vw, 15px)",
         whiteSpace: "nowrap",
@@ -44,7 +44,7 @@ function MySuperPower() {
     <section
       className="relative w-full overflow-hidden"
       data-nav="light"
-      style={{ minHeight: "100vh", backgroundColor: "#F6EFE3", color: "#101010" }}
+      style={{ minHeight: "100vh", backgroundColor: "#FCFAF6", color: "#101010" }}
     >
 
       {/* ── DESKTOP ── */}
@@ -106,7 +106,7 @@ function MySuperPower() {
               key={s.label}
               className="px-6 py-4 rounded-full font-bold text-center"
               style={{
-                backgroundColor: "#F6EFE3",
+                backgroundColor: "#FCFAF6",
                 color: "#101010",
                 fontSize: "17px",
                 boxShadow: "0 2px 10px rgba(0,0,0,0.05)",

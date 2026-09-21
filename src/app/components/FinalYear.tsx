@@ -7,7 +7,7 @@ function FinalYear() {
     <section
       className="relative w-full flex items-center justify-center overflow-hidden px-4 md:px-6 py-16 md:py-24 min-h-screen md:mt-[100vh]"
       data-nav="dark"
-      style={{ backgroundColor: "#101010", color: "#F6EFE3" }}
+      style={{ backgroundColor: "#101010", color: "#FCFAF6" }}
     >
       {/* Label haut gauche — caché sur mobile */}
       <motion.p

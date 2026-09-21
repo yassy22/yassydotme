@@ -39,7 +39,7 @@ const infos = [
 
 export default function About() {
   return (
-    <div style={{ backgroundColor: "#F6EFE3", color: "#101010", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "#FCFAF6", color: "#101010", minHeight: "100vh" }}>
       <Nav />
 
       {/* ── Hero ── */}
@@ -204,7 +204,7 @@ export default function About() {
       <section
         className="w-full px-6 md:px-16 py-32 flex flex-col md:flex-row items-start md:items-end justify-between gap-10"
         data-nav="dark"
-        style={{ backgroundColor: "#101010", color: "#F6EFE3" }}
+        style={{ backgroundColor: "#101010", color: "#FCFAF6" }}
       >
         <motion.h2
           className={`${NewYork.variable} font-newYork leading-none`}
@@ -220,7 +220,7 @@ export default function About() {
         <motion.a
           href="mailto:yasmine@example.com"
           className="uppercase tracking-widest text-[11px] font-bold underline underline-offset-4 hover:opacity-60 transition-opacity"
-          style={{ color: "#F6EFE3" }}
+          style={{ color: "#FCFAF6" }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}

@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --background: #F6EFE3;
+  --background: #FCFAF6;
   --background-black: #101010;
   --font-color: #101010;
   --off-white: #FDFCF8;
-  --ivory: #F6EFE3;
+  --ivory: #FCFAF6;
   --nude: #E3DBCC;
   --obsidian: #101010;
   --accent: #C4572A;

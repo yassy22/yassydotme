@@ -24,7 +24,7 @@ function PreLoading({ count }: { readonly count: number }) {
           {/* Panneau beige — part en premier */}
           <motion.section
             className="fixed inset-0 z-[102] flex flex-col justify-between px-6 md:px-14 py-8 overflow-hidden"
-            style={{ backgroundColor: "#F6EFE3" }}
+            style={{ backgroundColor: "#FCFAF6" }}
             initial={{ y: 0 }}
             exit={{
               y: "-100%",

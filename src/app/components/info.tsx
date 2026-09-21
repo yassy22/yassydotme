@@ -18,7 +18,7 @@ function Info({ work }: { work: Work }) {
     <section
       className="hidden lg:block w-full px-16 py-24"
       data-nav="light"
-      style={{ backgroundColor: "#F6EFE3" }}
+      style={{ backgroundColor: "#FCFAF6" }}
     >
       {/* Top row : titre + description */}
       <div className="flex items-start justify-between gap-20 border-t pt-12" style={{ borderColor: "rgba(0,0,0,0.1)" }}>

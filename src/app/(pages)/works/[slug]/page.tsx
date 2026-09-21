@@ -27,7 +27,7 @@ const WorkPage = async ({ params }: WorkPageProps) => {
     : nextWork.imageHeader;
 
   return (
-    <div style={{ backgroundColor: "#F6EFE3", color: "#101010" }}>
+    <div style={{ backgroundColor: "#FCFAF6", color: "#101010" }}>
       <Nav />
 
       {/* ── Hero image ── */}
@@ -63,7 +63,7 @@ const WorkPage = async ({ params }: WorkPageProps) => {
       />
 
       {/* ── Mobile info ── */}
-      <div className="lg:hidden px-6 pt-10 pb-6" style={{ backgroundColor: "#F6EFE3" }}>
+      <div className="lg:hidden px-6 pt-10 pb-6" style={{ backgroundColor: "#FCFAF6" }}>
         <h1
           className={`${NewYork.variable} font-newYork`}
           style={{ fontSize: "clamp(36px, 10vw, 64px)", lineHeight: 1.05, color: "#101010" }}
@@ -124,7 +124,7 @@ const WorkPage = async ({ params }: WorkPageProps) => {
         <div
           className="w-full group cursor-pointer px-8 md:px-20 pt-16 md:py-24 pb-16"
           data-nav="dark"
-          style={{ backgroundColor: "#101010", color: "#F6EFE3" }}
+          style={{ backgroundColor: "#101010", color: "#FCFAF6" }}
         >
           {/* Contenu : texte + vignette desktop */}
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
