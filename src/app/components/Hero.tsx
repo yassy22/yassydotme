@@ -23,12 +23,12 @@ export default function StudioPage() {
   const leftX = useTransform(
     scrollYProgress,
     isMobile ? [0, 0.4] : [0, 0.7],
-    isMobile ? ["0vw", "13vw"] : ["0vw", "30vw"]
+    isMobile ? ["0vw", "17vw"] : ["0vw", "30vw"]
   );
   const rightX = useTransform(
     scrollYProgress,
     isMobile ? [0, 0.4] : [0, 0.7],
-    isMobile ? ["0vw", "-13vw"] : ["0vw", "-30vw"]
+    isMobile ? ["0vw", "-17vw"] : ["0vw", "-30vw"]
   );
   const downZ = useTransform(scrollYProgress, [0, 0.3], ["22vw", "44vw"]);
   const videoScale = useTransform(scrollYProgress, [0.3, 0.6], [0.3, 1.02]);
@@ -76,7 +76,7 @@ export default function StudioPage() {
         </motion.div>
 
         {/* Middle row */}
-        <div className="relative w-full flex items-center justify-center mt-8 md:mt-40">
+        <div className="relative w-full flex items-center justify-center mt-8 md:mt-20">
           <motion.span
             className="absolute left-4 uppercase font-black leading-none"
             style={{
