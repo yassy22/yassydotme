@@ -97,11 +97,11 @@ function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
               WORKS
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/about" className="hover:opacity-50 transition-opacity">
               ABOUT
             </Link>
-          </li>
+          </li> */}
         </ul>
 
         {/* Burger mobile */}
@@ -140,7 +140,7 @@ function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
               {[
                 { href: "/", label: "Home" },
                 { href: "/all", label: "Works" },
-                { href: "/about", label: "About" },
+                // { href: "/about", label: "About" },
               ].map((link, i) => (
                 <motion.div
                   key={link.href}
