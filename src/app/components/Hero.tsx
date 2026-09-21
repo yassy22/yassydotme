@@ -20,8 +20,7 @@ export default function StudioPage() {
     <div
       ref={wrapperRef}
       data-nav="light"
-      className="h-[140vh] md:h-[300vh]"
-      style={{ backgroundColor: "#F3F0E9", color: "#101010" }}
+      style={{ height: "300vh", backgroundColor: "#F3F0E9", color: "#101010" }}
     >
       <div className="sticky top-0 h-screen pt-28  px-4" style={{}}>
         {/* Nom */}
