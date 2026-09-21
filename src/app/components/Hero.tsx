@@ -94,7 +94,7 @@ export default function StudioPage() {
           </motion.span>
 
           <motion.div
-            className=" absolute  flex-shrink-0"
+            className="hidden md:block absolute flex-shrink-0"
             style={{
               scale: videoScale,
               transformOrigin: "top center",
