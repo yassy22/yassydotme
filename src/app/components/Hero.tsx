@@ -37,7 +37,7 @@ export default function StudioPage() {
     <div
       ref={wrapperRef}
       data-nav="light"
-      className="h-[140dvh] md:h-[300vh]"
+      className="h-[220dvh] md:h-[300vh]"
       style={{ backgroundColor: "#F3F0E9", color: "#101010" }}
     >
       <div
