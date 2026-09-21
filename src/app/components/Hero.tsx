@@ -37,11 +37,11 @@ export default function StudioPage() {
     <div
       ref={wrapperRef}
       data-nav="light"
-      className="h-[140vh] md:h-[300vh]"
+      className="h-[140dvh] md:h-[300vh]"
       style={{ backgroundColor: "#F3F0E9", color: "#101010" }}
     >
       <div
-        className="sticky top-0 h-screen px-4 flex flex-col justify-center -translate-y-10 md:translate-y-0 md:block md:pt-28"
+        className="sticky top-0 h-[100dvh] md:h-screen px-4 flex flex-col justify-center -translate-y-10 md:translate-y-0 md:block md:pt-28"
         style={{}}
       >
         {/* Nom */}
