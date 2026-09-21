@@ -22,12 +22,12 @@ export default function StudioPage() {
 
   const leftX = useTransform(
     scrollYProgress,
-    isMobile ? [0, 0.75] : [0, 0.7],
+    isMobile ? [0, 0.4] : [0, 0.7],
     isMobile ? ["0vw", "13vw"] : ["0vw", "30vw"]
   );
   const rightX = useTransform(
     scrollYProgress,
-    isMobile ? [0, 0.75] : [0, 0.7],
+    isMobile ? [0, 0.4] : [0, 0.7],
     isMobile ? ["0vw", "-13vw"] : ["0vw", "-30vw"]
   );
   const downZ = useTransform(scrollYProgress, [0, 0.3], ["22vw", "44vw"]);
