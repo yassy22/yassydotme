@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
+// import Link from "next/link";
 import { motion } from "framer-motion";
 
 function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
@@ -83,7 +83,7 @@ function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
         </div>
 
         {/* Right : links */}
-        <ul className="flex gap-6 sm:gap-8 text-[11px]">
+        {/* <ul className="flex gap-6 sm:gap-8 text-[11px]">
           <li>
             <Link href="/" className="hover:opacity-50 transition-opacity">
               HOME
@@ -94,12 +94,12 @@ function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
               WORKS
             </Link>
           </li>
-          {/* <li>
+          <li>
             <Link href="/about" className="hover:opacity-50 transition-opacity">
               ABOUT
             </Link>
-          </li> */}
-        </ul>
+          </li>
+        </ul> */}
       </motion.div>
     </header>
   );
