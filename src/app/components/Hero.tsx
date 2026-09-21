@@ -22,13 +22,13 @@ export default function StudioPage() {
 
   const leftX = useTransform(
     scrollYProgress,
-    [0, 0.7],
-    isMobile ? ["0vw", "6vw"] : ["0vw", "30vw"]
+    isMobile ? [0, 1] : [0, 0.7],
+    isMobile ? ["0vw", "13vw"] : ["0vw", "30vw"]
   );
   const rightX = useTransform(
     scrollYProgress,
-    [0, 0.7],
-    isMobile ? ["0vw", "-6vw"] : ["0vw", "-30vw"]
+    isMobile ? [0, 1] : [0, 0.7],
+    isMobile ? ["0vw", "-13vw"] : ["0vw", "-30vw"]
   );
   const downZ = useTransform(scrollYProgress, [0, 0.3], ["22vw", "44vw"]);
   const videoScale = useTransform(scrollYProgress, [0.3, 0.6], [0.3, 1.02]);
