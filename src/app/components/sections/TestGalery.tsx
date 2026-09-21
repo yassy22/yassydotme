@@ -119,7 +119,7 @@ export default function TestGallery() {
             variants={rise1}
             initial="initial"
             animate="animate"
-            className={`${NewYork.className} dark:mix-blend-exclusion text-[12vw] xs:text-[9vw] sm:text-[8vw] lg:text-[5vw] text-center leading-[1] text-[#F3F0E9]`}
+            className={`${NewYork.className} dark:mix-blend-exclusion text-[12vw] xs:text-[9vw] sm:text-[8vw] lg:text-[5vw] text-center leading-[1] text-[#F6EFE3]`}
           >
             Hi, there I’m the <br /> person behind this
           </motion.h1>

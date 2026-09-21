@@ -55,7 +55,7 @@ function WorkPresentation({ work }: { work: Work }) {
     <section
       className="px-5 md:px-10 pt-10 pb-20"
       data-nav="light"
-      style={{ backgroundColor: "#F3F0E9" }}
+      style={{ backgroundColor: "#F6EFE3" }}
     >
       <div className="flex flex-col gap-8 md:gap-16 items-center">
         {work.image.map((image, index) => (

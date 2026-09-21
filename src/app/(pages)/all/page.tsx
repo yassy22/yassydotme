@@ -9,7 +9,7 @@ import { NewYork } from "@/app/fonts/newyork";
 
 function All() {
   return (
-    <div style={{ backgroundColor: "#F3F0E9", color: "#101010", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "#F6EFE3", color: "#101010", minHeight: "100vh" }}>
       <Nav theme="light" />
 
       <main className="px-6 md:px-16 pt-36 pb-24">
