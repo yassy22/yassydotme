@@ -5,10 +5,44 @@ import { motion } from "framer-motion";
 function FinalYear() {
   return (
     <section
-      className="relative w-full flex items-center justify-center overflow-hidden px-4 md:px-6 min-h-screen md:mt-[100vh]"
+      className="relative w-full flex items-center justify-center overflow-hidden px-4 md:px-6 py-16 md:py-24 min-h-screen md:mt-[100vh]"
       data-nav="dark"
       style={{ backgroundColor: "#101010", color: "#F3F0E9" }}
     >
+      {/* Label haut gauche — caché sur mobile */}
+      <motion.p
+        className="hidden md:block absolute uppercase font-bold tracking-widest text-[10px] leading-tight"
+        style={{ top: "17%", left: "26%" }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.6 }}
+        viewport={{ once: true }}
+      >
+        HELLO
+        <br />
+        IT&apos;S VERY NICE TO MEET YOU
+      </motion.p>
+
+      {/* Label milieu droite — caché sur mobile */}
+      <motion.div
+        className="hidden md:flex md:flex-col absolute uppercase font-bold tracking-widest text-[10px] leading-tight gap-3"
+        style={{ top: "46%", right: "8%" }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.2 }}
+        viewport={{ once: true }}
+      >
+        <p>
+          I&apos;M WRITING THIS TO EXPRESS
+          <br />
+          MY INTEREST IN WORKING TOGETHER
+        </p>
+        <p>
+          PLEASE SEE THE
+          <br />
+          ATTACHED WORKS BELOW:
+        </p>
+      </motion.div>
 
       {/* Texte principal */}
       <div
@@ -27,7 +61,7 @@ function FinalYear() {
           transition={{ duration: 1.4, ease: [0.83, 0, 0.17, 1] }}
           viewport={{ once: true }}
         >
-          LET&apos;S CREATE
+          JUNIOR WITH
         </motion.div>
 
         {/* TALENT — vient de droite */}
@@ -37,7 +71,7 @@ function FinalYear() {
           transition={{ duration: 1.4, ease: [0.83, 0, 0.17, 1], delay: 0.1 }}
           viewport={{ once: true }}
         >
-          SOMETHING
+          TALENT
         </motion.div>
 
         {/* 3e lijn */}
@@ -49,7 +83,7 @@ function FinalYear() {
             transition={{ duration: 1.4, ease: [0.83, 0, 0.17, 1], delay: 0.2 }}
             viewport={{ once: true }}
           >
-            GREAT
+            OR NOT
           </motion.div>
 
           <motion.div
@@ -65,7 +99,7 @@ function FinalYear() {
               wordSpacing: "0.2em",
             }}
           >
-            (shall we start?)
+            (what do you think?)
           </motion.div>
         </div>
       </div>

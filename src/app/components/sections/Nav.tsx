@@ -18,7 +18,7 @@ function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
           minute: "2-digit",
           hour12: false,
           timeZone: "Europe/Brussels",
-        }) + " GMT+2",
+        }) + " GMT+2"
       );
     };
     update();
@@ -28,10 +28,12 @@ function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
 
   // Auto-detect dark/light section behind nav
   useEffect(() => {
-    const darkSections =
-      document.querySelectorAll<HTMLElement>("[data-nav='dark']");
-    const lightSections =
-      document.querySelectorAll<HTMLElement>("[data-nav='light']");
+    const darkSections = document.querySelectorAll<HTMLElement>(
+      "[data-nav='dark']"
+    );
+    const lightSections = document.querySelectorAll<HTMLElement>(
+      "[data-nav='light']"
+    );
 
     if (darkSections.length === 0 && lightSections.length === 0) {
       setNavTheme(theme);
@@ -52,7 +54,7 @@ function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
       {
         rootMargin: "-10px 0px -90% 0px", // Détecte uniquement la zone en haut où la nav est
         threshold: 0,
-      },
+      }
     );
 
     darkSections.forEach((el) => observer.observe(el));
@@ -76,10 +78,8 @@ function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
         {/* Left : location + time */}
         <div className="flex items-center gap-6">
           <span className="flex items-center gap-2">
-            <span
-              className={`w-[6px] h-[6px] rounded-full ${dotColor} inline-block`}
-            />
-            Moeskroen, BE
+            <span className={`w-[6px] h-[6px] rounded-full ${dotColor} inline-block`} />
+           Moeskroen, BE
           </span>
           {/* <span>{time}</span> */}
           {/* <span className="hidden md:inline">51.0543° N, 3.7174°</span> */}
@@ -98,9 +98,9 @@ function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
             </Link>
           </li>
           <li>
-            {/* <Link href="/about" className="hover:opacity-50 transition-opacity">
+            <Link href="/about" className="hover:opacity-50 transition-opacity">
               ABOUT
-            </Link> */}
+            </Link>
           </li>
         </ul>
 
@@ -110,14 +110,8 @@ function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
           onClick={toggleMenu}
           aria-label="Menu"
         >
-          <span
-            className="w-5 h-[1.5px] block"
-            style={{ backgroundColor: color }}
-          />
-          <span
-            className="w-5 h-[1.5px] block"
-            style={{ backgroundColor: color }}
-          />
+          <span className="w-5 h-[1.5px] block" style={{ backgroundColor: color }} />
+          <span className="w-5 h-[1.5px] block" style={{ backgroundColor: color }} />
         </button>
       </motion.div>
 
