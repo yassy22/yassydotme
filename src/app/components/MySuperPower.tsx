@@ -3,12 +3,12 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const skills = [
-  { label: "Visual Design",         x: -240, y: -320, rotate: -4 },
-  { label: "Branding",              x:  260, y: -260, rotate:  3 },
-  { label: "User Interface Design", x: -580, y:  -40, rotate: -3 },
-  { label: "Design Systems",        x:  360, y:  120, rotate:  4 },
-  { label: "Creative Development",  x: -520, y:  280, rotate: -4 },
-  { label: "Visual Content",        x:   80, y:  340, rotate:  3 },
+  { label: "Web Design",            x: -240, y: -320, rotate: -4 },
+  { label: "UI / UX Design",        x:  260, y: -260, rotate:  3 },
+  { label: "Social Media Design",   x: -580, y:  -40, rotate: -3 },
+  { label: "Brand Identity",        x:  360, y:  120, rotate:  4 },
+  { label: "Landing Pages",         x: -520, y:  280, rotate: -4 },
+  { label: "Visual Storytelling",   x:   80, y:  340, rotate:  3 },
 ];
 
 
@@ -68,9 +68,9 @@ function MySuperPower() {
               lineHeight: 1.05,
             }}
           >
-            My Design
+            My
             <br />
-            Superpowers
+            Services
           </motion.div>
         </div>
       </div>
