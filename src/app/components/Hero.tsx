@@ -1,18 +1,35 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 
 export default function StudioPage() {
   const wrapperRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: wrapperRef,
     offset: ["start start", "end start"],
   });
 
-  const leftX = useTransform(scrollYProgress, [0, 0.7], ["0vw", "30vw"]);
-  const rightX = useTransform(scrollYProgress, [0, 0.7], ["0vw", "-30vw"]);
+  const leftX = useTransform(
+    scrollYProgress,
+    [0, 0.7],
+    isMobile ? ["0vw", "6vw"] : ["0vw", "30vw"]
+  );
+  const rightX = useTransform(
+    scrollYProgress,
+    [0, 0.7],
+    isMobile ? ["0vw", "-6vw"] : ["0vw", "-30vw"]
+  );
   const downZ = useTransform(scrollYProgress, [0, 0.3], ["22vw", "44vw"]);
   const videoScale = useTransform(scrollYProgress, [0.3, 0.6], [0.3, 1.02]);
 
@@ -20,7 +37,8 @@ export default function StudioPage() {
     <div
       ref={wrapperRef}
       data-nav="light"
-      style={{ height: "300vh", backgroundColor: "#F3F0E9", color: "#101010" }}
+      className="h-[140vh] md:h-[300vh]"
+      style={{ backgroundColor: "#F3F0E9", color: "#101010" }}
     >
       <div className="sticky top-0 h-screen pt-28  px-4" style={{}}>
         {/* Nom */}
