@@ -32,6 +32,7 @@ export default function StudioPage() {
   );
   const downZ = useTransform(scrollYProgress, [0, 0.3], ["22vw", "44vw"]);
   const videoScale = useTransform(scrollYProgress, [0.3, 0.6], [0.3, 1.02]);
+  const scrollDownOpacity = useTransform(scrollYProgress, [0, 0.08], [1, 0]);
 
   return (
     <div
@@ -132,9 +133,12 @@ export default function StudioPage() {
         </div>
 
         {/* Scroll down */}
-        <div className="absolute bottom-7 left-1/2 -translate-x-1/2 text-[11px] uppercase tracking-widest">
+        <motion.div
+          className="absolute bottom-7 left-1/2 -translate-x-1/2 text-[11px] uppercase tracking-widest"
+          style={{ opacity: scrollDownOpacity }}
+        >
           SCROLL DOWN
-        </div>
+        </motion.div>
       </div>
     </div>
   );
