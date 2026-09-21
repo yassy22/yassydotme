@@ -64,7 +64,7 @@ export default function WorksMobile() {
               </div>
 
               {/* Info */}
-              <div className="pt-4 flex justify-between items-start">
+              <div className="pt-4">
                 <h3
                   className="font-black uppercase leading-none"
                   style={{
@@ -76,14 +76,6 @@ export default function WorksMobile() {
                 >
                   {work.title}
                 </h3>
-                <p
-                  className="uppercase tracking-widest text-[10px] font-bold text-right mt-1"
-                  style={{ color: "#101010", opacity: 0.45, maxWidth: "45%" }}
-                >
-                  {Array.isArray(work.roles)
-                    ? work.roles.join(" · ")
-                    : work.roles}
-                </p>
               </div>
             </motion.div>
           </Link>
