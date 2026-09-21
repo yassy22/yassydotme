@@ -2,10 +2,10 @@
 import React from "react";
 
 import Nav from "../sections/Nav";
-import FinalYear from "../FinalYear";
+// import FinalYear from "../FinalYear";
 import Works from "../Works";
 import Hero from "../Hero";
-import MySuperPower from "../MySuperPower";
+// import MySuperPower from "../MySuperPower";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -18,8 +18,8 @@ export default function Home() {
       <Nav theme="light" />
       <main>
         <Hero />
-        <FinalYear />
-        <MySuperPower />
+        {/* <FinalYear /> */}
+        {/* <MySuperPower /> */}
         <Works />
       </main>
     </motion.div>
