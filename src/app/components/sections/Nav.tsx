@@ -78,11 +78,6 @@ function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
               [LAB]
             </Link>
           </li>
-          <li>
-            <Link href="/about" className="hover:opacity-50 transition-opacity">
-              ABOUT
-            </Link>
-          </li>
         </ul>
       </motion.div>
     </header>

@@ -76,21 +76,21 @@ import obscvra_i8 from "../../../../public/assets/images/works/obscvra/obscvra08
 import { IWork } from "../../data/type";
 
 // Solène
-import solene_intro from "../../../../public/assets/images/works/solène/01.png";
-import solene_logo from "../../../../public/assets/images/works/solène/02.png";
-import solene_colors from "../../../../public/assets/images/works/solène/03.png";
-import solene_wordmark from "../../../../public/assets/images/works/solène/04.png";
-import solene_typography from "../../../../public/assets/images/works/solène/04-1.png";
-import solene_tags from "../../../../public/assets/images/works/solène/05.png";
-import solene_detail from "../../../../public/assets/images/works/solène/05-1.png";
-import solene_packaging from "../../../../public/assets/images/works/solène/06.png";
-import solene_fabrics from "../../../../public/assets/images/works/solène/07.png";
-import solene_lifestyle from "../../../../public/assets/images/works/solène/08.png";
-import solene_header from "../../../../public/assets/images/works/solène/header.png";
-import solene_box from "../../../../public/assets/images/works/solène/09.png";
-import solene_navy from "../../../../public/assets/images/works/solène/10.png";
-import solene_blue from "../../../../public/assets/images/works/solène/11.png";
-import solene_collection from "../../../../public/assets/images/works/solène/12.png";
+import solene_intro from "../../../../public/assets/images/works/solene/01.png";
+import solene_logo from "../../../../public/assets/images/works/solene/02.png";
+import solene_colors from "../../../../public/assets/images/works/solene/03.png";
+import solene_wordmark from "../../../../public/assets/images/works/solene/04.png";
+import solene_typography from "../../../../public/assets/images/works/solene/04-1.png";
+import solene_tags from "../../../../public/assets/images/works/solene/05.png";
+import solene_detail from "../../../../public/assets/images/works/solene/05-1.png";
+import solene_packaging from "../../../../public/assets/images/works/solene/06.png";
+import solene_fabrics from "../../../../public/assets/images/works/solene/07.png";
+import solene_lifestyle from "../../../../public/assets/images/works/solene/08.png";
+import solene_header from "../../../../public/assets/images/works/solene/header.png";
+import solene_box from "../../../../public/assets/images/works/solene/09.png";
+import solene_navy from "../../../../public/assets/images/works/solene/10.png";
+import solene_blue from "../../../../public/assets/images/works/solene/11.png";
+import solene_collection from "../../../../public/assets/images/works/solene/12.png";
 
 const works: IWork[] = [
   {
