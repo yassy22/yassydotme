@@ -1,3 +1,5 @@
+import { PHASE_DEVELOPMENT_SERVER } from "next/constants.js";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   webpack(config) {
@@ -17,4 +19,10 @@ const nextConfig = {
   trailingSlash: true, // Optional: ensures all paths end with a slash
 };
 
-export default nextConfig;
+export default (phase) => ({
+  ...nextConfig,
+  // Keep development routing and cache separate from the static production export.
+  ...(phase === PHASE_DEVELOPMENT_SERVER
+    ? { output: undefined, distDir: ".next-dev" }
+    : {}),
+});

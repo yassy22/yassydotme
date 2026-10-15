@@ -49,15 +49,7 @@ import gwwc_i9 from "../../../../public/assets/images/works/gwwc/gwwc_i9.jpg";
 import gwwc_i10 from "../../../../public/assets/images/works/gwwc/gwwc_i10.jpg";
 import gwwc_i11 from "../../../../public/assets/images/works/gwwc/gwwc_i11.jpg";
 
-// Athena
-import athena_i1 from "../../../../public/assets/images/works/athena/i0.png";
-import athena_i1_bw from "../../../../public/assets/images/works/athena/athena_new.png";
 
-import athena_i3 from "../../../../public/assets/images/works/athena/i3.png";
-import athena_i4 from "../../../../public/assets/images/works/athena/i4.png";
-import athena_i5 from "../../../../public/assets/images/works/athena/i5.png";
-import athena_i6 from "../../../../public/assets/images/works/athena/i6.png";
-const gif_athena = "/assets/images/works/athena/igif.mp4";
 
 import slipDesktop_i0 from "../../../../public/assets/images/works/sipdesk/i0.png";
 import slipDesktop_i1 from "../../../../public/assets/images/works/sipdesk/i1.png";
@@ -70,17 +62,6 @@ import slipDesktop_i7 from "../../../../public/assets/images/works/sipdesk/i7.pn
 import slipDesktop_i8 from "../../../../public/assets/images/works/sipdesk/i8.png";
 import slipDesktop_new from "../../../../public/assets/images/works/sipdesk/slipdesk_new.png";
 
-// noyer
-import noyer_header from "../../../../public/assets/images/works/noyer/noyer01.png";
-import noyer_i2 from "../../../../public/assets/images/works/noyer/noyer02.png";
-import noyer_i3 from "../../../../public/assets/images/works/noyer/noyer03.png";
-import noyer_i4 from "../../../../public/assets/images/works/noyer/noyer04.png";
-import noyer_i5 from "../../../../public/assets/images/works/noyer/noyer5.png";
-import noyer_i6 from "../../../../public/assets/images/works/noyer/noyer06.png";
-import noyer_i7 from "../../../../public/assets/images/works/noyer/noyer07.png";
-import noyer_i8 from "../../../../public/assets/images/works/noyer/noyer08.png";
-import noyer_i9 from "../../../../public/assets/images/works/noyer/noyer09.png";
-import noyer_i10 from "../../../../public/assets/images/works/noyer/noyer10.png";
 
 // obscvra
 import obscvra_header from "../../../../public/assets/images/works/obscvra/obscvra01.png";
@@ -146,20 +127,6 @@ It was also my first deep dive into app design, where I learned the importance o
     roles: ["creative direction", "app design"],
   },
   {
-    id: 3,
-    slug: "athena",
-    hidden: true,
-    title: "Athena",
-    description: `Athena Calderone has been a major source of inspiration for me and was at the core of this two-day project. The goal was to explore her universe, better understand her approach and aesthetic, and use that as inspiration to develop my own creative style.
-
-    Based on this research, I created a cohesive visual universe and designed posts specifically for this project, focusing on social media and art direction.
-
-    `,
-    image: [athena_i3, athena_i4, gif_athena, athena_i5, athena_i6, athena_i1],
-    imageHeader: [athena_i1_bw],
-    roles: ["visual design", "Social media", "Rush project"],
-  },
-  {
     id: 4,
     slug: "Wizaa",
     title: "Wizaa potery",
@@ -213,16 +180,6 @@ This project allowed me to explore desktop application design, focusing on usabi
     image: [slipDesktop_i0, slipDesktop_i1, slipDesktop_i2, slipDesktop_i3, slipDesktop_i4, slipDesktop_i5, slipDesktop_i6, slipDesktop_i7, slipDesktop_i8],
     imageHeader: [slipDesktop_new],
     roles: ["desktop app design", "visual design"],
-  },
-  {
-    id: 8,
-    slug: "studio-noyer",
-    hidden: true,
-    title: "Studio Noyer",
-    description: `There is something honest about solid wood — it doesn't pretend. Studio Noyer, a luxury interior design studio, has built their entire practice around that truth. Brought in to capture their spaces and shape their print presence, the goal was simple: let the material speak, and get out of its way.`,
-    image: [noyer_i2, noyer_i3, noyer_i4, noyer_i5, noyer_i6, noyer_i7, noyer_i8, noyer_i9, noyer_i10],
-    imageHeader: [noyer_header],
-    roles: ["AI Photographer", "Print Designer", "Branding"],
   },
   {
     id: 9,

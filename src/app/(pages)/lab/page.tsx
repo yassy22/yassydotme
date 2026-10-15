@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import lab from "@/app/api/lab/lab";
 import Nav from "@/app/components/sections/Nav";
+import styles from "./lab.module.css";
 import { NewYork } from "@/app/fonts/newyork";
 
 export const metadata: Metadata = {
@@ -12,84 +13,71 @@ export const metadata: Metadata = {
 
 export default function Lab() {
   const projects = lab.filter((project) => !project.hidden);
+  const tiles = [
+    ...projects.map((project) => ({
+      project,
+      image: project.image
+        ? { src: project.image, alt: project.title }
+        : project.images?.[0],
+    })),
+    ...Array.from({ length: Math.max(0, 8 - projects.length) }, () => ({ project: undefined, image: undefined })),
+  ];
+  const positions = [
+    { column: "1", row: 1, span: 1 },
+    { column: "3", row: 1, span: 1 },
+    { column: "4", row: 1, span: 1 },
+    { column: "2", row: 2, span: 2 },
+    { column: "5", row: 2, span: 1 },
+    { column: "1", row: 4, span: 1 },
+    { column: "4", row: 4, span: 1 },
+    { column: "5", row: 4, span: 1 },
+  ];
   return (
-    <div className="min-h-screen bg-[var(--ivory)] text-[var(--obsidian)]">
+    <div className={styles.surface}>
       <Nav theme="light" />
-      <main className="px-6 md:px-16 pt-36 pb-24" data-nav="light">
-        <header className="border-b border-black/10 pb-12 mb-16">
-          <p className="text-[11px] uppercase tracking-widest font-bold text-[var(--accent)] mb-8">
-            A space to explore
-          </p>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-            <h1
-              className={`${NewYork.variable} font-newYork italic leading-none`}
-              style={{ fontSize: "clamp(100px, 18vw, 250px)" }}
-            >
-              [lab]
-            </h1>
-            <div className="max-w-sm md:pb-3">
-              <p className="text-lg leading-relaxed">Experiments in code, 3D, and everything in between.</p>
-              <p className="mt-4 text-sm leading-relaxed text-black/60">
-                A collection of side projects, playful ideas, and things made out of curiosity.
-              </p>
-            </div>
-          </div>
-        </header>
-
-        {projects.length > 0 ? (
-          <section aria-label="Experiments" className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16">
-            {projects.map((project) => (
-              <article key={project.id}>
-                <p className="mb-4 text-[11px] uppercase tracking-widest font-bold text-[var(--accent)]">
-                  {project.category}
-                </p>
-                {project.video ? (
-                  <video
-                    src={project.video}
-                    poster={typeof project.image === "string" ? project.image : project.image?.src}
-                    controls
-                    playsInline
-                    preload="none"
-                    className="w-full aspect-[4/3] object-contain bg-black/5 rounded-xl"
-                  />
-                ) : project.image ? (
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-black/5">
-                    <Image src={project.image} alt={project.title} fill className="object-contain" />
-                  </div>
-                ) : null}
-                <h2 className="mt-6 text-2xl md:text-3xl font-black uppercase">{project.title}</h2>
-                <p className="mt-3 text-sm leading-relaxed text-black/60 whitespace-pre-line">{project.description}</p>
-                <div className="mt-5 flex flex-wrap gap-6 text-[var(--accent)]">
-                  {project.demoUrl && (
-                    <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4" aria-label={`View demo: ${project.title} (opens in a new tab)`}>
-                      View demo ↗
-                    </a>
-                  )}
-                  {project.githubUrl && (
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4" aria-label={`GitHub: ${project.title} (opens in a new tab)`}>
-                      GitHub ↗
-                    </a>
-                  )}
+      <main className={styles.collageMain} data-nav="light">
+        <section className={styles.collage} aria-label="Lab experiments">
+          <header className={`${styles.collageTitle} ${NewYork.variable}`}>
+            <p className={styles.meta}>Code · 3D · Explorations</p>
+            <h1>[lab]</h1>
+            <p className={styles.meta}>Select an experiment ↗</p>
+          </header>
+          {tiles.map(({ project, image }, index) => {
+            const position = positions[index % positions.length];
+            const row = position.row + Math.floor(index / positions.length) * 4;
+            if (!project) {
+              return (
+                <div
+                  key={`coming-${index}`}
+                  className={styles.comingSlot}
+                  style={{ gridColumn: position.column, gridRow: `${row} / span ${position.span}` }}
+                >
+                  <span className={styles.comingSquare}>Project Coming</span>
                 </div>
-              </article>
-            ))}
-          </section>
-        ) : (
-        <section aria-label="Experiments" className="py-16 md:py-24">
-          <p className="text-[11px] uppercase tracking-widest font-bold text-[var(--accent)] mb-4">
-            Coming soon
-          </p>
-          <h2 className={`${NewYork.variable} font-newYork italic text-4xl md:text-6xl`}>
-            New experiments on the way.
-          </h2>
+              );
+            }
+            return (
+              <Link
+                key={`${project.id}-${index}`}
+                href={`/lab/${project.id}`}
+                className={styles.collageTile}
+                style={{ gridColumn: position.column, gridRow: `${row} / span ${position.span}` }}
+                aria-label={`Explore ${project.title}${image ? ` — ${image.alt}` : ""}`}
+              >
+                {image ? (
+                  <Image src={image.src} alt={image.alt} fill priority={index < 3} sizes="(max-width: 767px) 50vw, 20vw" />
+                ) : <span className={styles.meta}>{project.title}</span>}
+                <span className={styles.tileLabel}>
+                  <span>{project.title}</span><span aria-hidden="true">↗</span>
+                </span>
+              </Link>
+            );
+          })}
         </section>
-        )}
-
-        <footer className="mt-24 pt-8 border-t border-black/10 flex flex-wrap justify-between gap-6">
-          <p className="text-sm text-black/60">Always exploring. More experiments to come.</p>
-          <Link href="/all" className="uppercase tracking-widest font-bold text-[var(--accent)] hover:underline">
-            Selected works ↗
-          </Link>
+        {!projects.length && <p className="text-center py-16 font-mono text-sm">New experiments on the way.</p>}
+        <footer className={`${styles.collageFooter} ${styles.meta}`}>
+          <span>{String(projects.length).padStart(2, "0")} experiments / Ongoing explorations</span>
+          <Link href="/all">Selected works ↗</Link>
         </footer>
       </main>
     </div>

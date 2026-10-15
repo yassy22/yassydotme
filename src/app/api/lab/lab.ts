@@ -1,3 +1,27 @@
+import athena_i1 from "../../../../public/assets/images/lab/athena/i0.png";
+import athena_i1_bw from "../../../../public/assets/images/lab/athena/athena_new.png";
+import athena_i3 from "../../../../public/assets/images/lab/athena/i3.png";
+import athena_i4 from "../../../../public/assets/images/lab/athena/i4.png";
+import athena_i5 from "../../../../public/assets/images/lab/athena/i5.png";
+import athena_i6 from "../../../../public/assets/images/lab/athena/i6.png";
+const gif_athena = "/assets/images/lab/athena/igif.mp4";
+import noyer_header from "../../../../public/assets/images/lab/noyer/noyer01.png";
+import noyer_i2 from "../../../../public/assets/images/lab/noyer/noyer02.png";
+import noyer_i3 from "../../../../public/assets/images/lab/noyer/noyer03.png";
+import noyer_i4 from "../../../../public/assets/images/lab/noyer/noyer04.png";
+import noyer_i5 from "../../../../public/assets/images/lab/noyer/noyer5.png";
+import noyer_i6 from "../../../../public/assets/images/lab/noyer/noyer06.png";
+import noyer_i7 from "../../../../public/assets/images/lab/noyer/noyer07.png";
+import noyer_i8 from "../../../../public/assets/images/lab/noyer/noyer08.png";
+import noyer_i9 from "../../../../public/assets/images/lab/noyer/noyer09.png";
+import noyer_i10 from "../../../../public/assets/images/lab/noyer/noyer10.png";
+import exp1_cover from "../../../../public/assets/images/lab/exp1/image 287.png";
+import exp1_palette from "../../../../public/assets/images/lab/exp1/color palet.png";
+import exp1_illustrations from "../../../../public/assets/images/lab/exp1/illustrations.png";
+import exp1_design from "../../../../public/assets/images/lab/exp1/Frame 43.png";
+import exp1_photoshop from "../../../../public/assets/images/lab/exp1/photoshop design.png";
+import exp1_blender from "../../../../public/assets/images/lab/exp1/blender.png";
+import exp1_lighting from "../../../../public/assets/images/lab/exp1/blender-1.png";
 import type { StaticImageData } from "next/image";
 
 export interface LabProject {
@@ -6,6 +30,7 @@ export interface LabProject {
   category: string;
   description: string;
   image?: string | StaticImageData;
+  images?: { src: string | StaticImageData; alt: string; video?: string; wide?: boolean }[];
   video?: string;
   demoUrl?: string;
   githubUrl?: string;
@@ -24,6 +49,59 @@ export interface LabProject {
 //   demoUrl: "https://example.com", // Facultatif
 //   githubUrl: "https://github.com/username/project", // Facultatif
 // },
-const lab: LabProject[] = [];
+const lab: LabProject[] = [
+  {
+    id: "exp1",
+    title: "Bloom Festival",
+    category: "3D · Graphic design",
+    description: "A graphic exploration brought into 3D: playful shapes, pastel colours, and a modular festival composition. From the colour palette and illustrations to the final 3D render.",
+    image: exp1_cover,
+    images: [
+      { src: exp1_palette, alt: "Bloom Festival colour palette" },
+      { src: exp1_illustrations, alt: "Playful floral illustrations and graphic shapes" },
+      { src: exp1_design, alt: "Bloom Festival poster composition" },
+      { src: exp1_photoshop, alt: "Poster design process in Photoshop" },
+      { src: exp1_blender, alt: "Building the festival scene in Blender" },
+      { src: exp1_lighting, alt: "Blender lighting and final scene setup" },
+    ],
+  },
+  {
+    id: "athena",
+    title: "Athena",
+    category: "Social media",
+    description: `Athena Calderone has been a major source of inspiration for me and was at the core of this two-day project. The goal was to explore her universe, better understand her approach and aesthetic, and use that as inspiration to develop my own creative style.
+
+    Based on this research, I created a cohesive visual universe and designed posts specifically for this project, focusing on social media and art direction.
+
+    `,
+    image: athena_i1_bw,
+    images: [
+      { src: athena_i3, alt: "Athena visual exploration, first composition" },
+      { src: athena_i4, alt: "Athena visual exploration, second composition" },
+      { src: athena_i4, video: gif_athena, alt: "Athena motion exploration" },
+      { src: athena_i5, alt: "Athena social media composition" },
+      { src: athena_i6, alt: "Athena art direction exploration" },
+      { src: athena_i1, alt: "Athena visual universe" },
+    ],
+  },
+  {
+    id: "studio-noyer",
+    title: "Studio Noyer",
+    category: "Print",
+    description: `There is something honest about solid wood — it doesn't pretend. Studio Noyer, a luxury interior design studio, has built their entire practice around that truth. Brought in to capture their spaces and shape their print presence, the goal was simple: let the material speak, and get out of its way.`,
+    image: noyer_header,
+    images: [
+      { src: noyer_i2, alt: "Studio Noyer, image 02" },
+      { src: noyer_i3, alt: "Studio Noyer, image 03" },
+      { src: noyer_i4, alt: "Studio Noyer, image 04" },
+      { src: noyer_i5, alt: "Studio Noyer, image 05" },
+      { src: noyer_i6, alt: "Studio Noyer, image 06" },
+      { src: noyer_i7, alt: "Studio Noyer, image 07" },
+      { src: noyer_i8, alt: "Studio Noyer, image 08" },
+      { src: noyer_i9, alt: "Studio Noyer, image 09" },
+      { src: noyer_i10, alt: "Studio Noyer, image 10" },
+    ],
+  },
+];
 
 export default lab;
