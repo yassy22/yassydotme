@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import works from "../../../api/works/works";
 import Nav from "../../../components/sections/Nav";
 import Image from "next/image";
@@ -7,15 +8,15 @@ import WorkPresentation from "../../../components/workPresentation";
 import { NewYork } from "@/app/fonts/newyork";
 
 interface WorkPageProps {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }
 
 const WorkPage = async ({ params }: WorkPageProps) => {
   const { slug } = await params;
   const work = works.find((work) => work.slug === slug);
 
-  if (!work) {
-    return <div className="not-found">Not Found</div>;
+  if (!work || work.hidden) {
+    notFound();
   }
 
   const visibleWorks = works.filter((w) => !w.hidden);
@@ -98,11 +99,7 @@ const WorkPage = async ({ params }: WorkPageProps) => {
       <WorkPresentation
         work={{
           ...work,
-          image: Array.isArray(work.image)
-            ? work.image.map((img) =>
-                typeof img === "string" ? img : img.src
-              )
-            : work.image,
+          image: work.image,
         }}
       />
 

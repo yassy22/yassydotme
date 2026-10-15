@@ -116,9 +116,9 @@ export default function QAndA() {
 
           // Als je een poster/achtergrond wil tonen voor video-tiles:
           // Zet je image in /public en gebruik absolute pad:
-          // bv. /assets/images/clubSofa/clubsofa_i1.png
+          // bv. /assets/images/works/clubSofa/clubsofa_i1.png
           const bgImageForVideo = hasVideo
-            ? "url(/assets/images/clubSofa/clubsofa_i1.png)"
+            ? "url(/assets/images/works/clubSofa/clubsofa_i1.png)"
             : "none";
 
           return (

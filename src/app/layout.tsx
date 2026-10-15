@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Raleway } from "./fonts/Raleway";
 import { NewYork } from "./fonts/newyork";
@@ -8,6 +8,8 @@ import LenisScroll from "./components/LenisScroll";
 
 // import Grid from "./components/grid/Grid";
 
+
+export const viewport: Viewport = { width: "device-width", initialScale: 1 };
 
 export const metadata: Metadata = {
   title: "Yassydotme portfolio",
@@ -22,10 +24,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-        />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       </head>
 
@@ -35,7 +33,7 @@ export default function RootLayout({
       >
         <LenisScroll>
      
-            <main>{children}</main>
+            {children}
         
         </LenisScroll>
       </body>

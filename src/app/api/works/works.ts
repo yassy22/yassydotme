@@ -1,100 +1,126 @@
 // clubSofa
-import hearder from "../../../../public/assets/images/clubSofa/headeri0.png";
-import clubsofa_i1 from "../../../../public/assets/images/clubSofa/clubsofa_i1.png";
-import clubsofa_i4 from "../../../../public/assets/images/clubSofa/clubsofa_i4.png";
-import clubsofa_i5 from "../../../../public/assets/images/clubSofa/clubsofa_i5.png";
-import clubsofa_i6 from "../../../../public/assets/images/clubSofa/clubsofa_i6.png";
-import clubsofa_i7 from "../../../../public/assets/images/clubSofa/clubsofa_i7.png";
-import clubsofa_i8 from "../../../../public/assets/images/clubSofa/clubsofa_i8.png";
-import clubsofa_iphone from "../../../../public/assets/images/clubSofa/clubsofa_iphone.png";
+import hearder from "../../../../public/assets/images/works/clubSofa/headeri0.png";
+import clubsofa_i1 from "../../../../public/assets/images/works/clubSofa/clubsofa_i1.png";
+import clubsofa_i4 from "../../../../public/assets/images/works/clubSofa/clubsofa_i4.png";
+import clubsofa_i5 from "../../../../public/assets/images/works/clubSofa/clubsofa_i5.png";
+import clubsofa_i6 from "../../../../public/assets/images/works/clubSofa/clubsofa_i6.png";
+import clubsofa_i7 from "../../../../public/assets/images/works/clubSofa/clubsofa_i7.png";
+import clubsofa_i8 from "../../../../public/assets/images/works/clubSofa/clubsofa_i8.png";
+import clubsofa_iphone from "../../../../public/assets/images/works/clubSofa/clubsofa_iphone.png";
 
-const clubsofa_gif_1 = "/assets/images/clubSofa/gifs/workiV1.mp4";
+const clubsofa_gif_1 = "/assets/images/works/clubSofa/gifs/workiV1.mp4";
 
 // scapino
-import scapino_header from "../../../../public/assets/images/scapino/header_scapino.png";
-import scapino_i1 from "../../../../public/assets/images/scapino/i1.png";
-import scapino_i3 from "../../../../public/assets/images/scapino/styleboard.png";
-import scapino_i4 from "../../../../public/assets/images/scapino/insta.png";
-import scapino_i5 from "../../../../public/assets/images/scapino/imga1.png";
-const scapino_gif_1 = "/assets/images/scapino/scapino.mp4";
-const scapino_phone_gif = "/assets/images/scapino/phone.mp4";
+import scapino_header from "../../../../public/assets/images/works/scapino/header_scapino.png";
+import scapino_i1 from "../../../../public/assets/images/works/scapino/i1.png";
+import scapino_i3 from "../../../../public/assets/images/works/scapino/styleboard.png";
+import scapino_i4 from "../../../../public/assets/images/works/scapino/insta.png";
+import scapino_i5 from "../../../../public/assets/images/works/scapino/imga1.png";
+const scapino_gif_1 = "/assets/images/works/scapino/scapino.mp4";
+const scapino_phone_gif = "/assets/images/works/scapino/phone.mp4";
 
 
 // muiji
-import muiji_header from "../../../../public/assets/images/muij/muji_new.png";
-import i1_muji from "../../../../public/assets/images/muij/i1.png";
-import i2_muji from "../../../../public/assets/images/muij/i2.png";
-import moodboard_muji from "../../../../public/assets/images/muij/moodboard.png";
-import styleMuij from "../../../../public/assets/images/muij/style.png";
+import muiji_header from "../../../../public/assets/images/works/muij/muji_new.png";
+import i1_muji from "../../../../public/assets/images/works/muij/i1.png";
+import i2_muji from "../../../../public/assets/images/works/muij/i2.png";
+import moodboard_muji from "../../../../public/assets/images/works/muij/moodboard.png";
+import styleMuij from "../../../../public/assets/images/works/muij/style.png";
 
 // wizaa
-import wizaa_header from "../../../../public/assets/images/wizaa/i1.png";
-import wizaa_iO from "../../../../public/assets/images/wizaa/i0.png";
-import wizaa_i1 from "../../../../public/assets/images/wizaa/i2.png";
-import wizaa_i2 from "../../../../public/assets/images/wizaa/i3.png";
-import wizaa_i3 from "../../../../public/assets/images/wizaa/i4.png";
-import wizaa_i4 from "../../../../public/assets/images/wizaa/i5.png";
-import wizaa_i5 from "../../../../public/assets/images/wizaa/i6.png";
-const gif_1 = "/assets/images/wizaa/gif1.mp4";
+import wizaa_header from "../../../../public/assets/images/works/wizaa/i1.png";
+import wizaa_iO from "../../../../public/assets/images/works/wizaa/i0.png";
+import wizaa_i1 from "../../../../public/assets/images/works/wizaa/i2.png";
+import wizaa_i2 from "../../../../public/assets/images/works/wizaa/i3.png";
+import wizaa_i3 from "../../../../public/assets/images/works/wizaa/i4.png";
+import wizaa_i4 from "../../../../public/assets/images/works/wizaa/i5.png";
+import wizaa_i5 from "../../../../public/assets/images/works/wizaa/i6.png";
+const gif_1 = "/assets/images/works/wizaa/gif1.mp4";
 
 //gwwc
-import gwwc_i1 from "../../../../public/assets/images/gwwc/gwwc_i1.jpg";
-import gwwc_i2 from "../../../../public/assets/images/gwwc/gwwc_i2.jpg";
-import gwwc_i3 from "../../../../public/assets/images/gwwc/gwwc_i3.jpg";
-import gwwc_i4 from "../../../../public/assets/images/gwwc/gwwc_i4.jpg";
-import gwwc_i6 from "../../../../public/assets/images/gwwc/gwwc_i6.png";
-import gwwc_i7 from "../../../../public/assets/images/gwwc/gwwc_i7.jpg";
-import gwwc_i8 from "../../../../public/assets/images/gwwc/gwwc_i8.jpg";
-import gwwc_i9 from "../../../../public/assets/images/gwwc/gwwc_i9.jpg";
-import gwwc_i10 from "../../../../public/assets/images/gwwc/gwwc_i10.jpg";
-import gwwc_i11 from "../../../../public/assets/images/gwwc/gwwc_i11.jpg";
+import gwwc_i1 from "../../../../public/assets/images/works/gwwc/gwwc_i1.jpg";
+import gwwc_i2 from "../../../../public/assets/images/works/gwwc/gwwc_i2.jpg";
+import gwwc_i3 from "../../../../public/assets/images/works/gwwc/gwwc_i3.jpg";
+import gwwc_i4 from "../../../../public/assets/images/works/gwwc/gwwc_i4.jpg";
+import gwwc_i6 from "../../../../public/assets/images/works/gwwc/gwwc_i6.png";
+import gwwc_i7 from "../../../../public/assets/images/works/gwwc/gwwc_i7.jpg";
+import gwwc_i8 from "../../../../public/assets/images/works/gwwc/gwwc_i8.jpg";
+import gwwc_i9 from "../../../../public/assets/images/works/gwwc/gwwc_i9.jpg";
+import gwwc_i10 from "../../../../public/assets/images/works/gwwc/gwwc_i10.jpg";
+import gwwc_i11 from "../../../../public/assets/images/works/gwwc/gwwc_i11.jpg";
 
 // Athena
-import athena_i1 from "../../../../public/assets/images/athena/i0.png";
-import athena_i1_bw from "../../../../public/assets/images/athena/athena_new.png";
+import athena_i1 from "../../../../public/assets/images/works/athena/i0.png";
+import athena_i1_bw from "../../../../public/assets/images/works/athena/athena_new.png";
 
-import athena_i3 from "../../../../public/assets/images/athena/i3.png";
-import athena_i4 from "../../../../public/assets/images/athena/i4.png";
-import athena_i5 from "../../../../public/assets/images/athena/i5.png";
-import athena_i6 from "../../../../public/assets/images/athena/i6.png";
-const gif_athena = "/assets/images/athena/igif.mp4";
+import athena_i3 from "../../../../public/assets/images/works/athena/i3.png";
+import athena_i4 from "../../../../public/assets/images/works/athena/i4.png";
+import athena_i5 from "../../../../public/assets/images/works/athena/i5.png";
+import athena_i6 from "../../../../public/assets/images/works/athena/i6.png";
+const gif_athena = "/assets/images/works/athena/igif.mp4";
 
-import slipDesktop_i0 from "../../../../public/assets/images/sipdesk/i0.png";
-import slipDesktop_i1 from "../../../../public/assets/images/sipdesk/i1.png";
-import slipDesktop_i2 from "../../../../public/assets/images/sipdesk/i2.png";
-import slipDesktop_i3 from "../../../../public/assets/images/sipdesk/i3.png";
-import slipDesktop_i4 from "../../../../public/assets/images/sipdesk/i4.png";
-import slipDesktop_i5 from "../../../../public/assets/images/sipdesk/i5.png";
-import slipDesktop_i6 from "../../../../public/assets/images/sipdesk/i6.png";
-import slipDesktop_i7 from "../../../../public/assets/images/sipdesk/i7.png";
-import slipDesktop_i8 from "../../../../public/assets/images/sipdesk/i8.png";
-import slipDesktop_new from "../../../../public/assets/images/sipdesk/slipdesk_new.png";
+import slipDesktop_i0 from "../../../../public/assets/images/works/sipdesk/i0.png";
+import slipDesktop_i1 from "../../../../public/assets/images/works/sipdesk/i1.png";
+import slipDesktop_i2 from "../../../../public/assets/images/works/sipdesk/i2.png";
+import slipDesktop_i3 from "../../../../public/assets/images/works/sipdesk/i3.png";
+import slipDesktop_i4 from "../../../../public/assets/images/works/sipdesk/i4.png";
+import slipDesktop_i5 from "../../../../public/assets/images/works/sipdesk/i5.png";
+import slipDesktop_i6 from "../../../../public/assets/images/works/sipdesk/i6.png";
+import slipDesktop_i7 from "../../../../public/assets/images/works/sipdesk/i7.png";
+import slipDesktop_i8 from "../../../../public/assets/images/works/sipdesk/i8.png";
+import slipDesktop_new from "../../../../public/assets/images/works/sipdesk/slipdesk_new.png";
 
 // noyer
-import noyer_header from "../../../../public/assets/images/noyer/noyer01.png";
-import noyer_i2 from "../../../../public/assets/images/noyer/noyer02.png";
-import noyer_i3 from "../../../../public/assets/images/noyer/noyer03.png";
-import noyer_i4 from "../../../../public/assets/images/noyer/noyer04.png";
-import noyer_i5 from "../../../../public/assets/images/noyer/noyer5.png";
-import noyer_i6 from "../../../../public/assets/images/noyer/noyer06.png";
-import noyer_i7 from "../../../../public/assets/images/noyer/noyer07.png";
-import noyer_i8 from "../../../../public/assets/images/noyer/noyer08.png";
-import noyer_i9 from "../../../../public/assets/images/noyer/noyer09.png";
-import noyer_i10 from "../../../../public/assets/images/noyer/noyer10.png";
+import noyer_header from "../../../../public/assets/images/works/noyer/noyer01.png";
+import noyer_i2 from "../../../../public/assets/images/works/noyer/noyer02.png";
+import noyer_i3 from "../../../../public/assets/images/works/noyer/noyer03.png";
+import noyer_i4 from "../../../../public/assets/images/works/noyer/noyer04.png";
+import noyer_i5 from "../../../../public/assets/images/works/noyer/noyer5.png";
+import noyer_i6 from "../../../../public/assets/images/works/noyer/noyer06.png";
+import noyer_i7 from "../../../../public/assets/images/works/noyer/noyer07.png";
+import noyer_i8 from "../../../../public/assets/images/works/noyer/noyer08.png";
+import noyer_i9 from "../../../../public/assets/images/works/noyer/noyer09.png";
+import noyer_i10 from "../../../../public/assets/images/works/noyer/noyer10.png";
 
 // obscvra
-import obscvra_header from "../../../../public/assets/images/obscvra/obscvra01.png";
-import obscvra_i2 from "../../../../public/assets/images/obscvra/obscvra02.png";
-import obscvra_i3 from "../../../../public/assets/images/obscvra/obscvra03.png";
-import obscvra_i4 from "../../../../public/assets/images/obscvra/obscvra04.png";
-import obscvra_i5 from "../../../../public/assets/images/obscvra/obscvra05.png";
-import obscvra_i6 from "../../../../public/assets/images/obscvra/obscvra06.png";
-import obscvra_i7 from "../../../../public/assets/images/obscvra/obscvra07.png";
-import obscvra_i8 from "../../../../public/assets/images/obscvra/obscvra08.png";
+import obscvra_header from "../../../../public/assets/images/works/obscvra/obscvra01.png";
+import obscvra_i2 from "../../../../public/assets/images/works/obscvra/obscvra02.png";
+import obscvra_i3 from "../../../../public/assets/images/works/obscvra/obscvra03.png";
+import obscvra_i4 from "../../../../public/assets/images/works/obscvra/obscvra04.png";
+import obscvra_i5 from "../../../../public/assets/images/works/obscvra/obscvra05.png";
+import obscvra_i6 from "../../../../public/assets/images/works/obscvra/obscvra06.png";
+import obscvra_i7 from "../../../../public/assets/images/works/obscvra/obscvra07.png";
+import obscvra_i8 from "../../../../public/assets/images/works/obscvra/obscvra08.png";
 
 import { IWork } from "../../data/type";
 
+// Solène
+import solene_intro from "../../../../public/assets/images/works/solène/01.png";
+import solene_logo from "../../../../public/assets/images/works/solène/02.png";
+import solene_colors from "../../../../public/assets/images/works/solène/03.png";
+import solene_wordmark from "../../../../public/assets/images/works/solène/04.png";
+import solene_typography from "../../../../public/assets/images/works/solène/04-1.png";
+import solene_tags from "../../../../public/assets/images/works/solène/05.png";
+import solene_detail from "../../../../public/assets/images/works/solène/05-1.png";
+import solene_packaging from "../../../../public/assets/images/works/solène/06.png";
+import solene_fabrics from "../../../../public/assets/images/works/solène/07.png";
+import solene_lifestyle from "../../../../public/assets/images/works/solène/08.png";
+import solene_header from "../../../../public/assets/images/works/solène/header.png";
+import solene_box from "../../../../public/assets/images/works/solène/09.png";
+import solene_navy from "../../../../public/assets/images/works/solène/10.png";
+import solene_blue from "../../../../public/assets/images/works/solène/11.png";
+import solene_collection from "../../../../public/assets/images/works/solène/12.png";
+
 const works: IWork[] = [
+  {
+    id: 10,
+    slug: "solene",
+    title: "Solène",
+    description: `Visual identity for Solène, a homewear brand with a soft, refined aesthetic. The identity brings together an expressive serif wordmark, a flowing monogram, and a palette of blush pink, powder blue, cream, and deep brown. The visual universe extends across clothing tags, printed materials, and homewear imagery.`,
+    image: [solene_intro, solene_logo, solene_colors, solene_wordmark, solene_typography, solene_tags, solene_detail, solene_packaging, solene_fabrics, solene_lifestyle, solene_box, solene_navy, solene_blue, solene_collection],
+    imageHeader: [solene_header],
+    roles: ["Branding", "Visual identity", "Print design"],
+  },
   {
     id: 1,
     slug: "obscvra",
@@ -122,6 +148,7 @@ It was also my first deep dive into app design, where I learned the importance o
   {
     id: 3,
     slug: "athena",
+    hidden: true,
     title: "Athena",
     description: `Athena Calderone has been a major source of inspiration for me and was at the core of this two-day project. The goal was to explore her universe, better understand her approach and aesthetic, and use that as inspiration to develop my own creative style.
 
@@ -190,6 +217,7 @@ This project allowed me to explore desktop application design, focusing on usabi
   {
     id: 8,
     slug: "studio-noyer",
+    hidden: true,
     title: "Studio Noyer",
     description: `There is something honest about solid wood — it doesn't pretend. Studio Noyer, a luxury interior design studio, has built their entire practice around that truth. Brought in to capture their spaces and shape their print presence, the goal was simple: let the material speak, and get out of its way.`,
     image: [noyer_i2, noyer_i3, noyer_i4, noyer_i5, noyer_i6, noyer_i7, noyer_i8, noyer_i9, noyer_i10],
@@ -199,6 +227,7 @@ This project allowed me to explore desktop application design, focusing on usabi
   {
     id: 9,
     slug: "GWWC",
+    hidden: true,
     title: "GWWC",
     description: `
 During my internship in Amsterdam, I had the opportunity to work on CrowdBuilding, a Dutch platform that empowers people to collectively develop housing projects.

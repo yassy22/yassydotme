@@ -19,9 +19,10 @@ export default function ScrollWorks() {
 
     const cards = track.querySelectorAll<HTMLElement>(".work-card");
 
-    const totalScroll = track.scrollWidth - window.innerWidth;
+    const totalScroll = () => Math.max(0, track.scrollWidth - section.clientWidth);
 
-    const ctx = gsap.context(() => {
+    const media = gsap.matchMedia();
+    media.add("(min-width: 1024px)", () => {
       // Fade in cards on load
       gsap.from(cards, {
         opacity: 0,
@@ -38,24 +39,27 @@ export default function ScrollWorks() {
 
       // Horizontal scroll pinned
       gsap.to(track, {
-        x: -totalScroll,
+        x: () => -totalScroll(),
         ease: "none",
         scrollTrigger: {
           trigger: section,
           pin: true,
           scrub: 0.8,
           start: "top top",
-          end: `+=${totalScroll}`,
+          end: () => `+=${totalScroll()}`,
+          invalidateOnRefresh: true,
+          anticipatePin: 1,
         },
       });
     }, section);
 
-    return () => ctx.revert();
+    return () => media.revert();
   }, []);
 
   return (
     <section
       ref={sectionRef}
+      data-nav="light"
       className="relative overflow-hidden h-screen w-screen"
       style={{ backgroundColor: "#FCFAF6" }}
     >
@@ -72,7 +76,7 @@ export default function ScrollWorks() {
         className="absolute top-24 right-10 z-10 uppercase tracking-widest text-[11px] font-bold"
         style={{ color: "#101010", opacity: 0.4 }}
       >
-        {works.length} Projects
+        {works.filter(w => !w.hidden).length} Projects
       </div>
 
       {/* Scrollable track */}

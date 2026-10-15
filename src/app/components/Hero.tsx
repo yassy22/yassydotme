@@ -30,7 +30,7 @@ export default function StudioPage() {
     isMobile ? [0, 0.4] : [0, 0.7],
     isMobile ? ["0vw", "-17vw"] : ["0vw", "-30vw"]
   );
-  const downZ = useTransform(scrollYProgress, [0, 0.3], ["22vw", "44vw"]);
+  const downZ = useTransform(scrollYProgress, [0, 0.3], ["0vw", "27vw"]);
   const videoScale = useTransform(scrollYProgress, [0.3, 0.6], [0.3, 1.02]);
   const scrollDownOpacity = useTransform(scrollYProgress, [0, 0.08], [1, 0]);
 
@@ -38,11 +38,11 @@ export default function StudioPage() {
     <div
       ref={wrapperRef}
       data-nav="light"
-      className="h-[220svh] md:h-[300vh]"
+      className="h-[220svh] md:h-[250vh]"
       style={{ backgroundColor: "#FCFAF6", color: "#101010" }}
     >
       <div
-        className="sticky top-0 h-[100svh] md:h-screen px-4 flex flex-col justify-center -translate-y-10 md:translate-y-0 md:block md:pt-28"
+        className="sticky top-0 h-[100svh] md:h-screen px-4 flex flex-col justify-center -translate-y-10 md:translate-y-0 md:block md:pt-40"
         style={{}}
       >
         {/* Nom */}
@@ -77,7 +77,7 @@ export default function StudioPage() {
         </motion.div>
 
         {/* Middle row */}
-        <div className="relative w-full flex items-center justify-center mt-8 md:mt-20">
+        <div className="relative w-full flex items-start justify-center mt-8 md:mt-20 min-h-[clamp(14px,3.2vw,58px)]">
           <motion.span
             className="absolute left-4 uppercase font-black leading-none"
             style={{
@@ -94,8 +94,9 @@ export default function StudioPage() {
             A VISUAL
           </motion.span>
 
+          <div className="hidden md:flex absolute inset-0 items-start justify-center pointer-events-none">
           <motion.div
-            className="hidden md:block absolute flex-shrink-0"
+            className="w-full flex-shrink-0"
             style={{
               scale: videoScale,
               transformOrigin: "top center",
@@ -114,6 +115,7 @@ export default function StudioPage() {
               className="w-full h-full object-cover"
             />
           </motion.div>
+          </div>
 
           <motion.span
             className="absolute right-4 uppercase font-black leading-none"

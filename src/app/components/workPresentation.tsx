@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 import { StaticImageData } from "next/image";
@@ -13,7 +13,19 @@ interface Work {
 function WorkImage({ image, index }: { image: string | StaticImageData; index: number }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const isVideoVisible = useInView(ref, { margin: "100px" });
   const isVideo = typeof image === "string" && image.endsWith(".mp4");
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (isVideoVisible) {
+      void video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
+  }, [isVideoVisible]);
 
   return (
     <motion.div
@@ -24,13 +36,13 @@ function WorkImage({ image, index }: { image: string | StaticImageData; index: n
       transition={{
         duration: 0.8,
         ease: "easeOut",
-        delay: index * 0.2,
       }}
     >
       {isVideo ? (
         <video
+          ref={videoRef}
           src={image as string}
-          autoPlay
+          preload="none"
           loop
           muted
           playsInline

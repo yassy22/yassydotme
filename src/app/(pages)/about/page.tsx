@@ -40,7 +40,7 @@ const infos = [
 export default function About() {
   return (
     <div style={{ backgroundColor: "#FCFAF6", color: "#101010", minHeight: "100vh" }}>
-      <Nav />
+      <Nav theme="light" />
 
       {/* ── Hero ── */}
       <section
@@ -218,7 +218,7 @@ export default function About() {
         </motion.h2>
 
         <motion.a
-          href="mailto:yasmine@example.com"
+          href="mailto:yasmine_111@hotmail.be"
           className="uppercase tracking-widest text-[11px] font-bold underline underline-offset-4 hover:opacity-60 transition-opacity"
           style={{ color: "#FCFAF6" }}
           initial={{ opacity: 0 }}

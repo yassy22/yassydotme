@@ -8,6 +8,7 @@ import works from "../../api/works/works";
 export default function WorksMobile() {
   return (
     <section
+      data-nav="light"
       className="w-full px-5 pt-24 pb-20"
       style={{ backgroundColor: "#FCFAF6" }}
     >
@@ -23,7 +24,7 @@ export default function WorksMobile() {
           className="uppercase tracking-widest text-[11px] font-bold"
           style={{ color: "#101010", opacity: 0.4 }}
         >
-          {works.length} Projects
+          {works.filter(w => !w.hidden).length} Projects
         </span>
       </div>
 

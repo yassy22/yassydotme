@@ -1,30 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
-// import Link from "next/link";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
   const [navTheme, setNavTheme] = useState(theme);
-  const [, setTime] = useState("");
-
-  // Live clock
-  useEffect(() => {
-    const update = () => {
-      const now = new Date();
-      setTime(
-        now.toLocaleTimeString("en-US", {
-          hour: "2-digit",
-          minute: "2-digit",
-          hour12: false,
-          timeZone: "Europe/Brussels",
-        }) + " GMT+2"
-      );
-    };
-    update();
-    const interval = setInterval(update, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
   // Auto-detect dark/light section behind nav
   useEffect(() => {
     const darkSections = document.querySelectorAll<HTMLElement>(
@@ -78,12 +58,11 @@ function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
             <span className={`w-[6px] h-[6px] rounded-full ${dotColor} inline-block`} />
            Moeskroen, BE
           </span>
-          {/* <span>{time}</span> */}
           {/* <span className="hidden md:inline">51.0543° N, 3.7174°</span> */}
         </div>
 
         {/* Right : links */}
-        {/* <ul className="flex gap-6 sm:gap-8 text-[11px]">
+        <ul className="hidden md:flex gap-6 sm:gap-8 text-[11px]">
           <li>
             <Link href="/" className="hover:opacity-50 transition-opacity">
               HOME
@@ -95,11 +74,16 @@ function Nav({ theme = "dark" }: { theme?: "light" | "dark" }) {
             </Link>
           </li>
           <li>
+            <Link href="/lab" className="hover:opacity-50 transition-opacity">
+              [LAB]
+            </Link>
+          </li>
+          <li>
             <Link href="/about" className="hover:opacity-50 transition-opacity">
               ABOUT
             </Link>
           </li>
-        </ul> */}
+        </ul>
       </motion.div>
     </header>
   );
