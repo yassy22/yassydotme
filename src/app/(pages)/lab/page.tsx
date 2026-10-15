@@ -16,8 +16,8 @@ export default function Lab() {
   const tiles = [
     ...projects.map((project) => ({
       project,
-      image: project.image
-        ? { src: project.image, alt: project.title }
+      image: (project.coverImage ?? project.image)
+        ? { src: (project.coverImage ?? project.image)!, alt: project.title }
         : project.images?.[0],
     })),
     ...Array.from({ length: Math.max(0, 8 - projects.length) }, () => ({ project: undefined, image: undefined })),
@@ -64,7 +64,9 @@ export default function Lab() {
                 style={{ gridColumn: position.column, gridRow: `${row} / span ${position.span}` }}
                 aria-label={`Explore ${project.title}${image ? ` — ${image.alt}` : ""}`}
               >
-                {image ? (
+                {project.video ? (
+                  <video src={project.video} autoPlay loop muted playsInline preload="metadata" aria-hidden="true" />
+                ) : image?.src ? (
                   <Image src={image.src} alt={image.alt} fill priority={index < 3} sizes="(max-width: 767px) 50vw, 20vw" />
                 ) : <span className={styles.meta}>{project.title}</span>}
                 <span className={styles.tileLabel}>

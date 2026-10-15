@@ -43,7 +43,7 @@ export default function Experiment({ params }: Props) {
             {project.githubUrl && <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">GitHub ↗</a>}
           </div>
         </header>
-        <ExperimentGallery title={project.title} image={project.image} images={project.images} video={project.video} />
+        <ExperimentGallery title={project.title} image={project.image} images={project.images} video={project.video} autoplayVideos={project.autoplayVideos} />
         <footer className={`${styles.footer} ${styles.bar} ${styles.meta}`}>
           <Link href="/lab">← All experiments</Link>
           {next && <Link href={`/lab/${next.id}`}>Next / {next.title} ↗</Link>}

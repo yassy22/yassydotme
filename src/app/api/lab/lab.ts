@@ -5,9 +5,9 @@ import athena_i4 from "../../../../public/assets/images/lab/athena/i4.png";
 import athena_i5 from "../../../../public/assets/images/lab/athena/i5.png";
 import athena_i6 from "../../../../public/assets/images/lab/athena/i6.png";
 const gif_athena = "/assets/images/lab/athena/igif.mp4";
-import noyer_header from "../../../../public/assets/images/lab/noyer/noyer01.png";
+import noyer_header from "../../../../public/assets/images/lab/noyer/noyer03.png";
 import noyer_i2 from "../../../../public/assets/images/lab/noyer/noyer02.png";
-import noyer_i3 from "../../../../public/assets/images/lab/noyer/noyer03.png";
+import noyer_i3 from "../../../../public/assets/images/lab/noyer/noyer01.png";
 import noyer_i4 from "../../../../public/assets/images/lab/noyer/noyer04.png";
 import noyer_i5 from "../../../../public/assets/images/lab/noyer/noyer5.png";
 import noyer_i6 from "../../../../public/assets/images/lab/noyer/noyer06.png";
@@ -30,8 +30,10 @@ export interface LabProject {
   category: string;
   description: string;
   image?: string | StaticImageData;
-  images?: { src: string | StaticImageData; alt: string; video?: string; wide?: boolean }[];
+  coverImage?: string | StaticImageData;
+  images?: { src?: string | StaticImageData; alt: string; video?: string; wide?: boolean }[];
   video?: string;
+  autoplayVideos?: boolean;
   demoUrl?: string;
   githubUrl?: string;
   hidden?: boolean;
@@ -50,6 +52,28 @@ export interface LabProject {
 //   githubUrl: "https://github.com/username/project", // Facultatif
 // },
 const lab: LabProject[] = [
+  {
+    id: "exp2",
+    title: "Photo Motion — Interactive Image Tool",
+    demoUrl: "https://photo-motion.netlify.app/",
+    category: "JavaScript · Canvas 2D",
+    description: `Photo Motion is an interactive web tool that brings still images to life. Upload your photos and explore movement through spirals, waves and rotating compositions. A minimal control panel lets you adjust speed, rotation, height and scale, with instant visual feedback.
+
+The project explores how motion can transform a collection of images into a playful visual experience. A white background and a quiet interface keep the focus on the imagery.
+
+Focus: Concept, visual design and interaction design
+Built with: HTML, CSS, JavaScript and Canvas 2D
+Development: Created with AI assistance`,
+    // Replace this placeholder with your project cover image when ready.
+    image: "/assets/images/lab/exp2/cover-placeholder.svg",
+    // Animated cover in the lab overview and video inside the project.
+    video: "/assets/images/lab/exp2/photo-motion (2).mp4",
+    autoplayVideos: true,
+    images: [
+      { video: "/assets/images/lab/exp2/white-background.mp4", alt: "Photo Motion — image compositions on a white background" },
+      { video: "/assets/images/lab/exp2/controls.mp4", alt: "Photo Motion — adjusting the interactive controls" },
+    ],
+  },
   {
     id: "exp1",
     title: "Bloom Festival",
@@ -89,11 +113,12 @@ const lab: LabProject[] = [
     title: "Studio Noyer",
     category: "Print",
     description: `There is something honest about solid wood — it doesn't pretend. Studio Noyer, a luxury interior design studio, has built their entire practice around that truth. Brought in to capture their spaces and shape their print presence, the goal was simple: let the material speak, and get out of its way.`,
-    image: noyer_header,
+    coverImage: noyer_header,
+    image: noyer_i2,
     images: [
-      { src: noyer_i2, alt: "Studio Noyer, image 02" },
-      { src: noyer_i3, alt: "Studio Noyer, image 03" },
+      { src: noyer_i3, alt: "Studio Noyer typographic exploration" },
       { src: noyer_i4, alt: "Studio Noyer, image 04" },
+      { src: noyer_header, alt: "Studio Noyer logo" },
       { src: noyer_i5, alt: "Studio Noyer, image 05" },
       { src: noyer_i6, alt: "Studio Noyer, image 06" },
       { src: noyer_i7, alt: "Studio Noyer, image 07" },

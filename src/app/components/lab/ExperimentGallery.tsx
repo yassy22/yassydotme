@@ -5,9 +5,9 @@ import Image from "next/image";
 import type { LabProject } from "@/app/api/lab/lab";
 import styles from "../../(pages)/lab/lab.module.css";
 
-type Props = Pick<LabProject, "title" | "image" | "images" | "video">;
+type Props = Pick<LabProject, "title" | "image" | "images" | "video" | "autoplayVideos">;
 
-export default function ExperimentGallery({ title, image, images = [], video }: Props) {
+export default function ExperimentGallery({ title, image, images = [], video, autoplayVideos = false }: Props) {
   const items = [
     ...(image || video ? [{ src: image, alt: title, video }] : []),
     ...images,
@@ -67,7 +67,16 @@ export default function ExperimentGallery({ title, image, images = [], video }: 
             className={styles.stackFigure}
           >
             {item.video ? (
-              <video src={item.video} poster={typeof item.src === "string" ? item.src : item.src?.src} controls playsInline preload="none" />
+              <video
+                src={item.video}
+                poster={typeof item.src === "string" ? item.src : item.src?.src}
+                autoPlay={autoplayVideos}
+                loop={autoplayVideos}
+                muted={autoplayVideos}
+                controls={!autoplayVideos}
+                playsInline
+                preload={autoplayVideos ? "auto" : "none"}
+              />
             ) : item.src ? (
               <Image
                 src={item.src}
