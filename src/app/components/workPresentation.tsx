@@ -30,7 +30,7 @@ function WorkImage({ image, index }: { image: string | StaticImageData; index: n
   return (
     <motion.div
       ref={ref}
-      className="work-image overflow-hidden"
+      className="work-image w-full min-w-0 max-w-[1600px] overflow-hidden"
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{

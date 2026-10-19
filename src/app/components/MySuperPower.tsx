@@ -44,11 +44,11 @@ function MySuperPower() {
     <section
       className="relative w-full overflow-hidden"
       data-nav="light"
-      style={{ minHeight: "100vh", backgroundColor: "#FCFAF6", color: "#101010" }}
+      style={{ minHeight: "100svh", backgroundColor: "#FCFAF6", color: "#101010" }}
     >
 
       {/* ── DESKTOP ── */}
-      <div className="hidden md:block w-full" style={{ minHeight: "100vh" }}>
+      <div className="hidden xl:block relative w-full" style={{ minHeight: "max(900px, 100svh)" }}>
         {skills.map((s, i) => (
           <Pill key={s.label} {...s} delay={0.15 + i * 0.1} />
         ))}
@@ -76,7 +76,7 @@ function MySuperPower() {
       </div>
 
       {/* ── MOBILE ── */}
-      <div className="md:hidden flex flex-col items-center px-6 pt-24 pb-20 gap-8 min-h-screen">
+      <div className="xl:hidden flex flex-col items-center px-6 pt-24 pb-20 gap-8 min-h-screen">
 
         {/* Titre */}
         <motion.div

@@ -57,3 +57,8 @@ a {
 }
 
 
+
+/* Allow long project names and links to wrap without widening the page. */
+body { overflow-wrap: break-word; }
+img, video { max-width: 100%; }
+button, a { -webkit-tap-highlight-color: transparent; }

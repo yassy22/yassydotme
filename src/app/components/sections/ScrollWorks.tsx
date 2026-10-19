@@ -60,7 +60,7 @@ export default function ScrollWorks() {
     <section
       ref={sectionRef}
       data-nav="light"
-      className="relative overflow-hidden h-screen w-screen"
+      className="relative overflow-hidden h-[100svh] w-full"
       style={{ backgroundColor: "#FCFAF6" }}
     >
       {/* Section title */}
@@ -91,7 +91,7 @@ export default function ScrollWorks() {
               className="work-card relative flex-shrink-0 overflow-hidden group cursor-pointer"
               style={{
                 width: "clamp(320px, 30vw, 560px)",
-                height: "clamp(380px, 60vh, 680px)",
+                height: "min(60svh, 680px)",
                 borderRadius: "12px",
                 backgroundColor: "#FCFAF6",
               }}
@@ -111,7 +111,7 @@ export default function ScrollWorks() {
 
               {/* Hover overlay */}
               <div
-                className="absolute inset-0 flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+                className="absolute inset-0 flex flex-col justify-end p-8 opacity-100 lg:opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-400"
                 style={{
                   background:
                     "linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 60%)",

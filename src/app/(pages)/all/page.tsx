@@ -82,7 +82,7 @@ function All() {
                   </div>
 
                   {/* Info */}
-                  <div className="mt-5 flex items-start justify-between">
+                  <div className="mt-5 flex min-w-0 flex-col items-start gap-3 xl:flex-row xl:justify-between">
                     <h2
                       className="font-black uppercase leading-none"
                       style={{
@@ -94,8 +94,8 @@ function All() {
                       {work.title}
                     </h2>
                     <p
-                      className="uppercase tracking-widest text-[10px] font-bold text-right mt-1"
-                      style={{ color: "#101010", opacity: 0.4, maxWidth: "45%" }}
+                      className="uppercase tracking-widest text-[10px] font-bold xl:text-right mt-1 xl:max-w-[45%]"
+                      style={{ color: "#101010", opacity: 0.4 }}
                     >
                       {Array.isArray(work.roles)
                         ? work.roles.join(" · ")

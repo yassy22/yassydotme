@@ -79,7 +79,7 @@ export default function About() {
 
           {/* Bio */}
           <motion.div
-            className="md:w-1/2"
+            className="min-w-0 md:w-1/2"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -101,14 +101,14 @@ export default function About() {
 
           {/* Infos */}
           <motion.div
-            className="md:w-1/2 flex flex-col"
+            className="min-w-0 md:w-1/2 flex flex-col"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true }}
           >
             {infos.map((item, i) => (
-              <div key={i} className="flex justify-between items-center py-5 border-t" style={{ borderColor: "rgba(0,0,0,0.1)" }}>
+              <div key={i} className="flex flex-wrap justify-between items-center gap-x-6 gap-y-2 py-5 border-t" style={{ borderColor: "rgba(0,0,0,0.1)" }}>
                 <span className="uppercase tracking-widest text-[11px] font-bold" style={{ opacity: 0.4 }}>
                   {item.label}
                 </span>
@@ -175,7 +175,7 @@ export default function About() {
           {skills.map((skill, i) => (
             <motion.div
               key={i}
-              className="flex items-center justify-between py-6 border-t group cursor-default"
+              className="flex items-center justify-between gap-4 py-6 border-t group cursor-default"
               style={{ borderColor: "rgba(0,0,0,0.1)" }}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}

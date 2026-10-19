@@ -67,13 +67,13 @@ const WorkPage = async ({ params }: WorkPageProps) => {
       {/* ── Mobile info ── */}
       <div className="lg:hidden px-6 pt-10 pb-6" style={{ backgroundColor: "#FCFAF6" }}>
         <h1
-          className={`${NewYork.variable} font-newYork`}
+          className={`${NewYork.variable} font-newYork break-words`}
           style={{ fontSize: "clamp(36px, 10vw, 64px)", lineHeight: 1.05, color: "#101010" }}
         >
           {work.title}
         </h1>
 
-        <p className="mt-6 text-[14px] leading-relaxed" style={{ color: "#101010", opacity: 0.7 }}>
+        <p className="mt-6 whitespace-pre-line text-[14px] leading-relaxed" style={{ color: "#101010", opacity: 0.7 }}>
           {work.description}
         </p>
 
@@ -115,12 +115,12 @@ const WorkPage = async ({ params }: WorkPageProps) => {
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
 
             {/* Label + titre + roles + arrow */}
-            <div className="flex flex-col gap-5">
+            <div className="min-w-0 flex-1 flex flex-col gap-5">
               <p className="uppercase tracking-widest text-[11px] font-bold" style={{ opacity: 0.45 }}>
                 Next Project
               </p>
               <h2
-                className="font-black uppercase leading-none"
+                className="min-w-0 break-words font-black uppercase leading-none"
                 style={{
                   fontFamily: "'Arial Black', 'Arial', sans-serif",
                   fontSize: "clamp(32px, 6vw, 96px)",

@@ -42,7 +42,7 @@ export default function StudioPage() {
       style={{ backgroundColor: "#FCFAF6", color: "#101010" }}
     >
       <div
-        className="sticky top-0 h-[100svh] md:h-screen px-4 flex flex-col justify-center -translate-y-10 md:translate-y-0 md:block md:pt-40"
+        className="sticky top-0 h-[100svh] md:h-screen px-4 flex flex-col justify-center -translate-y-10 md:translate-y-0 md:block md:pt-[clamp(96px,18svh,160px)]"
         style={{}}
       >
         {/* Nom */}
@@ -55,7 +55,7 @@ export default function StudioPage() {
           <h1
             className="uppercase leading-none font-black"
             style={{
-              fontSize: "clamp(38px, 13vw, 200px)",
+              fontSize: "clamp(32px, 11.5vw, 184px)",
               letterSpacing: "-0.02em",
               fontFamily: "'Arial Black', 'Arial', sans-serif",
               lineHeight: 0.88,
@@ -66,7 +66,7 @@ export default function StudioPage() {
           <h1
             className="uppercase leading-none font-black"
             style={{
-              fontSize: "clamp(38px, 13vw, 200px)",
+              fontSize: "clamp(32px, 11.5vw, 184px)",
               letterSpacing: "-0.02em",
               fontFamily: "'Arial Black', 'Arial', sans-serif",
               lineHeight: 0.88,

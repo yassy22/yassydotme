@@ -1,3 +1,9 @@
+import keychain_01 from "../../../../public/assets/images/lab/keychain/01.png";
+import keychain_02 from "../../../../public/assets/images/lab/keychain/02.png";
+import keychain_03 from "../../../../public/assets/images/lab/keychain/03.png";
+import keychain_04 from "../../../../public/assets/images/lab/keychain/04.png";
+import keychain_05 from "../../../../public/assets/images/lab/keychain/05.png";
+
 // wizaa
 import wizaa_header from "../../../../public/assets/images/works/wizaa/i1.png";
 import wizaa_iO from "../../../../public/assets/images/works/wizaa/i0.png";
@@ -63,22 +69,23 @@ export interface LabProject {
 // },
 const lab: LabProject[] = [
   {
-    id: "wizaa",
-    autoplayVideos: true,
-    title: "Wizaa Pottery",
-    category: "UX design · 3D modeling · AI",
-    description: `For this personal project, I created Wizaa, a website dedicated to pottery. My goal was to explore various design styles and experiment with web design techniques.
+    id: "keychain",
+    title: "Keychain",
+    category: "3D modeling · Blender · Object design",
+    description: `A personal Blender exercise inspired by an object I wanted to make: a flower keychain, designed with the intention of 3D printing it.
 
-The project allowed me to flex my creative muscles and try new things, from creating a unique visual identity to experimenting with animations and interactions. It was a fun, challenging project that helped me grow as a designer.`,
-    coverImage: wizaa_header,
-    image: wizaa_iO,
+The project was a chance to practise 3D modeling and explore how a digital idea could become a small, tangible object.
+
+Focus: Blender practice and object design for a future 3D print`,
+    image: keychain_01,
+    video: "/video/yasmine_The_flower_keychain_slowly_rotates_360_degrees_around_f5818a06-d15b-4a5b-85b7-a5475c59d05b_2.mp4",
+    autoplayVideos: true,
     images: [
-      { video: gif_1, alt: "Wizaa Pottery — motion exploration" },
-      { src: wizaa_i1, alt: "Wizaa Pottery — image 02" },
-      { src: wizaa_i2, alt: "Wizaa Pottery — image 03" },
-      { src: wizaa_i3, alt: "Wizaa Pottery — image 04" },
-      { src: wizaa_i5, alt: "Wizaa Pottery — image 06" },
-      { src: wizaa_i4, alt: "Wizaa Pottery — image 05" },
+      { src: keychain_01, alt: "Keychain — pink flower design" },
+      { src: keychain_02, alt: "Keychain — image 02" },
+      { src: keychain_03, alt: "Keychain — image 03" },
+      { src: keychain_04, alt: "Keychain — image 04" },
+      { src: keychain_05, alt: "Keychain — image 05" },
     ],
   },
   {
@@ -156,6 +163,26 @@ Development: Created with AI assistance`,
       { src: noyer_i10, alt: "Studio Noyer, image 10" },
     ],
   },
+  {
+    id: "wizaa",
+    autoplayVideos: true,
+    title: "Wizaa Pottery",
+    category: "UX design · 3D modeling · AI",
+    description: `For this personal project, I created Wizaa, a website dedicated to pottery. My goal was to explore various design styles and experiment with web design techniques.
+
+The project allowed me to flex my creative muscles and try new things, from creating a unique visual identity to experimenting with animations and interactions. It was a fun, challenging project that helped me grow as a designer.`,
+    coverImage: wizaa_header,
+    image: wizaa_iO,
+    images: [
+      { video: gif_1, alt: "Wizaa Pottery — motion exploration" },
+      { src: wizaa_i1, alt: "Wizaa Pottery — image 02" },
+      { src: wizaa_i2, alt: "Wizaa Pottery — image 03" },
+      { src: wizaa_i3, alt: "Wizaa Pottery — image 04" },
+      { src: wizaa_i5, alt: "Wizaa Pottery — image 06" },
+      { src: wizaa_i4, alt: "Wizaa Pottery — image 05" },
+    ],
+  },
+
 ];
 
 export default lab;

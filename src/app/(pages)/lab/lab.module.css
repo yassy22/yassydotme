@@ -92,3 +92,18 @@
 @media (max-width: 767px) {
   .comingSlot { grid-column: auto !important; grid-row: auto !important; aspect-ratio: 3 / 4; }
 }
+
+/* Keep detail copy readable on tablets before adding the third column. */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .detailMain { width: 90%; padding-right: 76px; }
+  .projectIntro { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 32px; }
+  .projectLinks { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; }
+  .galleryLayout { column-gap: 24px; width: calc(100% + 100px); }
+}
+.projectIntro > *, .footer > * { min-width: 0; }
+.projectIntro { overflow-wrap: anywhere; }
+@media (max-width: 767px) {
+  .thumbnailRail { max-width: 100%; }
+  .footer { gap: 20px; }
+  .footer a { max-width: 100%; }
+}
