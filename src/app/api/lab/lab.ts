@@ -1,3 +1,13 @@
+// wizaa
+import wizaa_header from "../../../../public/assets/images/works/wizaa/i1.png";
+import wizaa_iO from "../../../../public/assets/images/works/wizaa/i0.png";
+import wizaa_i1 from "../../../../public/assets/images/works/wizaa/i2.png";
+import wizaa_i2 from "../../../../public/assets/images/works/wizaa/i3.png";
+import wizaa_i3 from "../../../../public/assets/images/works/wizaa/i4.png";
+import wizaa_i4 from "../../../../public/assets/images/works/wizaa/i5.png";
+import wizaa_i5 from "../../../../public/assets/images/works/wizaa/i6.png";
+const gif_1 = "/assets/images/works/wizaa/gif1.mp4";
+
 import athena_i1 from "../../../../public/assets/images/lab/athena/i0.png";
 import athena_i1_bw from "../../../../public/assets/images/lab/athena/athena_new.png";
 import athena_i3 from "../../../../public/assets/images/lab/athena/i3.png";
@@ -52,6 +62,25 @@ export interface LabProject {
 //   githubUrl: "https://github.com/username/project", // Facultatif
 // },
 const lab: LabProject[] = [
+  {
+    id: "wizaa",
+    autoplayVideos: true,
+    title: "Wizaa Pottery",
+    category: "UX design · 3D modeling · AI",
+    description: `For this personal project, I created Wizaa, a website dedicated to pottery. My goal was to explore various design styles and experiment with web design techniques.
+
+The project allowed me to flex my creative muscles and try new things, from creating a unique visual identity to experimenting with animations and interactions. It was a fun, challenging project that helped me grow as a designer.`,
+    coverImage: wizaa_header,
+    image: wizaa_iO,
+    images: [
+      { video: gif_1, alt: "Wizaa Pottery — motion exploration" },
+      { src: wizaa_i1, alt: "Wizaa Pottery — image 02" },
+      { src: wizaa_i2, alt: "Wizaa Pottery — image 03" },
+      { src: wizaa_i3, alt: "Wizaa Pottery — image 04" },
+      { src: wizaa_i5, alt: "Wizaa Pottery — image 06" },
+      { src: wizaa_i4, alt: "Wizaa Pottery — image 05" },
+    ],
+  },
   {
     id: "exp2",
     title: "Photo Motion — Interactive Image Tool",

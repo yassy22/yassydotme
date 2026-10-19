@@ -27,6 +27,7 @@ const WorkPage = async ({ params }: WorkPageProps) => {
     ? nextWork.imageHeader[0]
     : nextWork.imageHeader;
 
+
   return (
     <div style={{ backgroundColor: "#FCFAF6", color: "#101010" }}>
       <Nav />

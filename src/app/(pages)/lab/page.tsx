@@ -23,11 +23,11 @@ export default function Lab() {
     ...Array.from({ length: Math.max(0, 8 - projects.length) }, () => ({ project: undefined, image: undefined })),
   ];
   const positions = [
+    { column: "5", row: 2, span: 1 },
     { column: "1", row: 1, span: 1 },
-    { column: "3", row: 1, span: 1 },
     { column: "4", row: 1, span: 1 },
     { column: "2", row: 2, span: 2 },
-    { column: "5", row: 2, span: 1 },
+    { column: "3", row: 1, span: 1 },
     { column: "1", row: 4, span: 1 },
     { column: "4", row: 4, span: 1 },
     { column: "5", row: 4, span: 1 },

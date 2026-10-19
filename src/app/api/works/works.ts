@@ -27,16 +27,6 @@ import i2_muji from "../../../../public/assets/images/works/muij/i2.png";
 import moodboard_muji from "../../../../public/assets/images/works/muij/moodboard.png";
 import styleMuij from "../../../../public/assets/images/works/muij/style.png";
 
-// wizaa
-import wizaa_header from "../../../../public/assets/images/works/wizaa/i1.png";
-import wizaa_iO from "../../../../public/assets/images/works/wizaa/i0.png";
-import wizaa_i1 from "../../../../public/assets/images/works/wizaa/i2.png";
-import wizaa_i2 from "../../../../public/assets/images/works/wizaa/i3.png";
-import wizaa_i3 from "../../../../public/assets/images/works/wizaa/i4.png";
-import wizaa_i4 from "../../../../public/assets/images/works/wizaa/i5.png";
-import wizaa_i5 from "../../../../public/assets/images/works/wizaa/i6.png";
-const gif_1 = "/assets/images/works/wizaa/gif1.mp4";
-
 //gwwc
 import gwwc_i1 from "../../../../public/assets/images/works/gwwc/gwwc_i1.jpg";
 import gwwc_i2 from "../../../../public/assets/images/works/gwwc/gwwc_i2.jpg";
@@ -92,7 +82,29 @@ import solene_navy from "../../../../public/assets/images/works/solene/10.png";
 import solene_blue from "../../../../public/assets/images/works/solene/11.png";
 import solene_collection from "../../../../public/assets/images/works/solene/12.png";
 
+import music_header from "../../../../public/assets/images/works/ux_research_music/header.png";
+import music_01 from "../../../../public/assets/images/works/ux_research_music/01.png";
+import music_02 from "../../../../public/assets/images/works/ux_research_music/02.png";
+import music_03 from "../../../../public/assets/images/works/ux_research_music/03.png";
+import music_04 from "../../../../public/assets/images/works/ux_research_music/04.png";
+import music_05 from "../../../../public/assets/images/works/ux_research_music/05.png";
+import music_06 from "../../../../public/assets/images/works/ux_research_music/06.png";
+
 const works: IWork[] = [
+  {
+    id: 11,
+    slug: "music-and-movement",
+    link: "https://www.figma.com/proto/6gn6DFo1wGUyCqxVipebne/UX-website?node-id=244-332&page-id=89%3A9&starting-point-node-id=244%3A332&t=SRq5VuFzfD2Yr02I-1",
+    title: "Music & Movement",
+    description: `Music & Movement is a research project exploring how music shapes the experience of exercise. Through surveys, interviews and desk research, the project examines its role in motivation, focus and listening habits during indoor and outdoor activities.
+
+The findings are presented through an informational website, combining data visualizations, participant quotes and illustrations. Three themes guide the experience: the motivational boost of music, listening devices and the potential for distraction.
+
+Focus: User research, information design and web design`,
+    roles: ["Research", "Data Visualization", "Web Design"],
+    imageHeader: [music_header],
+    image: [music_01, music_02, music_03, music_04, music_05, music_06],
+  },
   {
     id: 10,
     slug: "solene",
@@ -125,19 +137,6 @@ It was also my first deep dive into app design, where I learned the importance o
     image: [clubsofa_gif_1, clubsofa_i6, clubsofa_i7, clubsofa_i1, clubsofa_i8, clubsofa_i4, clubsofa_i5],
     imageHeader: [clubsofa_iphone, hearder],
     roles: ["creative direction", "app design"],
-  },
-  {
-    id: 4,
-    slug: "Wizaa",
-    title: "Wizaa potery",
-    description: `
-    For this personal project, I created Wizaa, a website dedicated to pottery. My goal was to explore various design styles and experiment with web design techniques.
-
-    The project allowed me to flex my creative muscles and try new things, from creating a unique visual identity to experimenting with animations and interactions. It was a fun, challenging project that helped me grow as a designer.
-    `,
-    image: [wizaa_iO, gif_1, wizaa_i1, wizaa_i2, wizaa_i3, wizaa_i5, wizaa_i4],
-    imageHeader: [wizaa_header],
-    roles: ["ux design", " 3D modeling", "Ai"],
   },
   {
     id: 5,
