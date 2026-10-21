@@ -72,7 +72,6 @@ import solene_colors from "../../../../public/assets/images/works/solene/03.png"
 import solene_wordmark from "../../../../public/assets/images/works/solene/04.png";
 import solene_typography from "../../../../public/assets/images/works/solene/04-1.png";
 import solene_tags from "../../../../public/assets/images/works/solene/05.png";
-import solene_detail from "../../../../public/assets/images/works/solene/05-1.png";
 import solene_packaging from "../../../../public/assets/images/works/solene/06.png";
 import solene_fabrics from "../../../../public/assets/images/works/solene/07.png";
 import solene_lifestyle from "../../../../public/assets/images/works/solene/08.png";
@@ -110,7 +109,7 @@ Focus: User research, information design and web design`,
     slug: "solene",
     title: "Solène",
     description: `Visual identity for Solène, a homewear brand with a soft, refined aesthetic. The identity brings together an expressive serif wordmark, a flowing monogram, and a palette of blush pink, powder blue, cream, and deep brown. The visual universe extends across clothing tags, printed materials, and homewear imagery.`,
-    image: [solene_intro, solene_logo, solene_colors, solene_wordmark, solene_typography, solene_tags, solene_detail, solene_packaging, solene_fabrics, solene_lifestyle, solene_box, solene_navy, solene_blue, solene_collection],
+    image: [solene_intro, solene_logo, solene_colors, solene_wordmark, solene_typography, solene_tags, solene_packaging, solene_fabrics, solene_lifestyle, solene_box, solene_navy, solene_blue, solene_collection],
     imageHeader: [solene_header],
     roles: ["Branding", "Visual identity", "Print design"],
   },
